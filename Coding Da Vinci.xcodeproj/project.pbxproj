@@ -22,6 +22,40 @@
 		62B1C3D5190D420D0027A90F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3B4190D420D0027A90F /* UIKit.framework */; };
 		62B1C3DD190D420D0027A90F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62B1C3DB190D420D0027A90F /* InfoPlist.strings */; };
 		62B1C3DF190D420D0027A90F /* Coding_Da_VinciTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C3DE190D420D0027A90F /* Coding_Da_VinciTests.m */; };
+		62B1C3E9190D422A0027A90F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3E8190D422A0027A90F /* MapKit.framework */; };
+		62FBF645190D438200D248B6 /* ImageAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FBF644190D438200D248B6 /* ImageAnnotationView.m */; };
+		62FBF64D190D6C2D00D248B6 /* ImageAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FBF64C190D6C2D00D248B6 /* ImageAnnotation.m */; };
+		62FBF66D190D71D100D248B6 /* Zoo_Eingang-IV-64-1294-V.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF64E190D71D100D248B6 /* Zoo_Eingang-IV-64-1294-V.jpg */; };
+		62FBF66E190D71D100D248B6 /* Ufer_Stralauer_Strasse-GHZ-78-26.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF64F190D71D100D248B6 /* Ufer_Stralauer_Strasse-GHZ-78-26.jpg */; };
+		62FBF66F190D71D100D248B6 /* Schlossbrücke-VII-62-424-a-W.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF650190D71D100D248B6 /* Schlossbrücke-VII-62-424-a-W.jpg */; };
+		62FBF670190D71D100D248B6 /* Rathaus-IV-61-1537-S.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF651190D71D100D248B6 /* Rathaus-IV-61-1537-S.jpg */; };
+		62FBF671190D71D100D248B6 /* Platz_am_Zeughaus-VII-59-513-x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF652190D71D100D248B6 /* Platz_am_Zeughaus-VII-59-513-x.jpg */; };
+		62FBF672190D71D100D248B6 /* Panorama_von_Berlin-GDR-64-11-108.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF653190D71D100D248B6 /* Panorama_von_Berlin-GDR-64-11-108.jpg */; };
+		62FBF673190D71D100D248B6 /* Nauener_Platz-GHZ-77-13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF654190D71D100D248B6 /* Nauener_Platz-GHZ-77-13.jpg */; };
+		62FBF674190D71D100D248B6 /* Märkisches_Museum-GE-2007-638-VF.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF655190D71D100D248B6 /* Märkisches_Museum-GE-2007-638-VF.jpg */; };
+		62FBF675190D71D100D248B6 /* Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF656190D71D100D248B6 /* Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg */; };
+		62FBF676190D71D100D248B6 /* Luiseninsel_Tiergarten-GDR-76-57-45.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF657190D71D100D248B6 /* Luiseninsel_Tiergarten-GDR-76-57-45.jpg */; };
+		62FBF677190D71D100D248B6 /* Leipziger_Platz-GDR-76-57-24.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF658190D71D100D248B6 /* Leipziger_Platz-GDR-76-57-24.jpg */; };
+		62FBF678190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF659190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg */; };
+		62FBF679190D71D100D248B6 /* Landsbergerplatz-IV-61-3475-V.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF65A190D71D100D248B6 /* Landsbergerplatz-IV-61-3475-V.jpg */; };
+		62FBF67A190D71D100D248B6 /* Königsstrasse-VII-60-1489-W.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF65B190D71D100D248B6 /* Königsstrasse-VII-60-1489-W.jpg */; };
+		62FBF67B190D71D100D248B6 /* Köllnischer_Fischmarkt-VII-59-29-w.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF65C190D71D100D248B6 /* Köllnischer_Fischmarkt-VII-59-29-w.jpg */; };
+		62FBF67C190D71D100D248B6 /* Jerusalemkirche-GHZ-74-14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF65D190D71D100D248B6 /* Jerusalemkirche-GHZ-74-14.jpg */; };
+		62FBF67D190D71D100D248B6 /* Hackescher_Markt-VII-67-294-W.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF65E190D71D100D248B6 /* Hackescher_Markt-VII-67-294-W.jpg */; };
+		62FBF67E190D71D100D248B6 /* Grunewaldturm-SM-2013-1297.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF65F190D71D100D248B6 /* Grunewaldturm-SM-2013-1297.jpg */; };
+		62FBF67F190D71D100D248B6 /* Fischerhütte-SM-2012-2093.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF660190D71D100D248B6 /* Fischerhütte-SM-2012-2093.jpg */; };
+		62FBF680190D71D100D248B6 /* Filmfestspiele_Kudamm-SM-2013-1519.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF661190D71D100D248B6 /* Filmfestspiele_Kudamm-SM-2013-1519.jpg */; };
+		62FBF681190D71D100D248B6 /* Einzug_des_Königs-GDR-64-11-216.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF662190D71D100D248B6 /* Einzug_des_Königs-GDR-64-11-216.jpg */; };
+		62FBF682190D71D100D248B6 /* Der_Ochsen-Platz-GDR-64-11-171.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF663190D71D100D248B6 /* Der_Ochsen-Platz-GDR-64-11-171.jpg */; };
+		62FBF683190D71D100D248B6 /* Das_Leipziger_Tor-GDR-74-55.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF664190D71D100D248B6 /* Das_Leipziger_Tor-GDR-74-55.jpg */; };
+		62FBF684190D71D100D248B6 /* Das_Brandenburger_Tor-GDR-65-7-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF665190D71D100D248B6 /* Das_Brandenburger_Tor-GDR-65-7-1.jpg */; };
+		62FBF685190D71D100D248B6 /* Cölln_Jungfernbrücke-GHZ-64-3-13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF666190D71D100D248B6 /* Cölln_Jungfernbrücke-GHZ-64-3-13.jpg */; };
+		62FBF686190D71D100D248B6 /* Börse-IV-61-1531-S.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF667190D71D100D248B6 /* Börse-IV-61-1531-S.jpg */; };
+		62FBF687190D71D100D248B6 /* Blick_von_Oberbaumbrücke-VII-59-408-W.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF668190D71D100D248B6 /* Blick_von_Oberbaumbrücke-VII-59-408-W.jpg */; };
+		62FBF688190D71D100D248B6 /* Berlin_vom_Kreuzberg_aus-GDR-69-56.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF669190D71D100D248B6 /* Berlin_vom_Kreuzberg_aus-GDR-69-56.jpg */; };
+		62FBF689190D71D100D248B6 /* Avus_Funkturm-SM-2013-0958.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF66A190D71D100D248B6 /* Avus_Funkturm-SM-2013-0958.jpg */; };
+		62FBF68A190D71D100D248B6 /* Hamburger_Bahnhof-VII-97-341-a-W.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF66B190D71D100D248B6 /* Hamburger_Bahnhof-VII-97-341-a-W.jpg */; };
+		62FBF68B190D71D100D248B6 /* Rondell-GHZ-74-12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF66C190D71D100D248B6 /* Rondell-GHZ-74-12.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +89,42 @@
 		62B1C3DA190D420D0027A90F /* Coding Da VinciTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coding Da VinciTests-Info.plist"; sourceTree = "<group>"; };
 		62B1C3DC190D420D0027A90F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		62B1C3DE190D420D0027A90F /* Coding_Da_VinciTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coding_Da_VinciTests.m; sourceTree = "<group>"; };
+		62B1C3E8190D422A0027A90F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		62FBF643190D438200D248B6 /* ImageAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnnotationView.h; sourceTree = "<group>"; };
+		62FBF644190D438200D248B6 /* ImageAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAnnotationView.m; sourceTree = "<group>"; };
+		62FBF64B190D6C2D00D248B6 /* ImageAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnnotation.h; sourceTree = "<group>"; };
+		62FBF64C190D6C2D00D248B6 /* ImageAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAnnotation.m; sourceTree = "<group>"; };
+		62FBF64E190D71D100D248B6 /* Zoo_Eingang-IV-64-1294-V.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Zoo_Eingang-IV-64-1294-V.jpg"; sourceTree = "<group>"; };
+		62FBF64F190D71D100D248B6 /* Ufer_Stralauer_Strasse-GHZ-78-26.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ufer_Stralauer_Strasse-GHZ-78-26.jpg"; sourceTree = "<group>"; };
+		62FBF650190D71D100D248B6 /* Schlossbrücke-VII-62-424-a-W.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Schlossbrücke-VII-62-424-a-W.jpg"; sourceTree = "<group>"; };
+		62FBF651190D71D100D248B6 /* Rathaus-IV-61-1537-S.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Rathaus-IV-61-1537-S.jpg"; sourceTree = "<group>"; };
+		62FBF652190D71D100D248B6 /* Platz_am_Zeughaus-VII-59-513-x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Platz_am_Zeughaus-VII-59-513-x.jpg"; sourceTree = "<group>"; };
+		62FBF653190D71D100D248B6 /* Panorama_von_Berlin-GDR-64-11-108.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Panorama_von_Berlin-GDR-64-11-108.jpg"; sourceTree = "<group>"; };
+		62FBF654190D71D100D248B6 /* Nauener_Platz-GHZ-77-13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Nauener_Platz-GHZ-77-13.jpg"; sourceTree = "<group>"; };
+		62FBF655190D71D100D248B6 /* Märkisches_Museum-GE-2007-638-VF.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Märkisches_Museum-GE-2007-638-VF.jpg"; sourceTree = "<group>"; };
+		62FBF656190D71D100D248B6 /* Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg"; sourceTree = "<group>"; };
+		62FBF657190D71D100D248B6 /* Luiseninsel_Tiergarten-GDR-76-57-45.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Luiseninsel_Tiergarten-GDR-76-57-45.jpg"; sourceTree = "<group>"; };
+		62FBF658190D71D100D248B6 /* Leipziger_Platz-GDR-76-57-24.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Leipziger_Platz-GDR-76-57-24.jpg"; sourceTree = "<group>"; };
+		62FBF659190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Landwehrkanal-GHZ-90-61.jpg"; sourceTree = "<group>"; };
+		62FBF65A190D71D100D248B6 /* Landsbergerplatz-IV-61-3475-V.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Landsbergerplatz-IV-61-3475-V.jpg"; sourceTree = "<group>"; };
+		62FBF65B190D71D100D248B6 /* Königsstrasse-VII-60-1489-W.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Königsstrasse-VII-60-1489-W.jpg"; sourceTree = "<group>"; };
+		62FBF65C190D71D100D248B6 /* Köllnischer_Fischmarkt-VII-59-29-w.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Köllnischer_Fischmarkt-VII-59-29-w.jpg"; sourceTree = "<group>"; };
+		62FBF65D190D71D100D248B6 /* Jerusalemkirche-GHZ-74-14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jerusalemkirche-GHZ-74-14.jpg"; sourceTree = "<group>"; };
+		62FBF65E190D71D100D248B6 /* Hackescher_Markt-VII-67-294-W.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Hackescher_Markt-VII-67-294-W.jpg"; sourceTree = "<group>"; };
+		62FBF65F190D71D100D248B6 /* Grunewaldturm-SM-2013-1297.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Grunewaldturm-SM-2013-1297.jpg"; sourceTree = "<group>"; };
+		62FBF660190D71D100D248B6 /* Fischerhütte-SM-2012-2093.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Fischerhütte-SM-2012-2093.jpg"; sourceTree = "<group>"; };
+		62FBF661190D71D100D248B6 /* Filmfestspiele_Kudamm-SM-2013-1519.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Filmfestspiele_Kudamm-SM-2013-1519.jpg"; sourceTree = "<group>"; };
+		62FBF662190D71D100D248B6 /* Einzug_des_Königs-GDR-64-11-216.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Einzug_des_Königs-GDR-64-11-216.jpg"; sourceTree = "<group>"; };
+		62FBF663190D71D100D248B6 /* Der_Ochsen-Platz-GDR-64-11-171.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Der_Ochsen-Platz-GDR-64-11-171.jpg"; sourceTree = "<group>"; };
+		62FBF664190D71D100D248B6 /* Das_Leipziger_Tor-GDR-74-55.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Das_Leipziger_Tor-GDR-74-55.jpg"; sourceTree = "<group>"; };
+		62FBF665190D71D100D248B6 /* Das_Brandenburger_Tor-GDR-65-7-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Das_Brandenburger_Tor-GDR-65-7-1.jpg"; sourceTree = "<group>"; };
+		62FBF666190D71D100D248B6 /* Cölln_Jungfernbrücke-GHZ-64-3-13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Cölln_Jungfernbrücke-GHZ-64-3-13.jpg"; sourceTree = "<group>"; };
+		62FBF667190D71D100D248B6 /* Börse-IV-61-1531-S.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Börse-IV-61-1531-S.jpg"; sourceTree = "<group>"; };
+		62FBF668190D71D100D248B6 /* Blick_von_Oberbaumbrücke-VII-59-408-W.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Blick_von_Oberbaumbrücke-VII-59-408-W.jpg"; sourceTree = "<group>"; };
+		62FBF669190D71D100D248B6 /* Berlin_vom_Kreuzberg_aus-GDR-69-56.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Berlin_vom_Kreuzberg_aus-GDR-69-56.jpg"; sourceTree = "<group>"; };
+		62FBF66A190D71D100D248B6 /* Avus_Funkturm-SM-2013-0958.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Avus_Funkturm-SM-2013-0958.jpg"; sourceTree = "<group>"; };
+		62FBF66B190D71D100D248B6 /* Hamburger_Bahnhof-VII-97-341-a-W.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Hamburger_Bahnhof-VII-97-341-a-W.jpg"; sourceTree = "<group>"; };
+		62FBF66C190D71D100D248B6 /* Rondell-GHZ-74-12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Rondell-GHZ-74-12.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62B1C3E9190D422A0027A90F /* MapKit.framework in Frameworks */,
 				62B1C3B3190D420D0027A90F /* CoreGraphics.framework in Frameworks */,
 				62B1C3B5190D420D0027A90F /* UIKit.framework in Frameworks */,
 				62B1C3B1190D420D0027A90F /* Foundation.framework in Frameworks */,
@@ -103,6 +174,7 @@
 		62B1C3AF190D420D0027A90F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62B1C3E8190D422A0027A90F /* MapKit.framework */,
 				62B1C3B0190D420D0027A90F /* Foundation.framework */,
 				62B1C3B2190D420D0027A90F /* CoreGraphics.framework */,
 				62B1C3B4190D420D0027A90F /* UIKit.framework */,
@@ -120,7 +192,12 @@
 				62B1C3C5190D420D0027A90F /* Main_iPad.storyboard */,
 				62B1C3C8190D420D0027A90F /* ViewController.h */,
 				62B1C3C9190D420D0027A90F /* ViewController.m */,
+				62FBF64B190D6C2D00D248B6 /* ImageAnnotation.h */,
+				62FBF64C190D6C2D00D248B6 /* ImageAnnotation.m */,
+				62FBF643190D438200D248B6 /* ImageAnnotationView.h */,
+				62FBF644190D438200D248B6 /* ImageAnnotationView.m */,
 				62B1C3CB190D420D0027A90F /* Images.xcassets */,
+				62FBF646190D6B1B00D248B6 /* Images */,
 				62B1C3B7190D420D0027A90F /* Supporting Files */,
 			);
 			path = "Coding Da Vinci";
@@ -153,6 +230,44 @@
 				62B1C3DB190D420D0027A90F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		62FBF646190D6B1B00D248B6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				62FBF64E190D71D100D248B6 /* Zoo_Eingang-IV-64-1294-V.jpg */,
+				62FBF64F190D71D100D248B6 /* Ufer_Stralauer_Strasse-GHZ-78-26.jpg */,
+				62FBF650190D71D100D248B6 /* Schlossbrücke-VII-62-424-a-W.jpg */,
+				62FBF651190D71D100D248B6 /* Rathaus-IV-61-1537-S.jpg */,
+				62FBF652190D71D100D248B6 /* Platz_am_Zeughaus-VII-59-513-x.jpg */,
+				62FBF653190D71D100D248B6 /* Panorama_von_Berlin-GDR-64-11-108.jpg */,
+				62FBF654190D71D100D248B6 /* Nauener_Platz-GHZ-77-13.jpg */,
+				62FBF655190D71D100D248B6 /* Märkisches_Museum-GE-2007-638-VF.jpg */,
+				62FBF656190D71D100D248B6 /* Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg */,
+				62FBF657190D71D100D248B6 /* Luiseninsel_Tiergarten-GDR-76-57-45.jpg */,
+				62FBF658190D71D100D248B6 /* Leipziger_Platz-GDR-76-57-24.jpg */,
+				62FBF659190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg */,
+				62FBF65A190D71D100D248B6 /* Landsbergerplatz-IV-61-3475-V.jpg */,
+				62FBF65B190D71D100D248B6 /* Königsstrasse-VII-60-1489-W.jpg */,
+				62FBF65C190D71D100D248B6 /* Köllnischer_Fischmarkt-VII-59-29-w.jpg */,
+				62FBF65D190D71D100D248B6 /* Jerusalemkirche-GHZ-74-14.jpg */,
+				62FBF65E190D71D100D248B6 /* Hackescher_Markt-VII-67-294-W.jpg */,
+				62FBF65F190D71D100D248B6 /* Grunewaldturm-SM-2013-1297.jpg */,
+				62FBF660190D71D100D248B6 /* Fischerhütte-SM-2012-2093.jpg */,
+				62FBF661190D71D100D248B6 /* Filmfestspiele_Kudamm-SM-2013-1519.jpg */,
+				62FBF662190D71D100D248B6 /* Einzug_des_Königs-GDR-64-11-216.jpg */,
+				62FBF663190D71D100D248B6 /* Der_Ochsen-Platz-GDR-64-11-171.jpg */,
+				62FBF664190D71D100D248B6 /* Das_Leipziger_Tor-GDR-74-55.jpg */,
+				62FBF665190D71D100D248B6 /* Das_Brandenburger_Tor-GDR-65-7-1.jpg */,
+				62FBF666190D71D100D248B6 /* Cölln_Jungfernbrücke-GHZ-64-3-13.jpg */,
+				62FBF667190D71D100D248B6 /* Börse-IV-61-1531-S.jpg */,
+				62FBF668190D71D100D248B6 /* Blick_von_Oberbaumbrücke-VII-59-408-W.jpg */,
+				62FBF669190D71D100D248B6 /* Berlin_vom_Kreuzberg_aus-GDR-69-56.jpg */,
+				62FBF66A190D71D100D248B6 /* Avus_Funkturm-SM-2013-0958.jpg */,
+				62FBF66B190D71D100D248B6 /* Hamburger_Bahnhof-VII-97-341-a-W.jpg */,
+				62FBF66C190D71D100D248B6 /* Rondell-GHZ-74-12.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +347,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				62B1C3C7190D420D0027A90F /* Main_iPad.storyboard in Resources */,
+				62FBF671190D71D100D248B6 /* Platz_am_Zeughaus-VII-59-513-x.jpg in Resources */,
 				62B1C3CC190D420D0027A90F /* Images.xcassets in Resources */,
+				62FBF673190D71D100D248B6 /* Nauener_Platz-GHZ-77-13.jpg in Resources */,
+				62FBF686190D71D100D248B6 /* Börse-IV-61-1531-S.jpg in Resources */,
+				62FBF681190D71D100D248B6 /* Einzug_des_Königs-GDR-64-11-216.jpg in Resources */,
+				62FBF687190D71D100D248B6 /* Blick_von_Oberbaumbrücke-VII-59-408-W.jpg in Resources */,
+				62FBF682190D71D100D248B6 /* Der_Ochsen-Platz-GDR-64-11-171.jpg in Resources */,
+				62FBF66E190D71D100D248B6 /* Ufer_Stralauer_Strasse-GHZ-78-26.jpg in Resources */,
+				62FBF68B190D71D100D248B6 /* Rondell-GHZ-74-12.jpg in Resources */,
+				62FBF684190D71D100D248B6 /* Das_Brandenburger_Tor-GDR-65-7-1.jpg in Resources */,
+				62FBF675190D71D100D248B6 /* Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg in Resources */,
+				62FBF678190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg in Resources */,
+				62FBF67F190D71D100D248B6 /* Fischerhütte-SM-2012-2093.jpg in Resources */,
+				62FBF689190D71D100D248B6 /* Avus_Funkturm-SM-2013-0958.jpg in Resources */,
 				62B1C3C4190D420D0027A90F /* Main_iPhone.storyboard in Resources */,
+				62FBF67D190D71D100D248B6 /* Hackescher_Markt-VII-67-294-W.jpg in Resources */,
+				62FBF670190D71D100D248B6 /* Rathaus-IV-61-1537-S.jpg in Resources */,
+				62FBF676190D71D100D248B6 /* Luiseninsel_Tiergarten-GDR-76-57-45.jpg in Resources */,
+				62FBF674190D71D100D248B6 /* Märkisches_Museum-GE-2007-638-VF.jpg in Resources */,
+				62FBF67E190D71D100D248B6 /* Grunewaldturm-SM-2013-1297.jpg in Resources */,
+				62FBF685190D71D100D248B6 /* Cölln_Jungfernbrücke-GHZ-64-3-13.jpg in Resources */,
+				62FBF679190D71D100D248B6 /* Landsbergerplatz-IV-61-3475-V.jpg in Resources */,
+				62FBF672190D71D100D248B6 /* Panorama_von_Berlin-GDR-64-11-108.jpg in Resources */,
+				62FBF66F190D71D100D248B6 /* Schlossbrücke-VII-62-424-a-W.jpg in Resources */,
+				62FBF68A190D71D100D248B6 /* Hamburger_Bahnhof-VII-97-341-a-W.jpg in Resources */,
+				62FBF67A190D71D100D248B6 /* Königsstrasse-VII-60-1489-W.jpg in Resources */,
+				62FBF688190D71D100D248B6 /* Berlin_vom_Kreuzberg_aus-GDR-69-56.jpg in Resources */,
+				62FBF67B190D71D100D248B6 /* Köllnischer_Fischmarkt-VII-59-29-w.jpg in Resources */,
+				62FBF677190D71D100D248B6 /* Leipziger_Platz-GDR-76-57-24.jpg in Resources */,
+				62FBF683190D71D100D248B6 /* Das_Leipziger_Tor-GDR-74-55.jpg in Resources */,
+				62FBF680190D71D100D248B6 /* Filmfestspiele_Kudamm-SM-2013-1519.jpg in Resources */,
+				62FBF66D190D71D100D248B6 /* Zoo_Eingang-IV-64-1294-V.jpg in Resources */,
+				62FBF67C190D71D100D248B6 /* Jerusalemkirche-GHZ-74-14.jpg in Resources */,
 				62B1C3BB190D420D0027A90F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,7 +400,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				62B1C3CA190D420D0027A90F /* ViewController.m in Sources */,
+				62FBF645190D438200D248B6 /* ImageAnnotationView.m in Sources */,
 				62B1C3C1190D420D0027A90F /* AppDelegate.m in Sources */,
+				62FBF64D190D6C2D00D248B6 /* ImageAnnotation.m in Sources */,
 				62B1C3BD190D420D0027A90F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +618,7 @@
 				62B1C3E4190D420E0027A90F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62B1C3E5190D420E0027A90F /* Build configuration list for PBXNativeTarget "Coding Da VinciTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +627,7 @@
 				62B1C3E7190D420E0027A90F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
