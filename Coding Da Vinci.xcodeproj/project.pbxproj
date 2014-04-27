@@ -17,11 +17,6 @@
 		62B1C3C7190D420D0027A90F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B1C3C5190D420D0027A90F /* Main_iPad.storyboard */; };
 		62B1C3CA190D420D0027A90F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C3C9190D420D0027A90F /* ViewController.m */; };
 		62B1C3CC190D420D0027A90F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62B1C3CB190D420D0027A90F /* Images.xcassets */; };
-		62B1C3D3190D420D0027A90F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3D2190D420D0027A90F /* XCTest.framework */; };
-		62B1C3D4190D420D0027A90F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3B0190D420D0027A90F /* Foundation.framework */; };
-		62B1C3D5190D420D0027A90F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3B4190D420D0027A90F /* UIKit.framework */; };
-		62B1C3DD190D420D0027A90F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62B1C3DB190D420D0027A90F /* InfoPlist.strings */; };
-		62B1C3DF190D420D0027A90F /* Coding_Da_VinciTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C3DE190D420D0027A90F /* Coding_Da_VinciTests.m */; };
 		62B1C3E9190D422A0027A90F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3E8190D422A0027A90F /* MapKit.framework */; };
 		62FBF645190D438200D248B6 /* ImageAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FBF644190D438200D248B6 /* ImageAnnotationView.m */; };
 		62FBF64D190D6C2D00D248B6 /* ImageAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FBF64C190D6C2D00D248B6 /* ImageAnnotation.m */; };
@@ -58,16 +53,6 @@
 		62FBF68B190D71D100D248B6 /* Rondell-GHZ-74-12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF66C190D71D100D248B6 /* Rondell-GHZ-74-12.jpg */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		62B1C3D6190D420D0027A90F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 62B1C3A5190D420D0027A90F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 62B1C3AC190D420D0027A90F;
-			remoteInfo = "Coding Da Vinci";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		62B1C3AD190D420D0027A90F /* Coding Da Vinci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coding Da Vinci.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B1C3B0190D420D0027A90F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,11 +69,7 @@
 		62B1C3C8190D420D0027A90F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		62B1C3C9190D420D0027A90F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		62B1C3CB190D420D0027A90F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		62B1C3D1190D420D0027A90F /* Coding Da VinciTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coding Da VinciTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B1C3D2190D420D0027A90F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		62B1C3DA190D420D0027A90F /* Coding Da VinciTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coding Da VinciTests-Info.plist"; sourceTree = "<group>"; };
-		62B1C3DC190D420D0027A90F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		62B1C3DE190D420D0027A90F /* Coding_Da_VinciTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coding_Da_VinciTests.m; sourceTree = "<group>"; };
 		62B1C3E8190D422A0027A90F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		62FBF643190D438200D248B6 /* ImageAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnnotationView.h; sourceTree = "<group>"; };
 		62FBF644190D438200D248B6 /* ImageAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAnnotationView.m; sourceTree = "<group>"; };
@@ -139,16 +120,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		62B1C3CE190D420D0027A90F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				62B1C3D3190D420D0027A90F /* XCTest.framework in Frameworks */,
-				62B1C3D5190D420D0027A90F /* UIKit.framework in Frameworks */,
-				62B1C3D4190D420D0027A90F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -156,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				62B1C3B6190D420D0027A90F /* Coding Da Vinci */,
-				62B1C3D8190D420D0027A90F /* Coding Da VinciTests */,
 				62B1C3AF190D420D0027A90F /* Frameworks */,
 				62B1C3AE190D420D0027A90F /* Products */,
 			);
@@ -166,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				62B1C3AD190D420D0027A90F /* Coding Da Vinci.app */,
-				62B1C3D1190D420D0027A90F /* Coding Da VinciTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,24 +179,6 @@
 				62B1C3B9190D420D0027A90F /* InfoPlist.strings */,
 				62B1C3BC190D420D0027A90F /* main.m */,
 				62B1C3BE190D420D0027A90F /* Coding Da Vinci-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		62B1C3D8190D420D0027A90F /* Coding Da VinciTests */ = {
-			isa = PBXGroup;
-			children = (
-				62B1C3DE190D420D0027A90F /* Coding_Da_VinciTests.m */,
-				62B1C3D9190D420D0027A90F /* Supporting Files */,
-			);
-			path = "Coding Da VinciTests";
-			sourceTree = "<group>";
-		};
-		62B1C3D9190D420D0027A90F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				62B1C3DA190D420D0027A90F /* Coding Da VinciTests-Info.plist */,
-				62B1C3DB190D420D0027A90F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -290,24 +241,6 @@
 			productReference = 62B1C3AD190D420D0027A90F /* Coding Da Vinci.app */;
 			productType = "com.apple.product-type.application";
 		};
-		62B1C3D0190D420D0027A90F /* Coding Da VinciTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 62B1C3E5190D420E0027A90F /* Build configuration list for PBXNativeTarget "Coding Da VinciTests" */;
-			buildPhases = (
-				62B1C3CD190D420D0027A90F /* Sources */,
-				62B1C3CE190D420D0027A90F /* Frameworks */,
-				62B1C3CF190D420D0027A90F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				62B1C3D7190D420D0027A90F /* PBXTargetDependency */,
-			);
-			name = "Coding Da VinciTests";
-			productName = "Coding Da VinciTests";
-			productReference = 62B1C3D1190D420D0027A90F /* Coding Da VinciTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -316,11 +249,6 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Claus Höfele";
-				TargetAttributes = {
-					62B1C3D0190D420D0027A90F = {
-						TestTargetID = 62B1C3AC190D420D0027A90F;
-					};
-				};
 			};
 			buildConfigurationList = 62B1C3A8190D420D0027A90F /* Build configuration list for PBXProject "Coding Da Vinci" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -336,7 +264,6 @@
 			projectRoot = "";
 			targets = (
 				62B1C3AC190D420D0027A90F /* Coding Da Vinci */,
-				62B1C3D0190D420D0027A90F /* Coding Da VinciTests */,
 			);
 		};
 /* End PBXProject section */
@@ -384,14 +311,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		62B1C3CF190D420D0027A90F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				62B1C3DD190D420D0027A90F /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -407,23 +326,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		62B1C3CD190D420D0027A90F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				62B1C3DF190D420D0027A90F /* Coding_Da_VinciTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		62B1C3D7190D420D0027A90F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 62B1C3AC190D420D0027A90F /* Coding Da Vinci */;
-			targetProxy = 62B1C3D6190D420D0027A90F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		62B1C3B9190D420D0027A90F /* InfoPlist.strings */ = {
@@ -448,14 +351,6 @@
 				62B1C3C6190D420D0027A90F /* Base */,
 			);
 			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		62B1C3DB190D420D0027A90F /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				62B1C3DC190D420D0027A90F /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -559,46 +454,6 @@
 			};
 			name = Release;
 		};
-		62B1C3E6190D420E0027A90F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Coding Da Vinci.app/Coding Da Vinci";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Coding Da Vinci/Coding Da Vinci-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Coding Da VinciTests/Coding Da VinciTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		62B1C3E7190D420E0027A90F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Coding Da Vinci.app/Coding Da Vinci";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Coding Da Vinci/Coding Da Vinci-Prefix.pch";
-				INFOPLIST_FILE = "Coding Da VinciTests/Coding Da VinciTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -616,15 +471,6 @@
 			buildConfigurations = (
 				62B1C3E3190D420E0027A90F /* Debug */,
 				62B1C3E4190D420E0027A90F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		62B1C3E5190D420E0027A90F /* Build configuration list for PBXNativeTarget "Coding Da VinciTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				62B1C3E6190D420E0027A90F /* Debug */,
-				62B1C3E7190D420E0027A90F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
