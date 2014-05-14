@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="1023" y="-152"/>
         </scene>
-        <!--Swipe View Controller - Item-->
+        <!--Swipe View Controller - Swipe-->
         <scene sceneID="DJk-xZ-P59">
             <objects>
                 <viewController id="Zg8-EE-YsS" customClass="SwipeViewController" sceneMemberID="viewController">
@@ -52,13 +52,28 @@
                     <view key="view" contentMode="scaleToFill" id="5n9-Rj-NoW">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="osterdeich-bremen-strandpromenade.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zSI-z8-4nW">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zSI-z8-4nW" firstAttribute="top" secondItem="5n9-Rj-NoW" secondAttribute="top" id="OJG-m0-12M"/>
+                            <constraint firstAttribute="bottom" secondItem="zSI-z8-4nW" secondAttribute="bottom" id="W4u-CE-BAf"/>
+                            <constraint firstAttribute="trailing" secondItem="zSI-z8-4nW" secondAttribute="trailing" id="Yvx-We-UD4"/>
+                            <constraint firstItem="zSI-z8-4nW" firstAttribute="leading" secondItem="5n9-Rj-NoW" secondAttribute="leading" id="pJL-rp-4ZX"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="fQq-7o-xaZ"/>
+                    <tabBarItem key="tabBarItem" title="Swipe" id="fQq-7o-xaZ"/>
+                    <connections>
+                        <outlet property="imageView" destination="zSI-z8-4nW" id="JH3-R3-dyP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqv-XU-cQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023" y="1005"/>
+            <point key="canvasLocation" x="1023" y="1029"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="F96-o0-p6P">
@@ -80,6 +95,9 @@
             <point key="canvasLocation" x="49" y="-152"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="osterdeich-bremen-strandpromenade.jpg" width="620" height="335"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
