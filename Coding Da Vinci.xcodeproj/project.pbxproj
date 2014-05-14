@@ -13,7 +13,6 @@
 		62B1C3BB190D420D0027A90F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62B1C3B9190D420D0027A90F /* InfoPlist.strings */; };
 		62B1C3BD190D420D0027A90F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C3BC190D420D0027A90F /* main.m */; };
 		62B1C3C1190D420D0027A90F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C3C0190D420D0027A90F /* AppDelegate.m */; };
-		62B1C3C4190D420D0027A90F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B1C3C2190D420D0027A90F /* Main_iPhone.storyboard */; };
 		62B1C3C7190D420D0027A90F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B1C3C5190D420D0027A90F /* Main_iPad.storyboard */; };
 		62B1C3CA190D420D0027A90F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C3C9190D420D0027A90F /* ViewController.m */; };
 		62B1C3CC190D420D0027A90F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62B1C3CB190D420D0027A90F /* Images.xcassets */; };
@@ -64,7 +63,6 @@
 		62B1C3BE190D420D0027A90F /* Coding Da Vinci-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coding Da Vinci-Prefix.pch"; sourceTree = "<group>"; };
 		62B1C3BF190D420D0027A90F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		62B1C3C0190D420D0027A90F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		62B1C3C3190D420D0027A90F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		62B1C3C6190D420D0027A90F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		62B1C3C8190D420D0027A90F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		62B1C3C9190D420D0027A90F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 			children = (
 				62B1C3BF190D420D0027A90F /* AppDelegate.h */,
 				62B1C3C0190D420D0027A90F /* AppDelegate.m */,
-				62B1C3C2190D420D0027A90F /* Main_iPhone.storyboard */,
 				62B1C3C5190D420D0027A90F /* Main_iPad.storyboard */,
 				62B1C3C8190D420D0027A90F /* ViewController.h */,
 				62B1C3C9190D420D0027A90F /* ViewController.m */,
@@ -288,7 +285,6 @@
 				62FBF678190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg in Resources */,
 				62FBF67F190D71D100D248B6 /* Fischerhütte-SM-2012-2093.jpg in Resources */,
 				62FBF689190D71D100D248B6 /* Avus_Funkturm-SM-2013-0958.jpg in Resources */,
-				62B1C3C4190D420D0027A90F /* Main_iPhone.storyboard in Resources */,
 				62FBF67D190D71D100D248B6 /* Hackescher_Markt-VII-67-294-W.jpg in Resources */,
 				62FBF670190D71D100D248B6 /* Rathaus-IV-61-1537-S.jpg in Resources */,
 				62FBF676190D71D100D248B6 /* Luiseninsel_Tiergarten-GDR-76-57-45.jpg in Resources */,
@@ -335,14 +331,6 @@
 				62B1C3BA190D420D0027A90F /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		62B1C3C2190D420D0027A90F /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				62B1C3C3190D420D0027A90F /* Base */,
-			);
-			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		62B1C3C5190D420D0027A90F /* Main_iPad.storyboard */ = {
@@ -437,6 +425,7 @@
 				GCC_PREFIX_HEADER = "Coding Da Vinci/Coding Da Vinci-Prefix.pch";
 				INFOPLIST_FILE = "Coding Da Vinci/Coding Da Vinci-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -450,6 +439,7 @@
 				GCC_PREFIX_HEADER = "Coding Da Vinci/Coding Da Vinci-Prefix.pch";
 				INFOPLIST_FILE = "Coding Da Vinci/Coding Da Vinci-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
