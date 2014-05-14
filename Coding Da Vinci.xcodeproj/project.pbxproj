@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		629A62501923ECAA00DECB67 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A624F1923ECAA00DECB67 /* SwipeViewController.m */; };
 		62B1C3B1190D420D0027A90F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3B0190D420D0027A90F /* Foundation.framework */; };
 		62B1C3B3190D420D0027A90F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3B2190D420D0027A90F /* CoreGraphics.framework */; };
 		62B1C3B5190D420D0027A90F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3B4190D420D0027A90F /* UIKit.framework */; };
@@ -14,7 +15,7 @@
 		62B1C3BD190D420D0027A90F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C3BC190D420D0027A90F /* main.m */; };
 		62B1C3C1190D420D0027A90F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C3C0190D420D0027A90F /* AppDelegate.m */; };
 		62B1C3C7190D420D0027A90F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B1C3C5190D420D0027A90F /* Main_iPad.storyboard */; };
-		62B1C3CA190D420D0027A90F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C3C9190D420D0027A90F /* ViewController.m */; };
+		62B1C3CA190D420D0027A90F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C3C9190D420D0027A90F /* MapViewController.m */; };
 		62B1C3CC190D420D0027A90F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62B1C3CB190D420D0027A90F /* Images.xcassets */; };
 		62B1C3E9190D422A0027A90F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3E8190D422A0027A90F /* MapKit.framework */; };
 		62FBF645190D438200D248B6 /* ImageAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FBF644190D438200D248B6 /* ImageAnnotationView.m */; };
@@ -53,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		629A624E1923ECAA00DECB67 /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
+		629A624F1923ECAA00DECB67 /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
 		62B1C3AD190D420D0027A90F /* Coding Da Vinci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coding Da Vinci.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B1C3B0190D420D0027A90F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		62B1C3B2190D420D0027A90F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,8 +67,8 @@
 		62B1C3BF190D420D0027A90F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		62B1C3C0190D420D0027A90F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		62B1C3C6190D420D0027A90F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		62B1C3C8190D420D0027A90F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		62B1C3C9190D420D0027A90F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		62B1C3C8190D420D0027A90F /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		62B1C3C9190D420D0027A90F /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		62B1C3CB190D420D0027A90F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		62B1C3D2190D420D0027A90F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		62B1C3E8190D422A0027A90F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -156,12 +159,14 @@
 				62B1C3BF190D420D0027A90F /* AppDelegate.h */,
 				62B1C3C0190D420D0027A90F /* AppDelegate.m */,
 				62B1C3C5190D420D0027A90F /* Main_iPad.storyboard */,
-				62B1C3C8190D420D0027A90F /* ViewController.h */,
-				62B1C3C9190D420D0027A90F /* ViewController.m */,
+				62B1C3C8190D420D0027A90F /* MapViewController.h */,
+				62B1C3C9190D420D0027A90F /* MapViewController.m */,
 				62FBF64B190D6C2D00D248B6 /* ImageAnnotation.h */,
 				62FBF64C190D6C2D00D248B6 /* ImageAnnotation.m */,
 				62FBF643190D438200D248B6 /* ImageAnnotationView.h */,
 				62FBF644190D438200D248B6 /* ImageAnnotationView.m */,
+				629A624E1923ECAA00DECB67 /* SwipeViewController.h */,
+				629A624F1923ECAA00DECB67 /* SwipeViewController.m */,
 				62B1C3CB190D420D0027A90F /* Images.xcassets */,
 				62FBF646190D6B1B00D248B6 /* Images */,
 				62B1C3B7190D420D0027A90F /* Supporting Files */,
@@ -314,9 +319,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62B1C3CA190D420D0027A90F /* ViewController.m in Sources */,
+				62B1C3CA190D420D0027A90F /* MapViewController.m in Sources */,
 				62FBF645190D438200D248B6 /* ImageAnnotationView.m in Sources */,
 				62B1C3C1190D420D0027A90F /* AppDelegate.m in Sources */,
+				629A62501923ECAA00DECB67 /* SwipeViewController.m in Sources */,
 				62FBF64D190D6C2D00D248B6 /* ImageAnnotation.m in Sources */,
 				62B1C3BD190D420D0027A90F /* main.m in Sources */,
 			);

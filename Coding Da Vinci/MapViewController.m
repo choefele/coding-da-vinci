@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Claus Höfele. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MapViewController.h"
 
 #import "ImageAnnotation.h"
 #import "ImageAnnotationView.h"
@@ -51,13 +51,13 @@ ImageLocation IMAGE_LOCATIONS[] = {
     {52.498995, 13.391758, "Rondell-GHZ-74-12.jpg"}                 // Mehringplatz
 };
 
-@interface ViewController ()<MKMapViewDelegate>
+@interface MapViewController ()<MKMapViewDelegate>
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @end
 
-@implementation ViewController
+@implementation MapViewController
 
 - (void)viewDidLoad
 {

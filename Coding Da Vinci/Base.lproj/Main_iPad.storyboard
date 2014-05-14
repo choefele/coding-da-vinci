@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Hc7-kd-lW5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller - Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -32,12 +32,52 @@
                             <constraint firstAttribute="trailing" secondItem="a40-PN-6gx" secondAttribute="trailing" id="Swa-sC-63l"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="Xvm-fS-IR7"/>
                     <connections>
                         <outlet property="mapView" destination="a40-PN-6gx" id="Im2-o4-Rfy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1023" y="-152"/>
+        </scene>
+        <!--Swipe View Controller - Item-->
+        <scene sceneID="DJk-xZ-P59">
+            <objects>
+                <viewController id="Zg8-EE-YsS" customClass="SwipeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RUI-K7-sYz"/>
+                        <viewControllerLayoutGuide type="bottom" id="hgn-rV-uKF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5n9-Rj-NoW">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="fQq-7o-xaZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jqv-XU-cQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="1005"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="F96-o0-p6P">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Hc7-kd-lW5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="S4m-qq-55B">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="k57-1r-3nb"/>
+                        <segue destination="Zg8-EE-YsS" kind="relationship" relationship="viewControllers" id="UMz-we-kcg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qog-U2-3u0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="-152"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
