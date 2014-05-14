@@ -53,10 +53,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="osterdeich-bremen-strandpromenade.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zSI-z8-4nW">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="osterdeich-bremen-strandpromenade.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zSI-z8-4nW">
+                                <rect key="frame" x="0.0" y="238" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IBD-5b-LDZ">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="512"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="osterdeich-bremen-strandpromenade.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nQH-ei-P8a">
+                                        <rect key="frame" x="0.0" y="-270" width="768" height="1024"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -68,12 +79,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Swipe" id="fQq-7o-xaZ"/>
                     <connections>
+                        <outlet property="containerView" destination="IBD-5b-LDZ" id="BXT-tD-Zws"/>
                         <outlet property="imageView" destination="zSI-z8-4nW" id="JH3-R3-dyP"/>
+                        <outlet property="imageView2" destination="nQH-ei-P8a" id="T9r-2V-1Fx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqv-XU-cQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023" y="1029"/>
+            <point key="canvasLocation" x="1023" y="999"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="F96-o0-p6P">

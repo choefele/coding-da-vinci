@@ -13,6 +13,8 @@
 @interface SwipeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @property (nonatomic) CIContext *contextCI;
 @property (nonatomic) UIImage *inputImage;
@@ -34,6 +36,10 @@
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     [self.imageView addGestureRecognizer:panGestureRecognizer];
     self.imageView.userInteractionEnabled = YES;
+
+    UIPanGestureRecognizer *panGestureRecognizer2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture2:)];
+    [self.view addGestureRecognizer:panGestureRecognizer2];
+    self.view.userInteractionEnabled = YES;
 }
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer
@@ -48,6 +54,14 @@
             self.inProgress = NO;
         }];
     }
+}
+
+- (void)handlePanGesture2:(UIPanGestureRecognizer *)panGestureRecognizer
+{
+    CGPoint point = [panGestureRecognizer locationInView:self.view];
+    CGRect frame = self.containerView.frame;
+    frame.origin.x = point.x;
+    self.containerView.frame = frame;
 }
 
 + (CIFilter *)filterWithInputImage:(UIImage *)inputImage targetImage:(UIImage *)targetImage
