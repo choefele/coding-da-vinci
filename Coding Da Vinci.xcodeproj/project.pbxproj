@@ -12,7 +12,6 @@
 		628ED3101926044100C8EF43 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30F1926044100C8EF43 /* libstdc++.dylib */; };
 		628ED3131926057500C8EF43 /* MorphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628ED3121926057500C8EF43 /* MorphViewController.m */; };
 		628ED3151926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 628ED3141926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg */; };
-		628ED31719260B7700C8EF43 /* picture@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 628ED31619260B7700C8EF43 /* picture@2x.jpg */; };
 		628ED32019260FB800C8EF43 /* BCMeshShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 628ED31E19260FB800C8EF43 /* BCMeshShader.fsh */; };
 		628ED32119260FB800C8EF43 /* BCMeshShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 628ED31F19260FB800C8EF43 /* BCMeshShader.vsh */; };
 		629A62501923ECAA00DECB67 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A624F1923ECAA00DECB67 /* SwipeViewController.m */; };
@@ -70,7 +69,6 @@
 		628ED3111926057500C8EF43 /* MorphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphViewController.h; sourceTree = "<group>"; };
 		628ED3121926057500C8EF43 /* MorphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorphViewController.m; sourceTree = "<group>"; };
 		628ED3141926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1024px-JH_Hintze_Kreuzberg_1829.jpg"; sourceTree = "<group>"; };
-		628ED31619260B7700C8EF43 /* picture@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "picture@2x.jpg"; sourceTree = "<group>"; };
 		628ED31E19260FB800C8EF43 /* BCMeshShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BCMeshShader.fsh; sourceTree = "<group>"; };
 		628ED31F19260FB800C8EF43 /* BCMeshShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BCMeshShader.vsh; sourceTree = "<group>"; };
 		629A624E1923ECAA00DECB67 /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 		62FBF646190D6B1B00D248B6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				628ED31619260B7700C8EF43 /* picture@2x.jpg */,
 				628ED3141926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg */,
 				629A62511923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg */,
 				629A62521923EF9500DECB67 /* osterdeich-bremen.jpg */,
@@ -329,7 +326,6 @@
 				629A62541923EF9500DECB67 /* osterdeich-bremen.jpg in Resources */,
 				62FBF66E190D71D100D248B6 /* Ufer_Stralauer_Strasse-GHZ-78-26.jpg in Resources */,
 				62FBF68B190D71D100D248B6 /* Rondell-GHZ-74-12.jpg in Resources */,
-				628ED31719260B7700C8EF43 /* picture@2x.jpg in Resources */,
 				62FBF684190D71D100D248B6 /* Das_Brandenburger_Tor-GDR-65-7-1.jpg in Resources */,
 				62FBF675190D71D100D248B6 /* Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg in Resources */,
 				62FBF678190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg in Resources */,
