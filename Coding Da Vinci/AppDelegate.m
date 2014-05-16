@@ -13,7 +13,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    tabBarController.selectedIndex = 1;
+    tabBarController.selectedIndex = 2;
 
     return YES;
 }

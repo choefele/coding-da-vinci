@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080EFD20F1624137BB286BD6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC44FEC64A43C49D7A22E3 /* libPods.a */; };
+		628ED30E192602AC00C8EF43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30D192602AC00C8EF43 /* OpenGLES.framework */; };
+		628ED3101926044100C8EF43 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30F1926044100C8EF43 /* libstdc++.dylib */; };
 		629A62501923ECAA00DECB67 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A624F1923ECAA00DECB67 /* SwipeViewController.m */; };
 		629A62531923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 629A62511923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg */; };
 		629A62541923EF9500DECB67 /* osterdeich-bremen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 629A62521923EF9500DECB67 /* osterdeich-bremen.jpg */; };
@@ -57,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		628ED30D192602AC00C8EF43 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		628ED30F1926044100C8EF43 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		629A624E1923ECAA00DECB67 /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
 		629A624F1923ECAA00DECB67 /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
 		629A62511923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "osterdeich-bremen-strandpromenade.jpg"; sourceTree = "<group>"; };
@@ -113,6 +118,8 @@
 		62FBF66A190D71D100D248B6 /* Avus_Funkturm-SM-2013-0958.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Avus_Funkturm-SM-2013-0958.jpg"; sourceTree = "<group>"; };
 		62FBF66B190D71D100D248B6 /* Hamburger_Bahnhof-VII-97-341-a-W.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Hamburger_Bahnhof-VII-97-341-a-W.jpg"; sourceTree = "<group>"; };
 		62FBF66C190D71D100D248B6 /* Rondell-GHZ-74-12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Rondell-GHZ-74-12.jpg"; sourceTree = "<group>"; };
+		9CB14829540E4F13BCC0E7CA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		EADC44FEC64A43C49D7A22E3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +127,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				628ED3101926044100C8EF43 /* libstdc++.dylib in Frameworks */,
+				628ED30E192602AC00C8EF43 /* OpenGLES.framework in Frameworks */,
 				629A62561923F1D700DECB67 /* CoreImage.framework in Frameworks */,
 				62B1C3E9190D422A0027A90F /* MapKit.framework in Frameworks */,
 				62B1C3B3190D420D0027A90F /* CoreGraphics.framework in Frameworks */,
 				62B1C3B5190D420D0027A90F /* UIKit.framework in Frameworks */,
 				62B1C3B1190D420D0027A90F /* Foundation.framework in Frameworks */,
+				080EFD20F1624137BB286BD6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +147,7 @@
 				62B1C3B6190D420D0027A90F /* Coding Da Vinci */,
 				62B1C3AF190D420D0027A90F /* Frameworks */,
 				62B1C3AE190D420D0027A90F /* Products */,
+				9CB14829540E4F13BCC0E7CA /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,12 +162,15 @@
 		62B1C3AF190D420D0027A90F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				628ED30F1926044100C8EF43 /* libstdc++.dylib */,
+				628ED30D192602AC00C8EF43 /* OpenGLES.framework */,
 				629A62551923F1D700DECB67 /* CoreImage.framework */,
 				62B1C3E8190D422A0027A90F /* MapKit.framework */,
 				62B1C3B0190D420D0027A90F /* Foundation.framework */,
 				62B1C3B2190D420D0027A90F /* CoreGraphics.framework */,
 				62B1C3B4190D420D0027A90F /* UIKit.framework */,
 				62B1C3D2190D420D0027A90F /* XCTest.framework */,
+				EADC44FEC64A43C49D7A22E3 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,9 +254,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62B1C3E2190D420E0027A90F /* Build configuration list for PBXNativeTarget "Coding Da Vinci" */;
 			buildPhases = (
+				EBC512E0EA1C41E583C54A24 /* Check Pods Manifest.lock */,
 				62B1C3A9190D420D0027A90F /* Sources */,
 				62B1C3AA190D420D0027A90F /* Frameworks */,
 				62B1C3AB190D420D0027A90F /* Resources */,
+				D90EF51DE76A4554BCCD1E2B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -325,6 +341,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D90EF51DE76A4554BCCD1E2B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBC512E0EA1C41E583C54A24 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		62B1C3A9190D420D0027A90F /* Sources */ = {
@@ -436,6 +485,7 @@
 		};
 		62B1C3E3190D420E0027A90F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CB14829540E4F13BCC0E7CA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -450,6 +500,7 @@
 		};
 		62B1C3E4190D420E0027A90F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CB14829540E4F13BCC0E7CA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

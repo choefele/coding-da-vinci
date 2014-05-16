@@ -1,0 +1,10 @@
+PODS:
+  - BCMeshTransformView (0.8)
+
+DEPENDENCIES:
+  - BCMeshTransformView
+
+SPEC CHECKSUMS:
+  BCMeshTransformView: 2c24ab1d881df6aa761bd0eec4274bfb8f94c785
+
+COCOAPODS: 0.32.1
