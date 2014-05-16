@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="1023" y="999"/>
         </scene>
-        <!--View Controller - Morph-->
+        <!--Morph View Controller - Morph-->
         <scene sceneID="jlt-0m-ELV">
             <objects>
-                <viewController id="u9p-ht-dBj" sceneMemberID="viewController">
+                <viewController id="u9p-ht-dBj" customClass="MorphViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kah-6Y-skR"/>
                         <viewControllerLayoutGuide type="bottom" id="8jv-3l-eJ6"/>
