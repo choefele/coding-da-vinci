@@ -10,18 +10,11 @@
 
 #import "BCMeshTransformView.h"
 
-void myLog(NSString *format, ...)
-{
-    va_list args;
-    va_start(args, format);
-    NSString *formattedString = [[NSString alloc] initWithFormat:format arguments:args];
-    va_end(args);
-    [[NSFileHandle fileHandleWithStandardOutput] writeData:[formattedString dataUsingEncoding:NSNEXTSTEPStringEncoding]];
-}
-
 @interface MorphViewController ()
 
 @property (nonatomic) BCMeshTransformView *transformView;
+@property (nonatomic) BCMeshTransform *startMeshTransform;
+@property (nonatomic) BCMeshTransform *endMeshTransform;
 
 @end
 
@@ -42,15 +35,32 @@ void myLog(NSString *format, ...)
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.transformView.contentView addSubview:imageView];
     
-    self.transformView.meshTransform = [self.class meshTransformStart];
-    [UIView animateWithDuration:0.5 animations:^{
-        self.transformView.meshTransform = [self.class meshTransformEnd];
-    }];
+    self.startMeshTransform = [self.class meshTransformStart];
+    self.endMeshTransform = [self.class meshTransformEnd];
+    self.transformView.meshTransform = self.startMeshTransform;
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    [self.transformView addGestureRecognizer:panGestureRecognizer];
+    UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    longPressGestureRecognizer.minimumPressDuration = 0;
+    [self.transformView addGestureRecognizer:longPressGestureRecognizer];
+    self.transformView.userInteractionEnabled = YES;
+
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.transformView.meshTransform = [self.class meshTransformEnd];
+//    }];
 
 //    CGPoint point = imageView.center;
 //    point.x -= 300;
 //    self.transformView.meshTransform = [self.class buldgeMeshTransformAtPoint:point withRadius:120.0 boundsSize:self.transformView.bounds.size];
 //    [self.class dumpMeshTransform:self.transformView.meshTransform];
+}
+
+- (void)handleGesture:(UIPanGestureRecognizer *)panGestureRecognizer
+{
+    CGPoint point = [panGestureRecognizer locationInView:self.transformView];
+    double progress = point.x / self.transformView.bounds.size.width;
+    
+    self.transformView.meshTransform = [self.class interpolateTransform:self.startMeshTransform toTransform:self.endMeshTransform withProgress:progress];
 }
 
 + (BCMeshTransform *)buldgeMeshTransformAtPoint:(CGPoint)point withRadius:(CGFloat)radius boundsSize:(CGSize)size
@@ -2777,6 +2787,15 @@ void myLog(NSString *format, ...)
     return meshTransform;
 }
 
+void myLog(NSString *format, ...)
+{
+    va_list args;
+    va_start(args, format);
+    NSString *formattedString = [[NSString alloc] initWithFormat:format arguments:args];
+    va_end(args);
+    [[NSFileHandle fileHandleWithStandardOutput] writeData:[formattedString dataUsingEncoding:NSNEXTSTEPStringEncoding]];
+}
+
 + (void)dumpMeshTransform:(BCMeshTransform *)meshTransform
 {
     for (NSUInteger i = 0; i < meshTransform.vertexCount; i++) {
@@ -2796,6 +2815,36 @@ void myLog(NSString *format, ...)
         }
         myLog(@"\n");
     }
+}
+
+static inline CGFloat lerp(CGFloat from, CGFloat to, double t)
+{
+    return to * t + from * (1.0 - t);
+}
+
++ (BCMeshTransform *)interpolateTransform:(BCMeshTransform *)transform toTransform:(BCMeshTransform *)otherTransform withProgress:(double)progress
+{
+    NSAssert(otherTransform.vertexCount == transform.vertexCount,
+             @"Numbers of vertices in interpolated mesh transforms do not match");
+    
+    BCMutableMeshTransform *resultTransform = [transform mutableCopy];
+    
+    for (int i = 0; i < transform.vertexCount; i++) {
+        BCMeshVertex vertex = [transform vertexAtIndex:i];
+        BCMeshVertex otherVertex = [otherTransform vertexAtIndex:i];
+        BCMeshVertex outputVertex;
+        
+        outputVertex.from.x = lerp(vertex.from.x, otherVertex.from.x, progress);
+        outputVertex.from.y = lerp(vertex.from.y, otherVertex.from.y, progress);
+        
+        outputVertex.to.x = lerp(vertex.to.x, otherVertex.to.x, progress);
+        outputVertex.to.y = lerp(vertex.to.y, otherVertex.to.y, progress);
+        outputVertex.to.z = lerp(vertex.to.z, otherVertex.to.z, progress);
+        
+        [resultTransform replaceVertexAtIndex:i withVertex:outputVertex];
+    }
+    
+    return resultTransform;
 }
 
 @end
