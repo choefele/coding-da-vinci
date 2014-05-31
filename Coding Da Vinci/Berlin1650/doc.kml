@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <kml xmlns="http://www.opengis.net/kml/2.2">
+      <Document>
+        <name>Berlin1650.vrt</name>
+        <description></description>
+        <Style>
+          <ListStyle id="hideChildren">
+            <listItemType>checkHideChildren</listItemType>
+          </ListStyle>
+        </Style>
+        <NetworkLink>
+          <name>10/550/688.png</name>
+          <Region>
+            <LatLonAltBox>
+              <north>52.69636107827449</north>
+              <south>52.48278022207823</south>
+              <east>13.71093749999999</east>
+              <west>13.35937500000000</west>
+            </LatLonAltBox>
+            <Lod>
+              <minLodPixels>128</minLodPixels>
+              <maxLodPixels>-1</maxLodPixels>
+            </Lod>
+          </Region>
+          <Link>
+            <href>10/550/688.kml</href>
+            <viewRefreshMode>onRegion</viewRefreshMode>
+            <viewFormat/>
+          </Link>
+        </NetworkLink>
+          </Document>
+    </kml>
+    

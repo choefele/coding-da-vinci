@@ -63,8 +63,9 @@ ImageLocation IMAGE_LOCATIONS[] = {
 {
     [super viewDidLoad];
     
-    self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(52.5233, 13.4127), MKCoordinateSpanMake(0.4493, 0.7366));
+    self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(52.5233, 13.4127), MKCoordinateSpanMake(0.0493, 0.1366));
     
+    // Images
     for (NSUInteger i = 0; i < sizeof(IMAGE_LOCATIONS) / sizeof(ImageLocation); i++) {
         ImageLocation location = IMAGE_LOCATIONS[i];
         ImageAnnotation *annotation = [[ImageAnnotation alloc] init];
@@ -72,6 +73,14 @@ ImageLocation IMAGE_LOCATIONS[] = {
         annotation.path = [NSString stringWithUTF8String:location.path];
         [self.mapView addAnnotation:annotation];
     }
+    
+    // Map overlay
+    NSString *tileDirectory = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Berlin1650"];
+    NSString *tileDirectoryURL = [NSURL fileURLWithPath:tileDirectory isDirectory:YES];
+    NSString *tileTemplate = [NSString stringWithFormat:@"%@{z}/{x}/{y}.png", tileDirectoryURL];
+    MKTileOverlay *overlay = [[MKTileOverlay alloc] initWithURLTemplate:tileTemplate];
+    overlay.geometryFlipped = YES;
+    [self.mapView addOverlay:overlay];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -87,6 +96,12 @@ ImageLocation IMAGE_LOCATIONS[] = {
     }
     
     return annotationView;
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKTileOverlayRenderer *renderer = [[MKTileOverlayRenderer alloc] initWithOverlay:overlay];
+    return renderer;
 }
 
 @end

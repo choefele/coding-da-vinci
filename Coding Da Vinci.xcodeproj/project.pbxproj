@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		080EFD20F1624137BB286BD6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC44FEC64A43C49D7A22E3 /* libPods.a */; };
+		62661474193A67DD00BE454D /* Berlin1650 in Resources */ = {isa = PBXBuildFile; fileRef = 62661473193A67DD00BE454D /* Berlin1650 */; };
 		628ED30E192602AC00C8EF43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30D192602AC00C8EF43 /* OpenGLES.framework */; };
 		628ED3101926044100C8EF43 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30F1926044100C8EF43 /* libstdc++.dylib */; };
 		628ED3131926057500C8EF43 /* MorphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628ED3121926057500C8EF43 /* MorphViewController.m */; };
@@ -64,6 +65,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62661473193A67DD00BE454D /* Berlin1650 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1650; sourceTree = "<group>"; };
 		628ED30D192602AC00C8EF43 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		628ED30F1926044100C8EF43 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		628ED3111926057500C8EF43 /* MorphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphViewController.h; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				628ED31E19260FB800C8EF43 /* BCMeshShader.fsh */,
 				628ED31F19260FB800C8EF43 /* BCMeshShader.vsh */,
 				62FBF646190D6B1B00D248B6 /* Images */,
+				62661473193A67DD00BE454D /* Berlin1650 */,
 				62B1C3B7190D420D0027A90F /* Supporting Files */,
 			);
 			path = "Coding Da Vinci";
@@ -317,6 +320,7 @@
 			files = (
 				62B1C3C7190D420D0027A90F /* Main_iPad.storyboard in Resources */,
 				62FBF671190D71D100D248B6 /* Platz_am_Zeughaus-VII-59-513-x.jpg in Resources */,
+				62661474193A67DD00BE454D /* Berlin1650 in Resources */,
 				62B1C3CC190D420D0027A90F /* Images.xcassets in Resources */,
 				62FBF673190D71D100D248B6 /* Nauener_Platz-GHZ-77-13.jpg in Resources */,
 				62FBF686190D71D100D248B6 /* Börse-IV-61-1531-S.jpg in Resources */,
