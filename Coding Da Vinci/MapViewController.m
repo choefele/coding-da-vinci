@@ -62,7 +62,8 @@ ImageLocation IMAGE_LOCATIONS[] = {
 
 @property (nonatomic) MKTileOverlay *overlay;
 @property (nonatomic, getter = isOverlayEnabled) BOOL overlayEnabled;
-@property (nonatomic, copy) NSArray *annotations;
+@property (nonatomic, copy) NSArray *allAnnotations;
+@property (nonatomic) NSMutableSet *currentAnnotations;
 
 @end
 
@@ -86,7 +87,8 @@ ImageLocation IMAGE_LOCATIONS[] = {
         
         [annotations addObject:annotation];
     }
-    self.annotations = annotations;
+    self.allAnnotations = annotations;
+    self.currentAnnotations = [NSMutableSet set];
     [self updateAnnotations];
     
     // Map overlay
@@ -119,22 +121,45 @@ ImageLocation IMAGE_LOCATIONS[] = {
     return renderer;
 }
 
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)annotationViews
+{
+    // Animate annotations that get added
+    for (MKAnnotationView *annotationView in annotationViews)
+    {
+        annotationView.alpha = 0.0;
+    }
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        for (MKAnnotationView *annotationView in annotationViews) {
+            annotationView.alpha = 1.0;
+        }
+    }];
+}
+
 - (void)updateAnnotations
 {
     NSUInteger year = (NSUInteger)self.timeSlider.value;
-
+    
     // Remove map annotations
-    NSArray *currentAnnotations = self.mapView.annotations;
+    NSArray *currentAnnotations = [self.currentAnnotations copy];
     for (ImageAnnotation *annotation in currentAnnotations) {
         if (![annotation isAvailableInYear:year]) {
-            [self.mapView removeAnnotation:annotation];
+            [self.currentAnnotations removeObject:annotation];
+            
+            // Animate annotations that get removed
+            [UIView animateWithDuration:0.5 animations:^{
+                MKAnnotationView *annotationView = [self.mapView viewForAnnotation:annotation];
+                annotationView.alpha = 0.0;
+            } completion:^(BOOL finished) {
+                [self.mapView removeAnnotation:annotation];
+            }];
         }
     }
     
     // Add available annotations
-    NSArray *annotations = self.annotations;
-    for (ImageAnnotation *annotation in annotations) {
+    for (ImageAnnotation *annotation in self.allAnnotations) {
         if ([annotation isAvailableInYear:year]) {
+            [self.currentAnnotations addObject:annotation];
             [self.mapView addAnnotation:annotation];
         }
     }
