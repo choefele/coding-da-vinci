@@ -29,7 +29,7 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Cdo-bb-OZW"/>
                                     <barButtonItem style="plain" id="YG7-1d-e64">
-                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2000" minValue="1500" maxValue="2000" id="541-YN-cra">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2000" minValue="1400" maxValue="2000" id="541-YN-cra">
                                             <rect key="frame" x="123" y="7" width="522" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>

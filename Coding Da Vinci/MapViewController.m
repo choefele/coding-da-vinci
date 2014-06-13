@@ -21,39 +21,39 @@ typedef struct {
 } ImageLocation;
 ImageLocation IMAGE_LOCATIONS[] = {
     {52.505615, 13.339771, 1844, NSUIntegerMax, "Zoo_Eingang-IV-64-1294-V.jpg"},
-    {52.515078, 13.413831,    0, NSUIntegerMax, "Ufer_Stralauer_Strasse-GHZ-78-26.jpg"},
+    {52.515078, 13.413831, 1890, NSUIntegerMax, "Ufer_Stralauer_Strasse-GHZ-78-26.jpg"},    // §
     {52.517666, 13.398577, 1821, NSUIntegerMax, "Schlossbrücke-VII-62-424-a-W.jpg"},
     {52.518405, 13.408499, 1861, NSUIntegerMax, "Rathaus-IV-61-1537-S.jpg"},
     {52.517551, 13.396956, 1695, NSUIntegerMax, "Platz_am_Zeughaus-VII-59-513-x.jpg"},
-    {52.516273, 13.377702,    0, NSUIntegerMax, "Panorama_von_Berlin-GDR-64-11-108.jpg"},
+    {52.516273, 13.377702, 1851, NSUIntegerMax, "Panorama_von_Berlin-GDR-64-11-108.jpg"},   // §
     {52.551503, 13.367329, 1900, NSUIntegerMax, "Nauener_Platz-GHZ-77-13.jpg"},
     {52.513820, 13.414880, 1908, NSUIntegerMax, "Märkisches_Museum-GE-2007-638-VF.jpg"},
     {52.511931, 13.386628, 1737,          1947, "Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg"},
     {52.510995, 13.364291, 1809, NSUIntegerMax, "Luiseninsel_Tiergarten-GDR-76-57-45.jpg"},
     {52.509624, 13.377545, 1732, NSUIntegerMax, "Leipziger_Platz-GDR-76-57-24.jpg"},
-    {52.454568, 13.383504,    0, NSUIntegerMax, "Landwehrkanal-GHZ-90-61.jpg"},             // ?
-    {52.523305, 13.430665,    0, NSUIntegerMax, "Landsbergerplatz-IV-61-3475-V.jpg"},       // Platz der Vereinten Nationen
+    {52.454568, 13.383504, 1900, NSUIntegerMax, "Landwehrkanal-GHZ-90-61.jpg"},             // §, ?
+    {52.523305, 13.430665, 1900, NSUIntegerMax, "Landsbergerplatz-IV-61-3475-V.jpg"},       // §, Platz der Vereinten Nationen
     {52.521357, 13.411971, 1777, NSUIntegerMax, "Königsstrasse-VII-60-1489-W.jpg"},         // Königskolonnaden Alexanderplatz -> Kleistpark
     {52.514081, 13.405723, 1709,          1900, "Köllnischer_Fischmarkt-VII-59-29-w.jpg"},  // Breite Straße/Mühlendamm, Cöllnisches Rathaus
     {52.503960, 13.395452, 1484, NSUIntegerMax, "Jerusalemkirche-GHZ-74-14.jpg"},           // Rudi-Dutschke-Str. -> Linden- und Markgrafenstr.
-    {52.523649, 13.402032,    0, NSUIntegerMax, "Hackescher_Markt-VII-67-294-W.jpg"},
+    {52.523649, 13.402032, 1787, NSUIntegerMax, "Hackescher_Markt-VII-67-294-W.jpg"},       // §
     {52.478178, 13.196753, 1899, NSUIntegerMax, "Grunewaldturm-SM-2013-1297.jpg"},
-    {52.446822, 13.230031,    0, NSUIntegerMax, "Fischerhütte-SM-2012-2093.jpg"},
+    {52.446822, 13.230031, 1910, NSUIntegerMax, "Fischerhütte-SM-2012-2093.jpg"},           // §
     {52.503611, 13.329163, 1892, NSUIntegerMax, "Filmfestspiele_Kudamm-SM-2013-1519.jpg"},  // Kurfürstendamm 25, Hotel am Zoo (09020713)
     {52.516908, 13.400038, 1443,          1950, "Einzug_des_Königs-GDR-64-11-216.jpg"},     // Schlossplatz, Berliner Schloss
-    {52.521816, 13.413037,    0, NSUIntegerMax, "Der_Ochsen-Platz-GDR-64-11-171.jpg"},      // Alexanderplatz
+    {52.521816, 13.413037, 1790, NSUIntegerMax, "Der_Ochsen-Platz-GDR-64-11-171.jpg"},      // §, Alexanderplatz
     {52.509511, 13.376649, 1683,          1738, "Das_Leipziger_Tor-GDR-74-55.jpg"},         // Potsdamer Platz/Leipziger Platz
     {52.516280, 13.377695, 1734, NSUIntegerMax, "Das_Brandenburger_Tor-GDR-65-7-1.jpg"},
-    {52.513754, 13.401384,    0, NSUIntegerMax, "Cölln_Jungfernbrücke-GHZ-64-3-13.jpg"},
+    {52.513754, 13.401384, 1690, NSUIntegerMax, "Cölln_Jungfernbrücke-GHZ-64-3-13.jpg"},    // §
     {52.520565, 13.401708, 1859,          1945, "Börse-IV-61-1531-S.jpg"},                  // Burgstraße
-    {52.502331, 13.446358,    0, NSUIntegerMax, "Blick_von_Oberbaumbrücke-VII-59-408-W.jpg"},
+    {52.502331, 13.446358, 1860, NSUIntegerMax, "Blick_von_Oberbaumbrücke-VII-59-408-W.jpg"},// §
     {52.487625, 13.381483, 1818, NSUIntegerMax, "Berlin_vom_Kreuzberg_aus-GDR-69-56.jpg"},  // Nationaldenkmal
     {52.501799, 13.278023, 1924, NSUIntegerMax, "Avus_Funkturm-SM-2013-0958.jpg"},
     {52.527884, 13.373207, 1847, NSUIntegerMax, "Hamburger_Bahnhof-VII-97-341-a-W.jpg"},
     {52.498995, 13.391758, 1732, NSUIntegerMax, "Rondell-GHZ-74-12.jpg"}                    // Mehringplatz
 };
 // Date of building dominating the image
-// Panoramas, unknown -> date image
+// Panoramas, unknown -> date image (§)
 
 @interface MapViewController ()<MKMapViewDelegate>
 
@@ -122,7 +122,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
 - (void)updateAnnotations
 {
     NSUInteger year = (NSUInteger)self.timeSlider.value;
-    
+
     // Remove map annotations
     NSArray *currentAnnotations = self.mapView.annotations;
     for (ImageAnnotation *annotation in currentAnnotations) {
