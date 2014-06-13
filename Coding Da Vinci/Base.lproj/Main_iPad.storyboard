@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Hc7-kd-lW5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -23,13 +23,35 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="t9H-4T-ZqM"/>
                                 </connections>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYF-Oh-4Sn">
+                                <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Cdo-bb-OZW"/>
+                                    <barButtonItem style="plain" id="YG7-1d-e64">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="541-YN-cra">
+                                            <rect key="frame" x="123" y="7" width="522" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </slider>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="diG-Ew-BZ7"/>
+                                    <barButtonItem title="Karte" id="ajr-0J-nOR">
+                                        <connections>
+                                            <action selector="toggleMap:" destination="BYZ-38-t0r" id="yPE-XP-MNv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hYF-Oh-4Sn" firstAttribute="bottom" secondItem="a40-PN-6gx" secondAttribute="bottom" id="5oZ-y2-fiz"/>
                             <constraint firstItem="a40-PN-6gx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Bss-KP-2fM"/>
                             <constraint firstItem="a40-PN-6gx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GLO-hU-WWk"/>
                             <constraint firstAttribute="bottom" secondItem="a40-PN-6gx" secondAttribute="bottom" id="OB3-iQ-Xsy"/>
                             <constraint firstAttribute="trailing" secondItem="a40-PN-6gx" secondAttribute="trailing" id="Swa-sC-63l"/>
+                            <constraint firstItem="hYF-Oh-4Sn" firstAttribute="trailing" secondItem="a40-PN-6gx" secondAttribute="trailing" id="Vbi-n8-iGI"/>
+                            <constraint firstItem="hYF-Oh-4Sn" firstAttribute="leading" secondItem="a40-PN-6gx" secondAttribute="leading" id="xVf-TO-dfY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="Xvm-fS-IR7"/>
@@ -44,7 +66,7 @@
         <!--Swipe View Controller - Swipe-->
         <scene sceneID="DJk-xZ-P59">
             <objects>
-                <viewController id="Zg8-EE-YsS" customClass="SwipeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="swipeViewController" id="Zg8-EE-YsS" customClass="SwipeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RUI-K7-sYz"/>
                         <viewControllerLayoutGuide type="bottom" id="hgn-rV-uKF"/>
@@ -53,7 +75,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="osterdeich-bremen-strandpromenade.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zSI-z8-4nW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="osterdeich-bremen-strandpromenade.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zSI-z8-4nW">
                                 <rect key="frame" x="0.0" y="238" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -71,8 +93,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zSI-z8-4nW" firstAttribute="top" secondItem="5n9-Rj-NoW" secondAttribute="top" id="OJG-m0-12M"/>
-                            <constraint firstAttribute="bottom" secondItem="zSI-z8-4nW" secondAttribute="bottom" id="W4u-CE-BAf"/>
+                            <constraint firstItem="zSI-z8-4nW" firstAttribute="top" secondItem="5n9-Rj-NoW" secondAttribute="top" constant="238" id="OJG-m0-12M"/>
+                            <constraint firstAttribute="bottom" secondItem="zSI-z8-4nW" secondAttribute="bottom" constant="-238" id="W4u-CE-BAf"/>
                             <constraint firstAttribute="trailing" secondItem="zSI-z8-4nW" secondAttribute="trailing" id="Yvx-We-UD4"/>
                             <constraint firstItem="zSI-z8-4nW" firstAttribute="leading" secondItem="5n9-Rj-NoW" secondAttribute="leading" id="pJL-rp-4ZX"/>
                         </constraints>
@@ -91,7 +113,7 @@
         <!--Morph View Controller - Morph-->
         <scene sceneID="jlt-0m-ELV">
             <objects>
-                <viewController id="u9p-ht-dBj" customClass="MorphViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="morphViewController" id="u9p-ht-dBj" customClass="MorphViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kah-6Y-skR"/>
                         <viewControllerLayoutGuide type="bottom" id="8jv-3l-eJ6"/>
@@ -106,26 +128,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ta-Od-8Mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1021" y="2199"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="F96-o0-p6P">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Hc7-kd-lW5" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="S4m-qq-55B">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="k57-1r-3nb"/>
-                        <segue destination="Zg8-EE-YsS" kind="relationship" relationship="viewControllers" id="UMz-we-kcg"/>
-                        <segue destination="u9p-ht-dBj" kind="relationship" relationship="viewControllers" id="rEd-E2-uzq"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qog-U2-3u0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="49" y="-152"/>
         </scene>
     </scenes>
     <resources>

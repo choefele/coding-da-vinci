@@ -59,6 +59,9 @@ ImageLocation IMAGE_LOCATIONS[] = {
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
+@property (nonatomic) MKTileOverlay *overlay;
+@property (nonatomic, getter = isOverlayEnabled) BOOL overlayEnabled;
+
 @end
 
 @implementation MapViewController
@@ -82,9 +85,8 @@ ImageLocation IMAGE_LOCATIONS[] = {
     NSString *tileDirectory = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Berlin1650"];
     NSString *tileDirectoryURL = [NSURL fileURLWithPath:tileDirectory isDirectory:YES];
     NSString *tileTemplate = [NSString stringWithFormat:@"%@{z}/{x}/{y}.png", tileDirectoryURL];
-    MKTileOverlay *overlay = [[MKTileOverlay alloc] initWithURLTemplate:tileTemplate];
-    overlay.geometryFlipped = YES;
-    [self.mapView addOverlay:overlay];
+    self.overlay = [[MKTileOverlay alloc] initWithURLTemplate:tileTemplate];
+    self.overlay.geometryFlipped = YES;
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -106,6 +108,16 @@ ImageLocation IMAGE_LOCATIONS[] = {
 {
     MKTileOverlayRenderer *renderer = [[MKTileOverlayRenderer alloc] initWithOverlay:overlay];
     return renderer;
+}
+
+- (IBAction)toggleMap:(UIBarButtonItem *)sender
+{
+    self.overlayEnabled = !self.isOverlayEnabled;
+    if (self.isOverlayEnabled) {
+        [self.mapView addOverlay:self.overlay];
+    } else {
+        [self.mapView removeOverlay:self.overlay];
+    }
 }
 
 @end
