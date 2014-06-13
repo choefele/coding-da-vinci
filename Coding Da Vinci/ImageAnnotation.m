@@ -10,4 +10,9 @@
 
 @implementation ImageAnnotation
 
+- (BOOL)isAvailableInYear:(NSUInteger)year
+{
+    return (year > self.yearConstruction) && (year < self.yearDemolition);
+}
+
 @end
