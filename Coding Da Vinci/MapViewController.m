@@ -10,6 +10,7 @@
 
 #import "ImageAnnotation.h"
 #import "ImageAnnotationView.h"
+#import "ImageViewController.h"
 
 #import <MapKit/MapKit.h>
 
@@ -141,8 +142,12 @@ ImageLocation IMAGE_LOCATIONS[] = {
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
     [mapView deselectAnnotation:view.annotation animated:NO];
+
+    ImageAnnotation *imageAnnotation = (ImageAnnotation *)view.annotation;
+    UIImage *image = [UIImage imageNamed:imageAnnotation.imageFilePath];
     
-    UIViewController *imageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
+    ImageViewController *imageViewController = (ImageViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
+    imageViewController.image = image;
     self.myPopoverController = [[UIPopoverController alloc] initWithContentViewController:imageViewController];
     [self.myPopoverController presentPopoverFromRect:view.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
