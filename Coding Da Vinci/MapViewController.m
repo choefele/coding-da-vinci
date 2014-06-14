@@ -64,6 +64,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
 @property (nonatomic, getter = isOverlayEnabled) BOOL overlayEnabled;
 @property (nonatomic, copy) NSArray *allAnnotations;
 @property (nonatomic) NSMutableSet *currentAnnotations;
+@property (nonatomic) UIPopoverController *myPopoverController;
 
 @end
 
@@ -135,6 +136,15 @@ ImageLocation IMAGE_LOCATIONS[] = {
             annotationView.alpha = 1.0;
         }
     }];
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    [mapView deselectAnnotation:view.annotation animated:NO];
+    
+    UIViewController *imageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
+    self.myPopoverController = [[UIPopoverController alloc] initWithContentViewController:imageViewController];
+    [self.myPopoverController presentPopoverFromRect:view.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 - (void)updateAnnotations

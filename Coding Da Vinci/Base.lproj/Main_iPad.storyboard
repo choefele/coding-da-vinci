@@ -67,6 +67,26 @@
             </objects>
             <point key="canvasLocation" x="1023" y="-152"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Jsh-ME-nFy">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewController" id="D4g-WE-pdQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vAo-53-nvh"/>
+                        <viewControllerLayoutGuide type="bottom" id="OhF-5V-wS0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bGx-Eh-H2S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="640"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tPQ-uN-98J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045" y="-152"/>
+        </scene>
         <!--Swipe View Controller - Swipe-->
         <scene sceneID="DJk-xZ-P59">
             <objects>
