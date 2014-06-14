@@ -103,16 +103,17 @@ ImageLocation IMAGE_LOCATIONS[] = {
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     static NSString *identifier = @"identifier";
-    MKAnnotationView *annotationView = [self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    if (annotationView == nil) {
-        ImageAnnotationView *imageAnnotationView = [[ImageAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        ImageAnnotation *imageAnnotation = (ImageAnnotation *)annotation;
-        UIImage *image = [UIImage imageNamed:imageAnnotation.imageFilePath];
-        imageAnnotationView.image = image;
-        annotationView = imageAnnotationView;
+    
+    ImageAnnotationView *imageAnnotationView = (ImageAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    if (imageAnnotationView == nil) {
+        imageAnnotationView = [[ImageAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
     }
     
-    return annotationView;
+    ImageAnnotation *imageAnnotation = (ImageAnnotation *)annotation;
+    UIImage *image = [UIImage imageNamed:imageAnnotation.imageFilePath];
+    imageAnnotationView.image = image;
+    
+    return imageAnnotationView;
 }
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
