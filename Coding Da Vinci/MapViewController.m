@@ -76,7 +76,17 @@ ImageLocation IMAGE_LOCATIONS[] = {
     
     self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(52.5233, 13.4127), MKCoordinateSpanMake(0.0493, 0.1366));
     
-    // Images
+    [self setUpAnnotations];
+    [self updateAnnotations];
+    
+    [self setUpOverlay];
+    [self updateOverlay];
+}
+
+#pragma mark Image Annotations
+
+- (void)setUpAnnotations
+{
     NSMutableArray *annotations = [NSMutableArray array];
     for (NSUInteger i = 0; i < sizeof(IMAGE_LOCATIONS) / sizeof(ImageLocation); i++) {
         ImageLocation imageLocation = IMAGE_LOCATIONS[i];
@@ -90,15 +100,6 @@ ImageLocation IMAGE_LOCATIONS[] = {
     }
     self.allAnnotations = annotations;
     self.currentAnnotations = [NSMutableSet set];
-    [self updateAnnotations];
-    
-    // Map overlay
-    NSString *tileDirectory = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Berlin1650"];
-    NSString *tileDirectoryURL = [NSURL fileURLWithPath:tileDirectory isDirectory:YES];
-    NSString *tileTemplate = [NSString stringWithFormat:@"%@{z}/{x}/{y}.png", tileDirectoryURL];
-    self.overlay = [[MKTileOverlay alloc] initWithURLTemplate:tileTemplate];
-    self.overlay.geometryFlipped = YES;
-    [self updateOverlay];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -115,12 +116,6 @@ ImageLocation IMAGE_LOCATIONS[] = {
     imageAnnotationView.image = image;
     
     return imageAnnotationView;
-}
-
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
-{
-    MKTileOverlayRenderer *renderer = [[MKTileOverlayRenderer alloc] initWithOverlay:overlay];
-    return renderer;
 }
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)annotationViews
@@ -176,6 +171,28 @@ ImageLocation IMAGE_LOCATIONS[] = {
     }
 }
 
+- (IBAction)timeChanged:(UISlider *)sender
+{
+    [self updateAnnotations];
+}
+
+#pragma mark Map Overlay
+
+- (void)setUpOverlay
+{
+    NSString *tileDirectory = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Berlin1650"];
+    NSString *tileDirectoryURL = [NSURL fileURLWithPath:tileDirectory isDirectory:YES];
+    NSString *tileTemplate = [NSString stringWithFormat:@"%@{z}/{x}/{y}.png", tileDirectoryURL];
+    self.overlay = [[MKTileOverlay alloc] initWithURLTemplate:tileTemplate];
+    self.overlay.geometryFlipped = YES;
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKTileOverlayRenderer *renderer = [[MKTileOverlayRenderer alloc] initWithOverlay:overlay];
+    return renderer;
+}
+
 - (void)updateOverlay
 {
     if (self.isOverlayEnabled) {
@@ -189,11 +206,6 @@ ImageLocation IMAGE_LOCATIONS[] = {
 {
     self.overlayEnabled = !self.isOverlayEnabled;
     [self updateOverlay];
-}
-
-- (IBAction)timeChanged:(UISlider *)sender
-{
-    [self updateAnnotations];
 }
 
 @end

@@ -19,6 +19,7 @@
 		629A62531923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 629A62511923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg */; };
 		629A62541923EF9500DECB67 /* osterdeich-bremen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 629A62521923EF9500DECB67 /* osterdeich-bremen.jpg */; };
 		629A62561923F1D700DECB67 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629A62551923F1D700DECB67 /* CoreImage.framework */; };
+		62A2FC02194CED8F007790BB /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A2FC01194CED8F007790BB /* ImageViewController.m */; };
 		62B1C3B1190D420D0027A90F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3B0190D420D0027A90F /* Foundation.framework */; };
 		62B1C3B3190D420D0027A90F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3B2190D420D0027A90F /* CoreGraphics.framework */; };
 		62B1C3B5190D420D0027A90F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3B4190D420D0027A90F /* UIKit.framework */; };
@@ -78,6 +79,8 @@
 		629A62511923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "osterdeich-bremen-strandpromenade.jpg"; sourceTree = "<group>"; };
 		629A62521923EF9500DECB67 /* osterdeich-bremen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "osterdeich-bremen.jpg"; sourceTree = "<group>"; };
 		629A62551923F1D700DECB67 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		62A2FC00194CED8F007790BB /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		62A2FC01194CED8F007790BB /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		62B1C3AD190D420D0027A90F /* Coding Da Vinci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coding Da Vinci.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B1C3B0190D420D0027A90F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		62B1C3B2190D420D0027A90F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -198,6 +201,8 @@
 				62FBF64C190D6C2D00D248B6 /* ImageAnnotation.m */,
 				62FBF643190D438200D248B6 /* ImageAnnotationView.h */,
 				62FBF644190D438200D248B6 /* ImageAnnotationView.m */,
+				62A2FC00194CED8F007790BB /* ImageViewController.h */,
+				62A2FC01194CED8F007790BB /* ImageViewController.m */,
 				629A624E1923ECAA00DECB67 /* SwipeViewController.h */,
 				629A624F1923ECAA00DECB67 /* SwipeViewController.m */,
 				628ED3111926057500C8EF43 /* MorphViewController.h */,
@@ -403,6 +408,7 @@
 			files = (
 				62B1C3CA190D420D0027A90F /* MapViewController.m in Sources */,
 				62FBF645190D438200D248B6 /* ImageAnnotationView.m in Sources */,
+				62A2FC02194CED8F007790BB /* ImageViewController.m in Sources */,
 				628ED3131926057500C8EF43 /* MorphViewController.m in Sources */,
 				62B1C3C1190D420D0027A90F /* AppDelegate.m in Sources */,
 				629A62501923ECAA00DECB67 /* SwipeViewController.m in Sources */,
