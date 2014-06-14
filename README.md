@@ -1,7 +1,7 @@
 Geocodierte Bilder
 ==================
 
-[Die Bilder des Stadtmuseums Berlin](https://commons.wikimedia.org/wiki/Category:Stadtansichten_%28Stiftung_Stadtmuseum_Berlin%29) mit [geografischen Koordinaten](https://github.com/choefele/coding-da-vinci/blob/master/Coding%20Da%20Vinci/ViewController.m#L21).
+[Die Bilder des Stadtmuseums Berlin](https://raw.githubusercontent.com/choefele/coding-da-vinci/master/Animated-Images.gif) mit [geografischen Koordinaten und animiert basierend auf der Entstehungszeit](https://github.com/choefele/coding-da-vinci/blob/master/Coding%20Da%20Vinci/ViewController.m#L21).
 
 ![Geocodierte Bilder](Geocoded-Images.png)
 
