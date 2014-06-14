@@ -1,7 +1,7 @@
 Geocodierte Bilder
 ==================
 
-[Die Bilder des Stadtmuseums Berlin](https://commons.wikimedia.org/wiki/Category:Stadtansichten_%28Stiftung_Stadtmuseum_Berlin%29) mit geografischen Koordinaten und animiert basierend auf der Entstehungszeit der abgebildeten Gebäude.
+[Die Bilder des Stadtmuseums Berlin](https://commons.wikimedia.org/wiki/Category:Stadtansichten_%28Stiftung_Stadtmuseum_Berlin%29) mit geografischen Koordinaten und animiert basierend auf der Entstehungszeit der abgebildeten Gebäude. Der Zeitslider unten im Bild geht vom Jahr 1400 bis zum Jahr 2000.
 
 ![Geocodierte Bilder](https://raw.githubusercontent.com/choefele/coding-da-vinci/master/Animated-Images.gif)
 
