@@ -83,6 +83,11 @@ ImageLocation IMAGE_LOCATIONS[] = {
     [self updateOverlay];
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self.myPopoverController dismissPopoverAnimated:YES];
+}
+
 #pragma mark Image Annotations
 
 - (void)setUpAnnotations
