@@ -27,3 +27,16 @@ Berlin1650.tif Berlin1650.vrt
 
 gdal2tiles.py -p mercator -k Berlin1650.vrt
 ````
+
+Geometrien
+==========
+
+[Geometrien der Ortsteile Berlins](http://daten.berlin.de/datensaetze/geometrien-der-ortsteile-von-berlin-stand-072012)
+
+````
+npm install -g togeojson
+
+togeojson Berlin-Ortsteile.kml > Berlin.geojson
+````
+
+
