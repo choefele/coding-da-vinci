@@ -14,13 +14,21 @@ The demo app contains a few examples of how a mesh transform works and what it c
 
 ## Installation
 
-`BCMeshTransformView` is currently awaiting CocoaPods approval. Until then you can copy the contents of `BCMeshTransformView` folder to your project and include `BCMeshTransformView.h`, or use the embedded `.podspec` file.
+`BCMeshTransformView` is available via CocoaPods:
+
+```
+pod 'BCMeshTransformView'
+```
+
+Alternatively, you can copy the contents of `BCMeshTransformView` folder to your project and include `BCMeshTransformView.h`.
 
 ## Requirements
 
 - iOS 7.0
 - ARC
-- OpenGL ES framework
+- GLKit framework
+
+You may optionally include OpenGL ES framework, as this will enable [frame capturing](https://developer.apple.com/library/ios/recipes/xcode_help-debugger/articles/debugging_opengl_es_frame.html).
 
 ## Using `BCMeshTransformView`
 	

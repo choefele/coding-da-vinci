@@ -10,5 +10,11 @@
 #define COCOAPODS_POD_AVAILABLE_BCMeshTransformView
 #define COCOAPODS_VERSION_MAJOR_BCMeshTransformView 0
 #define COCOAPODS_VERSION_MINOR_BCMeshTransformView 8
-#define COCOAPODS_VERSION_PATCH_BCMeshTransformView 0
+#define COCOAPODS_VERSION_PATCH_BCMeshTransformView 1
+
+// GeoJSONSerialization
+#define COCOAPODS_POD_AVAILABLE_GeoJSONSerialization
+#define COCOAPODS_VERSION_MAJOR_GeoJSONSerialization 0
+#define COCOAPODS_VERSION_MINOR_GeoJSONSerialization 0
+#define COCOAPODS_VERSION_PATCH_GeoJSONSerialization 1
 

@@ -1,10 +1,13 @@
 PODS:
-  - BCMeshTransformView (0.8)
+  - BCMeshTransformView (0.8.1)
+  - GeoJSONSerialization (0.0.1)
 
 DEPENDENCIES:
   - BCMeshTransformView
+  - GeoJSONSerialization
 
 SPEC CHECKSUMS:
-  BCMeshTransformView: 2c24ab1d881df6aa761bd0eec4274bfb8f94c785
+  BCMeshTransformView: 26a6b973338a900fc63e37d9e51a719e72aef3a5
+  GeoJSONSerialization: 46f249c3b51f6612838604da44dfe03c0e5aac07
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1
