@@ -75,21 +75,21 @@
                         <viewControllerLayoutGuide type="top" id="vAo-53-nvh"/>
                         <viewControllerLayoutGuide type="bottom" id="OhF-5V-wS0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bGx-Eh-H2S">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="bGx-Eh-H2S">
                         <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="js6-Sk-xDj">
-                                <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
+                                <rect key="frame" x="10" y="10" width="620" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="js6-Sk-xDj" firstAttribute="top" secondItem="bGx-Eh-H2S" secondAttribute="top" id="QvP-N0-EEL"/>
-                            <constraint firstAttribute="trailing" secondItem="js6-Sk-xDj" secondAttribute="trailing" id="Yv4-lH-RQI"/>
-                            <constraint firstAttribute="bottom" secondItem="js6-Sk-xDj" secondAttribute="bottom" id="bzf-SU-SEi"/>
-                            <constraint firstItem="js6-Sk-xDj" firstAttribute="leading" secondItem="bGx-Eh-H2S" secondAttribute="leading" id="yvr-KL-XMs"/>
+                            <constraint firstItem="js6-Sk-xDj" firstAttribute="top" secondItem="bGx-Eh-H2S" secondAttribute="top" constant="10" id="QvP-N0-EEL"/>
+                            <constraint firstAttribute="trailing" secondItem="js6-Sk-xDj" secondAttribute="trailing" constant="10" id="Yv4-lH-RQI"/>
+                            <constraint firstAttribute="bottom" secondItem="js6-Sk-xDj" secondAttribute="bottom" constant="10" id="bzf-SU-SEi"/>
+                            <constraint firstItem="js6-Sk-xDj" firstAttribute="leading" secondItem="bGx-Eh-H2S" secondAttribute="leading" constant="10" id="yvr-KL-XMs"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
