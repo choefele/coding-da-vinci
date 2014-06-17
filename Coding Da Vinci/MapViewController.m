@@ -13,6 +13,7 @@
 #import "ImageViewController.h"
 
 #import <MapKit/MapKit.h>
+#import <GeoJSONSerialization/GeoJSONSerialization.h>
 
 typedef struct {
     CLLocationCoordinate2D coordinate;
@@ -65,6 +66,8 @@ ImageLocation IMAGE_LOCATIONS[] = {
 @property (nonatomic, getter = isOverlayEnabled) BOOL overlayEnabled;
 @property (nonatomic, copy) NSArray *allAnnotations;
 @property (nonatomic) NSMutableSet *currentAnnotations;
+@property (nonatomic, copy) NSArray *allGeometries;
+@property (nonatomic, getter = areGeometriesEnabled) BOOL geometriesEnabled;
 @property (nonatomic) UIPopoverController *myPopoverController;
 
 @end
@@ -82,6 +85,10 @@ ImageLocation IMAGE_LOCATIONS[] = {
     
     [self setUpOverlay];
     [self updateOverlay];
+    
+    self.geometriesEnabled = YES;
+    [self setUpGeometries];
+    [self updateGeometries];
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -199,7 +206,19 @@ ImageLocation IMAGE_LOCATIONS[] = {
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
 {
-    MKTileOverlayRenderer *renderer = [[MKTileOverlayRenderer alloc] initWithOverlay:overlay];
+    MKOverlayRenderer *renderer;
+    
+    if ([overlay isKindOfClass:MKTileOverlay.class]) {
+        MKTileOverlayRenderer *overlayRenderer = [[MKTileOverlayRenderer alloc] initWithOverlay:overlay];
+        renderer = overlayRenderer;
+    } else if ([overlay isKindOfClass:MKPolygon.class]) {
+        MKPolygon *polygon = (MKPolygon *)overlay;
+        MKPolygonRenderer *polygonRenderer = [[MKPolygonRenderer alloc] initWithOverlay:polygon];
+        polygonRenderer.strokeColor = UIColor.blueColor;
+        polygonRenderer.lineWidth = 1;
+        renderer = polygonRenderer;
+    }
+    
     return renderer;
 }
 
@@ -216,6 +235,25 @@ ImageLocation IMAGE_LOCATIONS[] = {
 {
     self.overlayEnabled = !self.isOverlayEnabled;
     [self updateOverlay];
+}
+
+#pragma mark Geometries
+
+- (void)setUpGeometries
+{
+    NSURL *URL = [[NSBundle mainBundle] URLForResource:@"Berlin" withExtension:@"geojson"];
+    NSData *data = [NSData dataWithContentsOfURL:URL];
+    NSDictionary *geoJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    self.allGeometries = [GeoJSONSerialization shapesFromGeoJSONFeatureCollection:geoJSON error:nil];
+}
+
+- (void)updateGeometries
+{
+    if (self.areGeometriesEnabled) {
+        [self.mapView addOverlays:self.allGeometries];
+    } else {
+        [self.mapView removeOverlays:self.allGeometries];
+    }
 }
 
 @end

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		080EFD20F1624137BB286BD6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC44FEC64A43C49D7A22E3 /* libPods.a */; };
+		62480E981950D1DF00C6CE9A /* Berlin-Ortsteile.kml in Resources */ = {isa = PBXBuildFile; fileRef = 62480E961950D1DF00C6CE9A /* Berlin-Ortsteile.kml */; };
+		62480E991950D1DF00C6CE9A /* Berlin.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62480E971950D1DF00C6CE9A /* Berlin.geojson */; };
 		62661474193A67DD00BE454D /* Berlin1650 in Resources */ = {isa = PBXBuildFile; fileRef = 62661473193A67DD00BE454D /* Berlin1650 */; };
 		628ED30E192602AC00C8EF43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30D192602AC00C8EF43 /* OpenGLES.framework */; };
 		628ED3101926044100C8EF43 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30F1926044100C8EF43 /* libstdc++.dylib */; };
@@ -66,6 +68,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62480E961950D1DF00C6CE9A /* Berlin-Ortsteile.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Berlin-Ortsteile.kml"; sourceTree = "<group>"; };
+		62480E971950D1DF00C6CE9A /* Berlin.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Berlin.geojson; sourceTree = "<group>"; };
 		62661473193A67DD00BE454D /* Berlin1650 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1650; sourceTree = "<group>"; };
 		628ED30D192602AC00C8EF43 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		628ED30F1926044100C8EF43 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
@@ -155,6 +159,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62480E951950D1DF00C6CE9A /* Geometries */ = {
+			isa = PBXGroup;
+			children = (
+				62480E961950D1DF00C6CE9A /* Berlin-Ortsteile.kml */,
+				62480E971950D1DF00C6CE9A /* Berlin.geojson */,
+			);
+			name = Geometries;
+			path = ../Geometries;
+			sourceTree = "<group>";
+		};
 		62B1C3A4190D420D0027A90F = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +226,7 @@
 				628ED31F19260FB800C8EF43 /* BCMeshShader.vsh */,
 				62FBF646190D6B1B00D248B6 /* Images */,
 				62661473193A67DD00BE454D /* Berlin1650 */,
+				62480E951950D1DF00C6CE9A /* Geometries */,
 				62B1C3B7190D420D0027A90F /* Supporting Files */,
 			);
 			path = "Coding Da Vinci";
@@ -336,6 +351,7 @@
 				62FBF66E190D71D100D248B6 /* Ufer_Stralauer_Strasse-GHZ-78-26.jpg in Resources */,
 				62FBF68B190D71D100D248B6 /* Rondell-GHZ-74-12.jpg in Resources */,
 				62FBF684190D71D100D248B6 /* Das_Brandenburger_Tor-GDR-65-7-1.jpg in Resources */,
+				62480E981950D1DF00C6CE9A /* Berlin-Ortsteile.kml in Resources */,
 				62FBF675190D71D100D248B6 /* Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg in Resources */,
 				62FBF678190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg in Resources */,
 				62FBF67F190D71D100D248B6 /* Fischerhütte-SM-2012-2093.jpg in Resources */,
@@ -351,6 +367,7 @@
 				62FBF685190D71D100D248B6 /* Cölln_Jungfernbrücke-GHZ-64-3-13.jpg in Resources */,
 				62FBF679190D71D100D248B6 /* Landsbergerplatz-IV-61-3475-V.jpg in Resources */,
 				62FBF672190D71D100D248B6 /* Panorama_von_Berlin-GDR-64-11-108.jpg in Resources */,
+				62480E991950D1DF00C6CE9A /* Berlin.geojson in Resources */,
 				62FBF66F190D71D100D248B6 /* Schlossbrücke-VII-62-424-a-W.jpg in Resources */,
 				62FBF68A190D71D100D248B6 /* Hamburger_Bahnhof-VII-97-341-a-W.jpg in Resources */,
 				62FBF67A190D71D100D248B6 /* Königsstrasse-VII-60-1489-W.jpg in Resources */,
