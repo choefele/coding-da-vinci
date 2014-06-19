@@ -289,9 +289,15 @@ static NSDictionary * GeoJSONPolygonFeatureGeometryFromPolygon(MKPolygon *polygo
     for (MKPolygon *interiorOrExteriorPolygon in mutablePolygons) {
         NSMutableArray *mutableCoordinatePairs = [NSMutableArray arrayWithCapacity:[interiorOrExteriorPolygon pointCount]];
         for (NSUInteger idx = 0; idx < [interiorOrExteriorPolygon pointCount]; idx++) {
-            MKMapPoint point = interiorOrExteriorPolygon.points[idx];
-            [mutableCoordinatePairs addObject:@[@(point.x), @(point.y)]];
+            CLLocationCoordinate2D coordinate;
+            [interiorOrExteriorPolygon getCoordinates:&coordinate range:NSMakeRange(idx, 1)];
+            [mutableCoordinatePairs addObject:@[@(coordinate.longitude), @(coordinate.latitude)]];
         }
+        
+//        for (NSUInteger idx = 0; idx < [interiorOrExteriorPolygon pointCount]; idx++) {
+//            MKMapPoint point = interiorOrExteriorPolygon.points[idx];
+//            [mutableCoordinatePairs addObject:@[@(point.x), @(point.y)]];
+//        }
 
         [mutableCoordinateSets addObject:mutableCoordinatePairs];
     }
