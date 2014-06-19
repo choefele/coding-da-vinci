@@ -15,8 +15,6 @@
 		628ED3101926044100C8EF43 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30F1926044100C8EF43 /* libstdc++.dylib */; };
 		628ED3131926057500C8EF43 /* MorphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628ED3121926057500C8EF43 /* MorphViewController.m */; };
 		628ED3151926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 628ED3141926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg */; };
-		628ED32019260FB800C8EF43 /* BCMeshShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 628ED31E19260FB800C8EF43 /* BCMeshShader.fsh */; };
-		628ED32119260FB800C8EF43 /* BCMeshShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 628ED31F19260FB800C8EF43 /* BCMeshShader.vsh */; };
 		629A62501923ECAA00DECB67 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A624F1923ECAA00DECB67 /* SwipeViewController.m */; };
 		629A62531923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 629A62511923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg */; };
 		629A62541923EF9500DECB67 /* osterdeich-bremen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 629A62521923EF9500DECB67 /* osterdeich-bremen.jpg */; };
@@ -76,8 +74,6 @@
 		628ED3111926057500C8EF43 /* MorphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphViewController.h; sourceTree = "<group>"; };
 		628ED3121926057500C8EF43 /* MorphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorphViewController.m; sourceTree = "<group>"; };
 		628ED3141926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1024px-JH_Hintze_Kreuzberg_1829.jpg"; sourceTree = "<group>"; };
-		628ED31E19260FB800C8EF43 /* BCMeshShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BCMeshShader.fsh; sourceTree = "<group>"; };
-		628ED31F19260FB800C8EF43 /* BCMeshShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BCMeshShader.vsh; sourceTree = "<group>"; };
 		629A624E1923ECAA00DECB67 /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
 		629A624F1923ECAA00DECB67 /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
 		629A62511923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "osterdeich-bremen-strandpromenade.jpg"; sourceTree = "<group>"; };
@@ -222,8 +218,6 @@
 				628ED3111926057500C8EF43 /* MorphViewController.h */,
 				628ED3121926057500C8EF43 /* MorphViewController.m */,
 				62B1C3CB190D420D0027A90F /* Images.xcassets */,
-				628ED31E19260FB800C8EF43 /* BCMeshShader.fsh */,
-				628ED31F19260FB800C8EF43 /* BCMeshShader.vsh */,
 				62FBF646190D6B1B00D248B6 /* Images */,
 				62661473193A67DD00BE454D /* Berlin1650 */,
 				62480E951950D1DF00C6CE9A /* Geometries */,
@@ -355,14 +349,12 @@
 				62FBF675190D71D100D248B6 /* Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg in Resources */,
 				62FBF678190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg in Resources */,
 				62FBF67F190D71D100D248B6 /* Fischerhütte-SM-2012-2093.jpg in Resources */,
-				628ED32119260FB800C8EF43 /* BCMeshShader.vsh in Resources */,
 				629A62531923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg in Resources */,
 				62FBF689190D71D100D248B6 /* Avus_Funkturm-SM-2013-0958.jpg in Resources */,
 				62FBF67D190D71D100D248B6 /* Hackescher_Markt-VII-67-294-W.jpg in Resources */,
 				62FBF670190D71D100D248B6 /* Rathaus-IV-61-1537-S.jpg in Resources */,
 				62FBF676190D71D100D248B6 /* Luiseninsel_Tiergarten-GDR-76-57-45.jpg in Resources */,
 				62FBF674190D71D100D248B6 /* Märkisches_Museum-GE-2007-638-VF.jpg in Resources */,
-				628ED32019260FB800C8EF43 /* BCMeshShader.fsh in Resources */,
 				62FBF67E190D71D100D248B6 /* Grunewaldturm-SM-2013-1297.jpg in Resources */,
 				62FBF685190D71D100D248B6 /* Cölln_Jungfernbrücke-GHZ-64-3-13.jpg in Resources */,
 				62FBF679190D71D100D248B6 /* Landsbergerplatz-IV-61-3475-V.jpg in Resources */,

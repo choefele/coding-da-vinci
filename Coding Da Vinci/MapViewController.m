@@ -86,7 +86,6 @@ ImageLocation IMAGE_LOCATIONS[] = {
     [self setUpOverlay];
     [self updateOverlay];
     
-    self.geometriesEnabled = YES;
     [self setUpGeometries];
     [self updateGeometries];
 }
@@ -254,6 +253,12 @@ ImageLocation IMAGE_LOCATIONS[] = {
     } else {
         [self.mapView removeOverlays:self.allGeometries];
     }
+}
+
+- (IBAction)toggleGeometries:(UIBarButtonItem *)sender
+{
+    self.geometriesEnabled = !self.areGeometriesEnabled;
+    [self updateGeometries];
 }
 
 @end
