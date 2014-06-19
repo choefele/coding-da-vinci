@@ -1,5 +1,5 @@
 #include "Pods-BCMeshTransformView.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/BCMeshTransformView" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/BCMeshTransformView" "${PODS_ROOT}/Headers/GeoJSONSerialization"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/BCMeshTransformView" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/BCMeshTransformView" "${PODS_ROOT}/Headers/GeoJSONSerialization" "${PODS_ROOT}/Headers/MKPolygon-GPC"
 OTHER_LDFLAGS = -ObjC ${PODS_BCMESHTRANSFORMVIEW_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}

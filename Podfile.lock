@@ -1,13 +1,16 @@
 PODS:
   - BCMeshTransformView (0.8.1)
   - GeoJSONSerialization (0.0.1)
+  - MKPolygon-GPC (0.0.1)
 
 DEPENDENCIES:
   - BCMeshTransformView
   - GeoJSONSerialization
+  - MKPolygon-GPC
 
 SPEC CHECKSUMS:
   BCMeshTransformView: 26a6b973338a900fc63e37d9e51a719e72aef3a5
   GeoJSONSerialization: 46f249c3b51f6612838604da44dfe03c0e5aac07
+  MKPolygon-GPC: ecc204ab024b5f70caa1487b4a87c2ba4599d075
 
 COCOAPODS: 0.33.1

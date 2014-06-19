@@ -1,5 +1,5 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/BCMeshTransformView" "${PODS_ROOT}/Headers/GeoJSONSerialization"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/BCMeshTransformView" -isystem "${PODS_ROOT}/Headers/GeoJSONSerialization"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/BCMeshTransformView" "${PODS_ROOT}/Headers/GeoJSONSerialization" "${PODS_ROOT}/Headers/MKPolygon-GPC"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/BCMeshTransformView" -isystem "${PODS_ROOT}/Headers/GeoJSONSerialization" -isystem "${PODS_ROOT}/Headers/MKPolygon-GPC"
 OTHER_LDFLAGS = -ObjC -lstdc++ -framework CoreLocation -framework GLKit -framework MapKit
 PODS_ROOT = ${SRCROOT}/Pods

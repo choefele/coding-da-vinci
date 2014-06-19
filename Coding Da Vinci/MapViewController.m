@@ -14,6 +14,7 @@
 
 #import <MapKit/MapKit.h>
 #import <GeoJSONSerialization/GeoJSONSerialization.h>
+#import <MKPolygon-GPC/MKPolygon+GPC.h>
 
 typedef struct {
     CLLocationCoordinate2D coordinate;
@@ -257,10 +258,29 @@ ImageLocation IMAGE_LOCATIONS[] = {
 
 - (void)setUpGeometries
 {
+//    NSURL *URL = [[NSBundle mainBundle] URLForResource:@"Berlin-Ortsteile" withExtension:@"geojson"];
+//    NSData *data = [NSData dataWithContentsOfURL:URL];
+//    NSDictionary *geoJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//    NSArray *geometries = [GeoJSONSerialization shapesFromGeoJSONFeatureCollection:geoJSON error:nil];
+//
+//    MKPolygon *unionPolygon = geometries[0];
+//    for (MKPolygon *polygon in geometries) {
+//        unionPolygon  = [unionPolygon polygonFromUnionWithPolygon:polygon];
+//    }
+//    
+//    NSDictionary *json = [GeoJSONSerialization GeoJSONFeatureFromShape:unionPolygon properties:nil error:NULL];
+//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:json options:0 error:NULL];
+//    
+//    NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *filePath = [[dirPaths objectAtIndex:0] stringByAppendingPathComponent:@"Berlin.geojson"];
+//    [jsonData writeToFile:filePath atomically:YES];
+
     NSURL *URL = [[NSBundle mainBundle] URLForResource:@"Berlin" withExtension:@"geojson"];
     NSData *data = [NSData dataWithContentsOfURL:URL];
     NSDictionary *geoJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-    self.allGeometries = [GeoJSONSerialization shapesFromGeoJSONFeatureCollection:geoJSON error:nil];
+    MKShape *geometry = [GeoJSONSerialization shapeFromGeoJSONFeature:geoJSON error:NULL];
+    
+    self.allGeometries = @[geometry];
 }
 
 - (void)updateGeometries
