@@ -95,6 +95,36 @@ ImageLocation IMAGE_LOCATIONS[] = {
     [self.myPopoverController dismissPopoverAnimated:YES];
 }
 
+#pragma mark MKMapViewDelegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    return [self imageAnnotationViewForAnnotation:annotation];
+}
+
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)annotationViews
+{
+    [self animateInAnnotationViews:annotationViews];
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)annotationView
+{
+    [self didSelectAnnotationView:annotationView];
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKOverlayRenderer *renderer;
+    
+    if ([overlay isKindOfClass:MKTileOverlay.class]) {
+        renderer = [self tileOverlayRendererForOverlay:overlay];
+    } else if ([overlay isKindOfClass:MKPolygon.class]) {
+        renderer = [self polygonRendererForOverlay:overlay];
+    }
+    
+    return renderer;
+}
+
 #pragma mark Image Annotations
 
 - (void)setUpAnnotations
@@ -112,50 +142,6 @@ ImageLocation IMAGE_LOCATIONS[] = {
     }
     self.allAnnotations = annotations;
     self.currentAnnotations = [NSMutableSet set];
-}
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-{
-    static NSString *identifier = @"identifier";
-    
-    ImageAnnotationView *imageAnnotationView = (ImageAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    if (imageAnnotationView == nil) {
-        imageAnnotationView = [[ImageAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-    }
-    
-    ImageAnnotation *imageAnnotation = (ImageAnnotation *)annotation;
-    UIImage *image = [UIImage imageNamed:imageAnnotation.imageFilePath];
-    imageAnnotationView.image = image;
-    
-    return imageAnnotationView;
-}
-
-- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)annotationViews
-{
-    // Animate annotations that get added
-    for (MKAnnotationView *annotationView in annotationViews)
-    {
-        annotationView.alpha = 0.0;
-    }
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        for (MKAnnotationView *annotationView in annotationViews) {
-            annotationView.alpha = 1.0;
-        }
-    }];
-}
-
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
-{
-    [mapView deselectAnnotation:view.annotation animated:NO];
-
-    ImageAnnotation *imageAnnotation = (ImageAnnotation *)view.annotation;
-    UIImage *image = [UIImage imageNamed:imageAnnotation.imageFilePath];
-    
-    ImageViewController *imageViewController = (ImageViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
-    imageViewController.image = image;
-    self.myPopoverController = [[UIPopoverController alloc] initWithContentViewController:imageViewController];
-    [self.myPopoverController presentPopoverFromRect:view.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 - (void)updateAnnotations
@@ -192,6 +178,49 @@ ImageLocation IMAGE_LOCATIONS[] = {
     [self updateAnnotations];
 }
 
+- (MKAnnotationView *)imageAnnotationViewForAnnotation:(id<MKAnnotation>)annotation
+{
+    static NSString *identifier = @"identifier";
+    
+    ImageAnnotationView *imageAnnotationView = (ImageAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    if (imageAnnotationView == nil) {
+        imageAnnotationView = [[ImageAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    }
+    
+    ImageAnnotation *imageAnnotation = (ImageAnnotation *)annotation;
+    UIImage *image = [UIImage imageNamed:imageAnnotation.imageFilePath];
+    imageAnnotationView.image = image;
+    
+    return imageAnnotationView;
+}
+
+- (void)animateInAnnotationViews:(NSArray *)annotationViews
+{
+    for (MKAnnotationView *annotationView in annotationViews)
+    {
+        annotationView.alpha = 0.0;
+    }
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        for (MKAnnotationView *annotationView in annotationViews) {
+            annotationView.alpha = 1.0;
+        }
+    }];
+}
+
+- (void)didSelectAnnotationView:(MKAnnotationView *)view
+{
+    [self.mapView deselectAnnotation:view.annotation animated:NO];
+
+    ImageAnnotation *imageAnnotation = (ImageAnnotation *)view.annotation;
+    UIImage *image = [UIImage imageNamed:imageAnnotation.imageFilePath];
+    
+    ImageViewController *imageViewController = (ImageViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
+    imageViewController.image = image;
+    self.myPopoverController = [[UIPopoverController alloc] initWithContentViewController:imageViewController];
+    [self.myPopoverController presentPopoverFromRect:view.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
 #pragma mark Map Overlay
 
 - (void)setUpOverlay
@@ -201,24 +230,6 @@ ImageLocation IMAGE_LOCATIONS[] = {
     NSString *tileTemplate = [NSString stringWithFormat:@"%@{z}/{x}/{y}.png", tileDirectoryURL];
     self.overlay = [[MKTileOverlay alloc] initWithURLTemplate:tileTemplate];
     self.overlay.geometryFlipped = YES;
-}
-
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
-{
-    MKOverlayRenderer *renderer;
-    
-    if ([overlay isKindOfClass:MKTileOverlay.class]) {
-        MKTileOverlayRenderer *overlayRenderer = [[MKTileOverlayRenderer alloc] initWithOverlay:overlay];
-        renderer = overlayRenderer;
-    } else if ([overlay isKindOfClass:MKPolygon.class]) {
-        MKPolygon *polygon = (MKPolygon *)overlay;
-        MKPolygonRenderer *polygonRenderer = [[MKPolygonRenderer alloc] initWithOverlay:polygon];
-        polygonRenderer.strokeColor = UIColor.blueColor;
-        polygonRenderer.lineWidth = 1;
-        renderer = polygonRenderer;
-    }
-    
-    return renderer;
 }
 
 - (void)updateOverlay
@@ -234,6 +245,12 @@ ImageLocation IMAGE_LOCATIONS[] = {
 {
     self.overlayEnabled = !self.isOverlayEnabled;
     [self updateOverlay];
+}
+
+- (MKTileOverlayRenderer *)tileOverlayRendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKTileOverlayRenderer *overlayRenderer = [[MKTileOverlayRenderer alloc] initWithOverlay:overlay];
+    return overlayRenderer;
 }
 
 #pragma mark Geometries
@@ -259,6 +276,16 @@ ImageLocation IMAGE_LOCATIONS[] = {
 {
     self.geometriesEnabled = !self.areGeometriesEnabled;
     [self updateGeometries];
+}
+
+- (MKPolygonRenderer *)polygonRendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKPolygon *polygon = (MKPolygon *)overlay;
+    MKPolygonRenderer *polygonRenderer = [[MKPolygonRenderer alloc] initWithOverlay:polygon];
+    polygonRenderer.strokeColor = UIColor.blueColor;
+    polygonRenderer.lineWidth = 1;
+    
+    return polygonRenderer;
 }
 
 @end
