@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		080EFD20F1624137BB286BD6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC44FEC64A43C49D7A22E3 /* libPods.a */; };
 		62480E991950D1DF00C6CE9A /* Berlin.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62480E971950D1DF00C6CE9A /* Berlin.geojson */; };
+		624AD9641954CAD2002EAD24 /* Shape.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 624AD9631954CAD2002EAD24 /* Shape.geojson */; };
 		62661474193A67DD00BE454D /* Berlin1650 in Resources */ = {isa = PBXBuildFile; fileRef = 62661473193A67DD00BE454D /* Berlin1650 */; };
 		6271CB3B19537FE70039E7C6 /* Berlin-Ortsteile.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 6271CB3A19537FE70039E7C6 /* Berlin-Ortsteile.geojson */; };
 		628ED30E192602AC00C8EF43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30D192602AC00C8EF43 /* OpenGLES.framework */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		62480E971950D1DF00C6CE9A /* Berlin.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Berlin.geojson; sourceTree = "<group>"; };
+		624AD9631954CAD2002EAD24 /* Shape.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Shape.geojson; sourceTree = "<group>"; };
 		62661473193A67DD00BE454D /* Berlin1650 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1650; sourceTree = "<group>"; };
 		6271CB3A19537FE70039E7C6 /* Berlin-Ortsteile.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Berlin-Ortsteile.geojson"; sourceTree = "<group>"; };
 		628ED30D192602AC00C8EF43 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -158,6 +160,7 @@
 		62480E951950D1DF00C6CE9A /* Geometries */ = {
 			isa = PBXGroup;
 			children = (
+				624AD9631954CAD2002EAD24 /* Shape.geojson */,
 				6271CB3A19537FE70039E7C6 /* Berlin-Ortsteile.geojson */,
 				62480E971950D1DF00C6CE9A /* Berlin.geojson */,
 			);
@@ -337,6 +340,7 @@
 				62661474193A67DD00BE454D /* Berlin1650 in Resources */,
 				62B1C3CC190D420D0027A90F /* Images.xcassets in Resources */,
 				62FBF673190D71D100D248B6 /* Nauener_Platz-GHZ-77-13.jpg in Resources */,
+				624AD9641954CAD2002EAD24 /* Shape.geojson in Resources */,
 				62FBF686190D71D100D248B6 /* Börse-IV-61-1531-S.jpg in Resources */,
 				62FBF681190D71D100D248B6 /* Einzug_des_Königs-GDR-64-11-216.jpg in Resources */,
 				6271CB3B19537FE70039E7C6 /* Berlin-Ortsteile.geojson in Resources */,

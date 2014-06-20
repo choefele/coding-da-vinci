@@ -104,6 +104,16 @@ ImageLocation IMAGE_LOCATIONS[] = {
     [self.myPopoverController dismissPopoverAnimated:YES];
 }
 
+- (void)writeShape:(MKShape *)shape toFileWithName:(NSString *)fileName
+{
+    NSDictionary *json = [GeoJSONSerialization GeoJSONFeatureFromShape:shape properties:nil error:NULL];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:json options:0 error:NULL];
+    
+    NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[dirPaths objectAtIndex:0] stringByAppendingPathComponent:fileName];
+    [jsonData writeToFile:filePath atomically:YES];
+}
+
 #pragma mark MKMapViewDelegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -300,15 +310,8 @@ ImageLocation IMAGE_LOCATIONS[] = {
 //    for (MKPolygon *polygon in geometries) {
 //        unionPolygon  = [unionPolygon polygonFromUnionWithPolygon:polygon];
 //    }
-//    
-//    NSDictionary *json = [GeoJSONSerialization GeoJSONFeatureFromShape:unionPolygon properties:nil error:NULL];
-//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:json options:0 error:NULL];
-//    
-//    NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *filePath = [[dirPaths objectAtIndex:0] stringByAppendingPathComponent:@"Berlin.geojson"];
-//    [jsonData writeToFile:filePath atomically:YES];
 
-    NSURL *URL = [[NSBundle mainBundle] URLForResource:@"Berlin" withExtension:@"geojson"];
+    NSURL *URL = [[NSBundle mainBundle] URLForResource:@"Shape" withExtension:@"geojson"];
     NSData *data = [NSData dataWithContentsOfURL:URL];
     NSDictionary *geoJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     MKShape *geometry = [GeoJSONSerialization shapeFromGeoJSONFeature:geoJSON error:NULL];
@@ -362,9 +365,13 @@ ImageLocation IMAGE_LOCATIONS[] = {
         if (numberOfPoints > 2)
         {
             CLLocationCoordinate2D points[numberOfPoints];
-            for (NSInteger i = 0; i < numberOfPoints; i++)
+            for (NSInteger i = 0; i < numberOfPoints; i++) {
                 points[i] = [self.coordinates[i] MKCoordinateValue];
-            [self.mapView addOverlay:[MKPolygon polygonWithCoordinates:points count:numberOfPoints]];
+            }
+            MKPolygon *polygon = [MKPolygon polygonWithCoordinates:points count:numberOfPoints];
+            [self.mapView addOverlay:polygon];
+            
+            [self writeShape:polygon toFileWithName:@"Shape.geojson"];
         }
         
         if (self.polyLine) {
