@@ -63,11 +63,11 @@ ImageLocation IMAGE_LOCATIONS[] = {
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UISlider *timeSlider;
 
-@property (nonatomic) MKTileOverlay *overlay;
-@property (nonatomic, getter = isOverlayEnabled) BOOL overlayEnabled;
-@property (nonatomic, copy) NSArray *allAnnotations;
-@property (nonatomic) NSMutableSet *currentAnnotations;
-@property (nonatomic, getter = areAnnotationsEnabled) BOOL annotationsEnabled;
+@property (nonatomic) MKTileOverlay *mapOverlay;
+@property (nonatomic, getter = isMapOverlayEnabled) BOOL mapOverlayEnabled;
+@property (nonatomic, copy) NSArray *allImageAnnotations;
+@property (nonatomic) NSMutableSet *currentImageAnnotations;
+@property (nonatomic, getter = areImageAnnotationsEnabled) BOOL imageAnnotationsEnabled;
 @property (nonatomic, copy) NSArray *allGeometries;
 @property (nonatomic, getter = areGeometriesEnabled) BOOL geometriesEnabled;
 @property (nonatomic) UIPopoverController *myPopoverController;
@@ -82,12 +82,12 @@ ImageLocation IMAGE_LOCATIONS[] = {
     
     self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(52.5233, 13.4127), MKCoordinateSpanMake(0.0493, 0.1366));
     
-    self.annotationsEnabled = YES;
-    [self setUpAnnotations];
-    [self updateAnnotations];
+    self.imageAnnotationsEnabled = YES;
+    [self setUpImageAnnotations];
+    [self updateImageAnnotations];
     
-    [self setUpOverlay];
-    [self updateOverlay];
+    [self setUpMapOverlay];
+    [self updateMapOverlay];
     
     [self setUpGeometries];
     [self updateGeometries];
@@ -112,7 +112,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)annotationView
 {
-    [self didSelectAnnotationView:annotationView];
+    [self didSelectImageAnnotationView:annotationView];
 }
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
@@ -130,7 +130,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
 
 #pragma mark Image Annotations
 
-- (void)setUpAnnotations
+- (void)setUpImageAnnotations
 {
     NSMutableArray *annotations = [NSMutableArray array];
     for (NSUInteger i = 0; i < sizeof(IMAGE_LOCATIONS) / sizeof(ImageLocation); i++) {
@@ -143,50 +143,50 @@ ImageLocation IMAGE_LOCATIONS[] = {
         
         [annotations addObject:annotation];
     }
-    self.allAnnotations = annotations;
-    self.currentAnnotations = [NSMutableSet set];
+    self.allImageAnnotations = annotations;
+    self.currentImageAnnotations = [NSMutableSet set];
 }
 
-- (void)updateAnnotations
+- (void)updateImageAnnotations
 {
     NSUInteger year = (NSUInteger)self.timeSlider.value;
     
-    if (self.areAnnotationsEnabled) {
+    if (self.areImageAnnotationsEnabled) {
         // Remove outdated map annotations
-        NSArray *currentAnnotations = [self.currentAnnotations copy];
+        NSArray *currentAnnotations = [self.currentImageAnnotations copy];
         for (ImageAnnotation *annotation in currentAnnotations) {
             if (![annotation isAvailableInYear:year]) {
-                [self.currentAnnotations removeObject:annotation];
+                [self.currentImageAnnotations removeObject:annotation];
                 [self animateOutAnnotation:annotation];
             }
         }
         
         // Add available annotations
-        for (ImageAnnotation *annotation in self.allAnnotations) {
+        for (ImageAnnotation *annotation in self.allImageAnnotations) {
             if ([annotation isAvailableInYear:year]) {
-                [self.currentAnnotations addObject:annotation];
+                [self.currentImageAnnotations addObject:annotation];
                 [self.mapView addAnnotation:annotation];
             }
         }
     } else {
         // Remove all annotations
-        NSArray *currentAnnotations = [self.currentAnnotations copy];
+        NSArray *currentAnnotations = [self.currentImageAnnotations copy];
         for (ImageAnnotation *annotation in currentAnnotations) {
-            [self.currentAnnotations removeObject:annotation];
+            [self.currentImageAnnotations removeObject:annotation];
             [self animateOutAnnotation:annotation];
         }
     }
 }
 
-- (IBAction)toggleImages:(UIBarButtonItem *)sender
+- (IBAction)toggleImageAnnotations:(UIBarButtonItem *)sender
 {
-    self.annotationsEnabled = !self.areAnnotationsEnabled;
-    [self updateAnnotations];
+    self.imageAnnotationsEnabled = !self.areImageAnnotationsEnabled;
+    [self updateImageAnnotations];
 }
 
 - (IBAction)timeChanged:(UISlider *)sender
 {
-    [self updateAnnotations];
+    [self updateImageAnnotations];
 }
 
 - (MKAnnotationView *)imageAnnotationViewForAnnotation:(id<MKAnnotation>)annotation
@@ -229,7 +229,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
     }];
 }
 
-- (void)didSelectAnnotationView:(MKAnnotationView *)view
+- (void)didSelectImageAnnotationView:(MKAnnotationView *)view
 {
     [self.mapView deselectAnnotation:view.annotation animated:NO];
 
@@ -244,28 +244,28 @@ ImageLocation IMAGE_LOCATIONS[] = {
 
 #pragma mark Map Overlay
 
-- (void)setUpOverlay
+- (void)setUpMapOverlay
 {
     NSString *tileDirectory = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Berlin1650"];
     NSString *tileDirectoryURL = [NSURL fileURLWithPath:tileDirectory isDirectory:YES];
     NSString *tileTemplate = [NSString stringWithFormat:@"%@{z}/{x}/{y}.png", tileDirectoryURL];
-    self.overlay = [[MKTileOverlay alloc] initWithURLTemplate:tileTemplate];
-    self.overlay.geometryFlipped = YES;
+    self.mapOverlay = [[MKTileOverlay alloc] initWithURLTemplate:tileTemplate];
+    self.mapOverlay.geometryFlipped = YES;
 }
 
-- (void)updateOverlay
+- (void)updateMapOverlay
 {
-    if (self.isOverlayEnabled) {
-        [self.mapView addOverlay:self.overlay];
+    if (self.isMapOverlayEnabled) {
+        [self.mapView addOverlay:self.mapOverlay];
     } else {
-        [self.mapView removeOverlay:self.overlay];
+        [self.mapView removeOverlay:self.mapOverlay];
     }
 }
 
-- (IBAction)toggleMap:(UIBarButtonItem *)sender
+- (IBAction)toggleMapOverlay:(UIBarButtonItem *)sender
 {
-    self.overlayEnabled = !self.isOverlayEnabled;
-    [self updateOverlay];
+    self.mapOverlayEnabled = !self.isMapOverlayEnabled;
+    [self updateMapOverlay];
 }
 
 - (MKTileOverlayRenderer *)tileOverlayRendererForOverlay:(id<MKOverlay>)overlay

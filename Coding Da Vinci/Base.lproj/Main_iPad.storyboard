@@ -29,7 +29,7 @@
                                 <items>
                                     <barButtonItem title="Karte" id="ajr-0J-nOR">
                                         <connections>
-                                            <action selector="toggleMap:" destination="BYZ-38-t0r" id="yPE-XP-MNv"/>
+                                            <action selector="toggleMapOverlay:" destination="BYZ-38-t0r" id="Tdz-5N-gr4"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Cdo-bb-OZW"/>
@@ -41,7 +41,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="oAo-qa-X5I"/>
                                     <barButtonItem title="Bilder" id="axy-vC-nYz">
                                         <connections>
-                                            <action selector="toggleImages:" destination="BYZ-38-t0r" id="3yQ-tc-T7G"/>
+                                            <action selector="toggleImageAnnotations:" destination="BYZ-38-t0r" id="vf7-yX-9IL"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="qoS-Zd-A3Z"/>
