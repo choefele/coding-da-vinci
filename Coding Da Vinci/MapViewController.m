@@ -62,6 +62,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UISlider *timeSlider;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editBarButtonItem;
 
 @property (nonatomic) MKTileOverlay *mapOverlay;
 @property (nonatomic, getter = isMapOverlayEnabled) BOOL mapOverlayEnabled;
@@ -71,6 +72,11 @@ ImageLocation IMAGE_LOCATIONS[] = {
 @property (nonatomic, copy) NSArray *allGeometries;
 @property (nonatomic, getter = areGeometriesEnabled) BOOL geometriesEnabled;
 @property (nonatomic) UIPopoverController *myPopoverController;
+
+@property (nonatomic) NSMutableArray *coordinates;
+@property (nonatomic) MKPolyline *polyLine;
+@property (nonatomic) MKPointAnnotation *previousAnnotation;
+@property (nonatomic, getter = isEditing) BOOL editing;
 
 @end
 
@@ -102,7 +108,12 @@ ImageLocation IMAGE_LOCATIONS[] = {
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    return [self imageAnnotationViewForAnnotation:annotation];
+    MKAnnotationView *annotationView;
+    if ([annotation isKindOfClass:ImageAnnotation.class]) {
+        annotationView = [self imageAnnotationViewForAnnotation:annotation];
+    }
+    
+    return annotationView;
 }
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)annotationViews
@@ -123,8 +134,10 @@ ImageLocation IMAGE_LOCATIONS[] = {
         renderer = [self tileOverlayRendererForOverlay:overlay];
     } else if ([overlay isKindOfClass:MKPolygon.class]) {
         renderer = [self polygonRendererForOverlay:overlay];
+    } else if ([overlay isKindOfClass:MKPolyline.class]) {
+        renderer = [self polylineRendererForOverlay:overlay];
     }
-    
+
     return renderer;
 }
 
@@ -326,6 +339,151 @@ ImageLocation IMAGE_LOCATIONS[] = {
     polygonRenderer.lineWidth = 1;
     
     return polygonRenderer;
+}
+
+#pragma mark Editing
+
+- (IBAction)toggleEditing:(UIBarButtonItem *)sender
+{
+    if (!self.isEditing)
+    {
+        self.editing = YES;
+        self.mapView.userInteractionEnabled = NO;
+        self.editBarButtonItem.title = @"Fertig";
+        self.coordinates = [NSMutableArray array];
+    }
+    else
+    {
+        self.editing = NO;
+        self.mapView.userInteractionEnabled = YES;
+        self.editBarButtonItem.title = @"Editieren";
+
+        NSInteger numberOfPoints = [self.coordinates count];
+        if (numberOfPoints > 2)
+        {
+            CLLocationCoordinate2D points[numberOfPoints];
+            for (NSInteger i = 0; i < numberOfPoints; i++)
+                points[i] = [self.coordinates[i] MKCoordinateValue];
+            [self.mapView addOverlay:[MKPolygon polygonWithCoordinates:points count:numberOfPoints]];
+        }
+        
+        if (self.polyLine) {
+            [self.mapView removeOverlay:self.polyLine];
+        }
+        
+        if (self.previousAnnotation) {
+            [self.mapView removeAnnotation:self.previousAnnotation];
+        }
+    }
+}
+
+- (void)addCoordinate:(CLLocationCoordinate2D)coordinate replaceLastObject:(BOOL)replaceLast
+{
+    if (replaceLast && [self.coordinates count] > 0) {
+        [self.coordinates removeLastObject];
+    }
+    
+    [self.coordinates addObject:[NSValue valueWithMKCoordinate:coordinate]];
+    
+    NSInteger numberOfPoints = [self.coordinates count];
+    if (numberOfPoints > 1)
+    {
+        MKPolyline *oldPolyLine = self.polyLine;
+        CLLocationCoordinate2D points[numberOfPoints];
+        for (NSInteger i = 0; i < numberOfPoints; i++) {
+            points[i] = [self.coordinates[i] MKCoordinateValue];
+        }
+        MKPolyline *newPolyLine = [MKPolyline polylineWithCoordinates:points count:numberOfPoints];
+        [self.mapView addOverlay:newPolyLine];
+        self.polyLine = newPolyLine;
+        
+        // note, remove old polyline _after_ adding new one, to avoid flickering effect
+        if (oldPolyLine) {
+            [self.mapView removeOverlay:oldPolyLine];
+        }
+        
+    }
+    
+    MKPointAnnotation *newAnnotation = [[MKPointAnnotation alloc] init];
+    newAnnotation.coordinate = coordinate;
+    [self.mapView addAnnotation:newAnnotation];
+    
+    if (self.previousAnnotation) {
+        [self.mapView removeAnnotation:self.previousAnnotation];
+    }
+    self.previousAnnotation = newAnnotation;
+}
+
+- (BOOL)isClosingPolygonWithCoordinate:(CLLocationCoordinate2D)coordinate
+{
+    if (self.coordinates.count > 2)
+    {
+        CLLocationCoordinate2D startCoordinate = [self.coordinates[0] MKCoordinateValue];
+        CGPoint start = [self.mapView convertCoordinate:startCoordinate toPointToView:self.mapView];
+        CGPoint end = [self.mapView convertCoordinate:coordinate toPointToView:self.mapView];
+        CGFloat xDiff = end.x - start.x;
+        CGFloat yDiff = end.y - start.y;
+        CGFloat distance = sqrtf(xDiff * xDiff + yDiff * yDiff);
+        if (distance < 30.0)
+        {
+            [self.coordinates removeLastObject];
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (!self.isEditing) {
+        return;
+    }
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self.mapView];
+    CLLocationCoordinate2D coordinate = [self.mapView convertPoint:location toCoordinateFromView:self.mapView];
+    [self addCoordinate:coordinate replaceLastObject:NO];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (!self.isEditing) {
+        return;
+    }
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self.mapView];
+    CLLocationCoordinate2D coordinate = [self.mapView convertPoint:location toCoordinateFromView:self.mapView];
+    [self addCoordinate:coordinate replaceLastObject:YES];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (!self.isEditing) {
+        return;
+    }
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self.mapView];
+    CLLocationCoordinate2D coordinate = [self.mapView convertPoint:location toCoordinateFromView:self.mapView];
+    [self addCoordinate:coordinate replaceLastObject:YES];
+    
+    // detect if this coordinate is close enough to starting
+    // coordinate to qualify as closing the polygon
+    if ([self isClosingPolygonWithCoordinate:coordinate]) {
+        [self toggleEditing:nil];
+    }
+}
+
+- (MKPolylineRenderer *)polylineRendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKPolygon *polygon = (MKPolygon *)overlay;
+    MKPolylineRenderer *polylineRenderer = [[MKPolylineRenderer alloc] initWithOverlay:polygon];
+    polylineRenderer.strokeColor = UIColor.blueColor;
+    polylineRenderer.lineWidth = 1;
+    
+    return polylineRenderer;
 }
 
 @end
