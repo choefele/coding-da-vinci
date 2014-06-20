@@ -247,7 +247,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
 - (void)setUpMapOverlay
 {
     NSString *tileDirectory = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Berlin1650"];
-    NSString *tileDirectoryURL = [NSURL fileURLWithPath:tileDirectory isDirectory:YES];
+    NSURL *tileDirectoryURL = [NSURL fileURLWithPath:tileDirectory isDirectory:YES];
     NSString *tileTemplate = [NSString stringWithFormat:@"%@{z}/{x}/{y}.png", tileDirectoryURL];
     self.mapOverlay = [[MKTileOverlay alloc] initWithURLTemplate:tileTemplate];
     self.mapOverlay.geometryFlipped = YES;
