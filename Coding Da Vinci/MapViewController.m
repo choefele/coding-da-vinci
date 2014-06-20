@@ -67,6 +67,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
 @property (nonatomic, getter = isOverlayEnabled) BOOL overlayEnabled;
 @property (nonatomic, copy) NSArray *allAnnotations;
 @property (nonatomic) NSMutableSet *currentAnnotations;
+@property (nonatomic, getter = areAnnotationsEnabled) BOOL annotationsEnabled;
 @property (nonatomic, copy) NSArray *allGeometries;
 @property (nonatomic, getter = areGeometriesEnabled) BOOL geometriesEnabled;
 @property (nonatomic) UIPopoverController *myPopoverController;
@@ -81,6 +82,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
     
     self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(52.5233, 13.4127), MKCoordinateSpanMake(0.0493, 0.1366));
     
+    self.annotationsEnabled = YES;
     [self setUpAnnotations];
     [self updateAnnotations];
     
@@ -149,29 +151,37 @@ ImageLocation IMAGE_LOCATIONS[] = {
 {
     NSUInteger year = (NSUInteger)self.timeSlider.value;
     
-    // Remove map annotations
-    NSArray *currentAnnotations = [self.currentAnnotations copy];
-    for (ImageAnnotation *annotation in currentAnnotations) {
-        if (![annotation isAvailableInYear:year]) {
+    if (self.areAnnotationsEnabled) {
+        // Remove outdated map annotations
+        NSArray *currentAnnotations = [self.currentAnnotations copy];
+        for (ImageAnnotation *annotation in currentAnnotations) {
+            if (![annotation isAvailableInYear:year]) {
+                [self.currentAnnotations removeObject:annotation];
+                [self animateOutAnnotation:annotation];
+            }
+        }
+        
+        // Add available annotations
+        for (ImageAnnotation *annotation in self.allAnnotations) {
+            if ([annotation isAvailableInYear:year]) {
+                [self.currentAnnotations addObject:annotation];
+                [self.mapView addAnnotation:annotation];
+            }
+        }
+    } else {
+        // Remove all annotations
+        NSArray *currentAnnotations = [self.currentAnnotations copy];
+        for (ImageAnnotation *annotation in currentAnnotations) {
             [self.currentAnnotations removeObject:annotation];
-            
-            // Animate annotations that get removed
-            [UIView animateWithDuration:0.5 animations:^{
-                MKAnnotationView *annotationView = [self.mapView viewForAnnotation:annotation];
-                annotationView.alpha = 0.0;
-            } completion:^(BOOL finished) {
-                [self.mapView removeAnnotation:annotation];
-            }];
+            [self animateOutAnnotation:annotation];
         }
     }
-    
-    // Add available annotations
-    for (ImageAnnotation *annotation in self.allAnnotations) {
-        if ([annotation isAvailableInYear:year]) {
-            [self.currentAnnotations addObject:annotation];
-            [self.mapView addAnnotation:annotation];
-        }
-    }
+}
+
+- (IBAction)toggleImages:(UIBarButtonItem *)sender
+{
+    self.annotationsEnabled = !self.areAnnotationsEnabled;
+    [self updateAnnotations];
 }
 
 - (IBAction)timeChanged:(UISlider *)sender
@@ -206,6 +216,16 @@ ImageLocation IMAGE_LOCATIONS[] = {
         for (MKAnnotationView *annotationView in annotationViews) {
             annotationView.alpha = 1.0;
         }
+    }];
+}
+
+- (void)animateOutAnnotation:(id<MKAnnotation>)annotation
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        MKAnnotationView *annotationView = [self.mapView viewForAnnotation:annotation];
+        annotationView.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [self.mapView removeAnnotation:annotation];
     }];
 }
 
