@@ -311,7 +311,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
 //        unionPolygon  = [unionPolygon polygonFromUnionWithPolygon:polygon];
 //    }
 
-    NSURL *URL = [[NSBundle mainBundle] URLForResource:@"Shape" withExtension:@"geojson"];
+    NSURL *URL = [[NSBundle mainBundle] URLForResource:@"Berlin" withExtension:@"geojson"];
     NSData *data = [NSData dataWithContentsOfURL:URL];
     NSDictionary *geoJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     MKShape *geometry = [GeoJSONSerialization shapeFromGeoJSONFeature:geoJSON error:NULL];

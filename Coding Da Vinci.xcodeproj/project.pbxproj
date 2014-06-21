@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		080EFD20F1624137BB286BD6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC44FEC64A43C49D7A22E3 /* libPods.a */; };
-		62480E991950D1DF00C6CE9A /* Berlin.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62480E971950D1DF00C6CE9A /* Berlin.geojson */; };
-		624AD9641954CAD2002EAD24 /* Shape.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 624AD9631954CAD2002EAD24 /* Shape.geojson */; };
-		62661474193A67DD00BE454D /* Berlin1650 in Resources */ = {isa = PBXBuildFile; fileRef = 62661473193A67DD00BE454D /* Berlin1650 */; };
-		6271CB3B19537FE70039E7C6 /* Berlin-Ortsteile.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 6271CB3A19537FE70039E7C6 /* Berlin-Ortsteile.geojson */; };
+		62325C541956022500E8BB56 /* Berlin-Ortsteile.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62325C511956022500E8BB56 /* Berlin-Ortsteile.geojson */; };
+		62325C551956022500E8BB56 /* Berlin.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62325C521956022500E8BB56 /* Berlin.geojson */; };
+		62325C561956022500E8BB56 /* Shape.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62325C531956022500E8BB56 /* Shape.geojson */; };
+		62325C5C1956028F00E8BB56 /* Berlin1800 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C581956028F00E8BB56 /* Berlin1800 */; };
+		62325C5D1956028F00E8BB56 /* Berlin1750 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C591956028F00E8BB56 /* Berlin1750 */; };
+		62325C5E1956028F00E8BB56 /* Berlin1690 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C5A1956028F00E8BB56 /* Berlin1690 */; };
+		62325C5F1956028F00E8BB56 /* Berlin1650 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C5B1956028F00E8BB56 /* Berlin1650 */; };
 		628ED30E192602AC00C8EF43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30D192602AC00C8EF43 /* OpenGLES.framework */; };
 		628ED3101926044100C8EF43 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30F1926044100C8EF43 /* libstdc++.dylib */; };
 		628ED3131926057500C8EF43 /* MorphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628ED3121926057500C8EF43 /* MorphViewController.m */; };
@@ -67,10 +70,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		62480E971950D1DF00C6CE9A /* Berlin.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Berlin.geojson; sourceTree = "<group>"; };
-		624AD9631954CAD2002EAD24 /* Shape.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Shape.geojson; sourceTree = "<group>"; };
-		62661473193A67DD00BE454D /* Berlin1650 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1650; sourceTree = "<group>"; };
-		6271CB3A19537FE70039E7C6 /* Berlin-Ortsteile.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Berlin-Ortsteile.geojson"; sourceTree = "<group>"; };
+		62325C511956022500E8BB56 /* Berlin-Ortsteile.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Berlin-Ortsteile.geojson"; sourceTree = "<group>"; };
+		62325C521956022500E8BB56 /* Berlin.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Berlin.geojson; sourceTree = "<group>"; };
+		62325C531956022500E8BB56 /* Shape.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Shape.geojson; sourceTree = "<group>"; };
+		62325C581956028F00E8BB56 /* Berlin1800 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1800; sourceTree = "<group>"; };
+		62325C591956028F00E8BB56 /* Berlin1750 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1750; sourceTree = "<group>"; };
+		62325C5A1956028F00E8BB56 /* Berlin1690 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1690; sourceTree = "<group>"; };
+		62325C5B1956028F00E8BB56 /* Berlin1650 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1650; sourceTree = "<group>"; };
 		628ED30D192602AC00C8EF43 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		628ED30F1926044100C8EF43 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		628ED3111926057500C8EF43 /* MorphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphViewController.h; sourceTree = "<group>"; };
@@ -157,15 +163,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		62480E951950D1DF00C6CE9A /* Geometries */ = {
+		62325C501956022500E8BB56 /* Geometries */ = {
 			isa = PBXGroup;
 			children = (
-				624AD9631954CAD2002EAD24 /* Shape.geojson */,
-				6271CB3A19537FE70039E7C6 /* Berlin-Ortsteile.geojson */,
-				62480E971950D1DF00C6CE9A /* Berlin.geojson */,
+				62325C511956022500E8BB56 /* Berlin-Ortsteile.geojson */,
+				62325C521956022500E8BB56 /* Berlin.geojson */,
+				62325C531956022500E8BB56 /* Shape.geojson */,
 			);
-			name = Geometries;
-			path = ../Geometries;
+			path = Geometries;
+			sourceTree = "<group>";
+		};
+		62325C571956025900E8BB56 /* MapOverlays */ = {
+			isa = PBXGroup;
+			children = (
+				62325C5B1956028F00E8BB56 /* Berlin1650 */,
+				62325C5A1956028F00E8BB56 /* Berlin1690 */,
+				62325C591956028F00E8BB56 /* Berlin1750 */,
+				62325C581956028F00E8BB56 /* Berlin1800 */,
+			);
+			path = MapOverlays;
 			sourceTree = "<group>";
 		};
 		62B1C3A4190D420D0027A90F = {
@@ -222,8 +238,8 @@
 				628ED3121926057500C8EF43 /* MorphViewController.m */,
 				62B1C3CB190D420D0027A90F /* Images.xcassets */,
 				62FBF646190D6B1B00D248B6 /* Images */,
-				62661473193A67DD00BE454D /* Berlin1650 */,
-				62480E951950D1DF00C6CE9A /* Geometries */,
+				62325C501956022500E8BB56 /* Geometries */,
+				62325C571956025900E8BB56 /* MapOverlays */,
 				62B1C3B7190D420D0027A90F /* Supporting Files */,
 			);
 			path = "Coding Da Vinci";
@@ -336,23 +352,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				62B1C3C7190D420D0027A90F /* Main_iPad.storyboard in Resources */,
+				62325C5D1956028F00E8BB56 /* Berlin1750 in Resources */,
+				62325C541956022500E8BB56 /* Berlin-Ortsteile.geojson in Resources */,
+				62325C551956022500E8BB56 /* Berlin.geojson in Resources */,
 				62FBF671190D71D100D248B6 /* Platz_am_Zeughaus-VII-59-513-x.jpg in Resources */,
-				62661474193A67DD00BE454D /* Berlin1650 in Resources */,
 				62B1C3CC190D420D0027A90F /* Images.xcassets in Resources */,
+				62325C5F1956028F00E8BB56 /* Berlin1650 in Resources */,
 				62FBF673190D71D100D248B6 /* Nauener_Platz-GHZ-77-13.jpg in Resources */,
-				624AD9641954CAD2002EAD24 /* Shape.geojson in Resources */,
 				62FBF686190D71D100D248B6 /* Börse-IV-61-1531-S.jpg in Resources */,
 				62FBF681190D71D100D248B6 /* Einzug_des_Königs-GDR-64-11-216.jpg in Resources */,
-				6271CB3B19537FE70039E7C6 /* Berlin-Ortsteile.geojson in Resources */,
 				62FBF687190D71D100D248B6 /* Blick_von_Oberbaumbrücke-VII-59-408-W.jpg in Resources */,
 				62FBF682190D71D100D248B6 /* Der_Ochsen-Platz-GDR-64-11-171.jpg in Resources */,
 				629A62541923EF9500DECB67 /* osterdeich-bremen.jpg in Resources */,
 				62FBF66E190D71D100D248B6 /* Ufer_Stralauer_Strasse-GHZ-78-26.jpg in Resources */,
+				62325C5C1956028F00E8BB56 /* Berlin1800 in Resources */,
 				62FBF68B190D71D100D248B6 /* Rondell-GHZ-74-12.jpg in Resources */,
 				62FBF684190D71D100D248B6 /* Das_Brandenburger_Tor-GDR-65-7-1.jpg in Resources */,
 				62FBF675190D71D100D248B6 /* Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg in Resources */,
 				62FBF678190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg in Resources */,
 				62FBF67F190D71D100D248B6 /* Fischerhütte-SM-2012-2093.jpg in Resources */,
+				62325C561956022500E8BB56 /* Shape.geojson in Resources */,
 				629A62531923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg in Resources */,
 				62FBF689190D71D100D248B6 /* Avus_Funkturm-SM-2013-0958.jpg in Resources */,
 				62FBF67D190D71D100D248B6 /* Hackescher_Markt-VII-67-294-W.jpg in Resources */,
@@ -363,7 +382,6 @@
 				62FBF685190D71D100D248B6 /* Cölln_Jungfernbrücke-GHZ-64-3-13.jpg in Resources */,
 				62FBF679190D71D100D248B6 /* Landsbergerplatz-IV-61-3475-V.jpg in Resources */,
 				62FBF672190D71D100D248B6 /* Panorama_von_Berlin-GDR-64-11-108.jpg in Resources */,
-				62480E991950D1DF00C6CE9A /* Berlin.geojson in Resources */,
 				62FBF66F190D71D100D248B6 /* Schlossbrücke-VII-62-424-a-W.jpg in Resources */,
 				62FBF68A190D71D100D248B6 /* Hamburger_Bahnhof-VII-97-341-a-W.jpg in Resources */,
 				62FBF67A190D71D100D248B6 /* Königsstrasse-VII-60-1489-W.jpg in Resources */,
@@ -374,6 +392,7 @@
 				62FBF683190D71D100D248B6 /* Das_Leipziger_Tor-GDR-74-55.jpg in Resources */,
 				62FBF680190D71D100D248B6 /* Filmfestspiele_Kudamm-SM-2013-1519.jpg in Resources */,
 				62FBF66D190D71D100D248B6 /* Zoo_Eingang-IV-64-1294-V.jpg in Resources */,
+				62325C5E1956028F00E8BB56 /* Berlin1690 in Resources */,
 				62FBF67C190D71D100D248B6 /* Jerusalemkirche-GHZ-74-14.jpg in Resources */,
 				62B1C3BB190D420D0027A90F /* InfoPlist.strings in Resources */,
 			);
