@@ -1,0 +1,54 @@
+-z zoom
+-r resampling
+
+oben links, unten links, oben rechts, unten rechts
+gdalinfo Berlin\ um\ 1800\ entz.tif
+
+Rechts/Hochwert unten links 23100/19600, oben rechts 26300/22600
+gdal_translate -of VRT -a_srs EPSG:3068 \
+-gcp 0 0 23100 22600 \
+-gcp 0 3511 23100 19600 \
+-gcp 3678 0 26300 22600 \
+-gcp 3678 3511 26300 19600 \
+Berlin\ um\ 1650\ entz.tif Berlin1650.vrt
+
+gdal2tiles.py -p mercator -z 0-16 Berlin1650.vrt
+
+--
+
+Rechts/Hochwert unten links 23100/19600, oben rechts 26300/22600
+gdal_translate -of VRT -a_srs EPSG:3068 \
+-gcp 0 0 23100 22600 \
+-gcp 0 3497 23100 19600 \
+-gcp 3662 0 26300 22600 \
+-gcp 3662 3497 26300 19600 \
+Berlin\ um\ 1690\ entz.tif Berlin1690.vrt
+
+gdal2tiles.py -p mercator -z 0-16 Berlin1690.vrt
+
+--
+
+Rechts/Hochwert unten links 21600/17120, oben rechts 28400/23820
+
+gdal_translate -of VRT -a_srs EPSG:3068 \
+-gcp 0 0 21600 23820 \
+-gcp 0 7905 21600 17120 \
+-gcp 8547 0 28400 23820 \
+-gcp 8547 7905 28400 17120 \
+Berlin\ um\ 1750\ entz.tif Berlin1750.vrt
+
+gdal2tiles.py -p mercator -z 0-16 Berlin1750.vrt
+
+--
+
+Rechts/Hochwert unten links 21600/17120, oben rechts 28400/23820
+
+gdal_translate -of VRT -a_srs EPSG:3068 \
+-gcp 0 0 21600 23820 \
+-gcp 0 7912 21600 17120 \
+-gcp 8548 0 28400 23820 \
+-gcp 8548 7912 28400 17120 \
+Berlin\ um\ 1800\ entz.tif Berlin1800.vrt
+
+gdal2tiles.py -p mercator -z 0-16 Berlin1800.vrt
+
