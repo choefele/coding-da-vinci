@@ -52,7 +52,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="qoS-Zd-A3Z"/>
                                     <barButtonItem style="plain" id="YG7-1d-e64">
-                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2000" minValue="1400" maxValue="2000" id="541-YN-cra">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2000" minValue="1400" maxValue="2000" id="541-YN-cra" customClass="ASValueTrackingSlider">
                                             <rect key="frame" x="343" y="7" width="394" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>

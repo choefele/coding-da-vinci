@@ -15,6 +15,7 @@
 #import <MapKit/MapKit.h>
 #import <GeoJSONSerialization/GeoJSONSerialization.h>
 #import <MKPolygon-GPC/MKPolygon+GPC.h>
+#import <ASValueTrackingSlider/ASValueTrackingSlider.h>
 
 typedef struct {
     CLLocationCoordinate2D coordinate;
@@ -61,7 +62,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
 @interface MapViewController ()<MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UISlider *timeSlider;
+@property (weak, nonatomic) IBOutlet ASValueTrackingSlider *timeSlider;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editBarButtonItem;
 
 @property (nonatomic) MKTileOverlay *mapOverlay;
@@ -87,6 +88,13 @@ ImageLocation IMAGE_LOCATIONS[] = {
     [super viewDidLoad];
     
     self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(52.5233, 13.4127), MKCoordinateSpanMake(0.0493, 0.1366));
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.maximumFractionDigits = 0;
+    formatter.minimumFractionDigits = 0;
+    formatter.usesGroupingSeparator = NO;
+    self.timeSlider.numberFormatter = formatter;
+    self.timeSlider.popUpViewColor = UIColor.grayColor;
     
     self.imageAnnotationsEnabled = YES;
     [self setUpImageAnnotations];
