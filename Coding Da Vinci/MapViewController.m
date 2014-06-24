@@ -22,8 +22,8 @@ typedef struct {
     NSUInteger yearConstruction;
     NSUInteger yearDemolition;
     char *path;
-} ImageLocation;
-ImageLocation IMAGE_LOCATIONS[] = {
+} ImageAnnotationData;
+ImageAnnotationData IMAGE_ANNOTATIONS[] = {
     {52.505615, 13.339771, 1844, NSUIntegerMax, "Zoo_Eingang-IV-64-1294-V.jpg"},
     {52.515078, 13.413831, 1890, NSUIntegerMax, "Ufer_Stralauer_Strasse-GHZ-78-26.jpg"},    // §
     {52.517666, 13.398577, 1821, NSUIntegerMax, "Schlossbrücke-VII-62-424-a-W.jpg"},
@@ -59,14 +59,23 @@ ImageLocation IMAGE_LOCATIONS[] = {
 // Date of building dominating the image
 // Panoramas, unknown -> date image (§)
 
+typedef struct {
+    NSUInteger year;
+    char *path;
+} MapOverlayData;
+MapOverlayData MAP_OVERLAYS[] = {
+    {1400, "Berlin1650"},
+    {1690, "Berlin1690"},
+    {1750, "Berlin1750"},
+    {1800, "Berlin1800"}
+};
+
 @interface MapViewController ()<MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet ASValueTrackingSlider *timeSlider;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editBarButtonItem;
 
-@property (nonatomic) MKTileOverlay *mapOverlay;
-@property (nonatomic, getter = isMapOverlayEnabled) BOOL mapOverlayEnabled;
 @property (nonatomic, copy) NSArray *allImageAnnotations;
 @property (nonatomic) NSMutableSet *currentImageAnnotations;
 @property (nonatomic, getter = areImageAnnotationsEnabled) BOOL imageAnnotationsEnabled;
@@ -74,10 +83,15 @@ ImageLocation IMAGE_LOCATIONS[] = {
 @property (nonatomic, getter = areGeometriesEnabled) BOOL geometriesEnabled;
 @property (nonatomic) UIPopoverController *myPopoverController;
 
+@property (nonatomic) MKTileOverlay *mapOverlay;
+@property (nonatomic, getter = isMapOverlayEnabled) BOOL mapOverlayEnabled;
+@property (nonatomic) NSString *currentMapOverlayPath;
+
 @property (nonatomic) NSMutableArray *coordinates;
 @property (nonatomic) MKPolyline *polyLine;
 @property (nonatomic) MKPointAnnotation *previousAnnotation;
 @property (nonatomic, getter = isEditing) BOOL editing;
+@property (nonatomic) MKPolygon *currentPolygon;
 
 @end
 
@@ -105,6 +119,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
     
     [self setUpGeometries];
     [self updateGeometries];
+    self.coordinates = [NSMutableArray array];
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -120,6 +135,12 @@ ImageLocation IMAGE_LOCATIONS[] = {
     NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[dirPaths objectAtIndex:0] stringByAppendingPathComponent:fileName];
     [jsonData writeToFile:filePath atomically:YES];
+}
+
+- (NSUInteger)year
+{
+    NSUInteger year = (NSUInteger)self.timeSlider.value;
+    return year;
 }
 
 #pragma mark MKMapViewDelegate
@@ -159,82 +180,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
     return renderer;
 }
 
-#pragma mark Image Annotations
-
-- (void)setUpImageAnnotations
-{
-    NSMutableArray *annotations = [NSMutableArray array];
-    for (NSUInteger i = 0; i < sizeof(IMAGE_LOCATIONS) / sizeof(ImageLocation); i++) {
-        ImageLocation imageLocation = IMAGE_LOCATIONS[i];
-        ImageAnnotation *annotation = [[ImageAnnotation alloc] init];
-        annotation.coordinate = imageLocation.coordinate;
-        annotation.imageFilePath = [NSString stringWithUTF8String:imageLocation.path];
-        annotation.yearConstruction = imageLocation.yearConstruction;
-        annotation.yearDemolition = imageLocation.yearDemolition;
-        
-        [annotations addObject:annotation];
-    }
-    self.allImageAnnotations = annotations;
-    self.currentImageAnnotations = [NSMutableSet set];
-}
-
-- (void)updateImageAnnotations
-{
-    NSUInteger year = (NSUInteger)self.timeSlider.value;
-    
-    if (self.areImageAnnotationsEnabled) {
-        // Remove outdated map annotations
-        NSArray *currentAnnotations = [self.currentImageAnnotations copy];
-        for (ImageAnnotation *annotation in currentAnnotations) {
-            if (![annotation isAvailableInYear:year]) {
-                [self.currentImageAnnotations removeObject:annotation];
-                [self animateOutAnnotation:annotation];
-            }
-        }
-        
-        // Add available annotations
-        for (ImageAnnotation *annotation in self.allImageAnnotations) {
-            if ([annotation isAvailableInYear:year]) {
-                [self.currentImageAnnotations addObject:annotation];
-                [self.mapView addAnnotation:annotation];
-            }
-        }
-    } else {
-        // Remove all annotations
-        NSArray *currentAnnotations = [self.currentImageAnnotations copy];
-        for (ImageAnnotation *annotation in currentAnnotations) {
-            [self.currentImageAnnotations removeObject:annotation];
-            [self animateOutAnnotation:annotation];
-        }
-    }
-}
-
-- (IBAction)toggleImageAnnotations:(UIBarButtonItem *)sender
-{
-    self.imageAnnotationsEnabled = !self.areImageAnnotationsEnabled;
-    [self updateImageAnnotations];
-}
-
-- (IBAction)timeChanged:(UISlider *)sender
-{
-    [self updateImageAnnotations];
-}
-
-- (MKAnnotationView *)imageAnnotationViewForAnnotation:(id<MKAnnotation>)annotation
-{
-    static NSString *identifier = @"identifier";
-    
-    ImageAnnotationView *imageAnnotationView = (ImageAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    if (imageAnnotationView == nil) {
-        imageAnnotationView = [[ImageAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-    }
-    
-    ImageAnnotation *imageAnnotation = (ImageAnnotation *)annotation;
-    UIImage *image = [UIImage imageNamed:imageAnnotation.imageFilePath];
-    imageAnnotationView.image = image;
-    
-    return imageAnnotationView;
-}
+#pragma mark Animations
 
 - (void)animateInAnnotationViews:(NSArray *)annotationViews
 {
@@ -260,6 +206,82 @@ ImageLocation IMAGE_LOCATIONS[] = {
     }];
 }
 
+#pragma mark Image Annotations
+
+- (void)setUpImageAnnotations
+{
+    NSMutableArray *annotations = [NSMutableArray array];
+    for (NSUInteger i = 0; i < sizeof(IMAGE_ANNOTATIONS) / sizeof(ImageAnnotationData); i++) {
+        ImageAnnotationData imageAnnotationData = IMAGE_ANNOTATIONS[i];
+        ImageAnnotation *annotation = [[ImageAnnotation alloc] init];
+        annotation.coordinate = imageAnnotationData.coordinate;
+        annotation.imageFilePath = [NSString stringWithUTF8String:imageAnnotationData.path];
+        annotation.yearConstruction = imageAnnotationData.yearConstruction;
+        annotation.yearDemolition = imageAnnotationData.yearDemolition;
+        
+        [annotations addObject:annotation];
+    }
+    self.allImageAnnotations = annotations;
+    self.currentImageAnnotations = [NSMutableSet set];
+}
+
+- (void)updateImageAnnotations
+{
+    if (self.areImageAnnotationsEnabled) {
+        // Remove outdated map annotations
+        NSArray *currentAnnotations = [self.currentImageAnnotations copy];
+        for (ImageAnnotation *annotation in currentAnnotations) {
+            if (![annotation isAvailableInYear:self.year]) {
+                [self.currentImageAnnotations removeObject:annotation];
+                [self animateOutAnnotation:annotation];
+            }
+        }
+        
+        // Add available annotations
+        for (ImageAnnotation *annotation in self.allImageAnnotations) {
+            if ([annotation isAvailableInYear:self.year]) {
+                [self.currentImageAnnotations addObject:annotation];
+                [self.mapView addAnnotation:annotation];
+            }
+        }
+    } else {
+        // Remove all annotations
+        NSArray *currentAnnotations = [self.currentImageAnnotations copy];
+        for (ImageAnnotation *annotation in currentAnnotations) {
+            [self.currentImageAnnotations removeObject:annotation];
+            [self animateOutAnnotation:annotation];
+        }
+    }
+}
+
+- (IBAction)toggleImageAnnotations:(UIBarButtonItem *)sender
+{
+    self.imageAnnotationsEnabled = !self.areImageAnnotationsEnabled;
+    [self updateImageAnnotations];
+}
+
+- (IBAction)timeChanged:(UISlider *)sender
+{
+    [self updateImageAnnotations];
+    [self updateMapOverlay];
+}
+
+- (MKAnnotationView *)imageAnnotationViewForAnnotation:(id<MKAnnotation>)annotation
+{
+    static NSString *identifier = @"identifier";
+    
+    ImageAnnotationView *imageAnnotationView = (ImageAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    if (imageAnnotationView == nil) {
+        imageAnnotationView = [[ImageAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    }
+    
+    ImageAnnotation *imageAnnotation = (ImageAnnotation *)annotation;
+    UIImage *image = [UIImage imageNamed:imageAnnotation.imageFilePath];
+    imageAnnotationView.image = image;
+    
+    return imageAnnotationView;
+}
+
 - (void)didSelectImageAnnotationView:(MKAnnotationView *)view
 {
     [self.mapView deselectAnnotation:view.annotation animated:NO];
@@ -277,17 +299,33 @@ ImageLocation IMAGE_LOCATIONS[] = {
 
 - (void)setUpMapOverlay
 {
-    NSString *tileDirectory = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Berlin1650"];
-    NSURL *tileDirectoryURL = [NSURL fileURLWithPath:tileDirectory isDirectory:YES];
-    NSString *tileTemplate = [NSString stringWithFormat:@"%@{z}/{x}/{y}.png", tileDirectoryURL];
-    self.mapOverlay = [[MKTileOverlay alloc] initWithURLTemplate:tileTemplate];
-    self.mapOverlay.geometryFlipped = YES;
 }
 
 - (void)updateMapOverlay
 {
     if (self.isMapOverlayEnabled) {
-        [self.mapView addOverlay:self.mapOverlay];
+        NSString *path;
+        for (NSUInteger i = 0; i < sizeof(MAP_OVERLAYS) / sizeof(MapOverlayData); i++) {
+            MapOverlayData mapOverlayData = MAP_OVERLAYS[i];
+            if (mapOverlayData.year > self.year) {
+                break;
+            }
+            
+            path = [NSString stringWithUTF8String:mapOverlayData.path];
+        }
+        
+        if (![path isEqualToString:self.currentMapOverlayPath]) {
+            [self.mapView removeOverlay:self.mapOverlay];
+            self.currentMapOverlayPath = path;
+
+            NSString *tileDirectory = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path];
+            NSURL *tileDirectoryURL = [NSURL fileURLWithPath:tileDirectory isDirectory:YES];
+            NSString *tileTemplate = [NSString stringWithFormat:@"%@{z}/{x}/{y}.png", tileDirectoryURL];
+            self.mapOverlay = [[MKTileOverlay alloc] initWithURLTemplate:tileTemplate];
+            self.mapOverlay.geometryFlipped = YES;
+            
+            [self.mapView addOverlay:self.mapOverlay];
+        }
     } else {
         [self.mapView removeOverlay:self.mapOverlay];
     }
@@ -319,7 +357,7 @@ ImageLocation IMAGE_LOCATIONS[] = {
 //        unionPolygon  = [unionPolygon polygonFromUnionWithPolygon:polygon];
 //    }
 
-    NSURL *URL = [[NSBundle mainBundle] URLForResource:@"Berlin" withExtension:@"geojson"];
+    NSURL *URL = [[NSBundle mainBundle] URLForResource:@"Berlin1650" withExtension:@"geojson"];
     NSData *data = [NSData dataWithContentsOfURL:URL];
     NSDictionary *geoJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     MKShape *geometry = [GeoJSONSerialization shapeFromGeoJSONFeature:geoJSON error:NULL];
@@ -361,7 +399,6 @@ ImageLocation IMAGE_LOCATIONS[] = {
         self.editing = YES;
         self.mapView.userInteractionEnabled = NO;
         self.editBarButtonItem.title = @"Fertig";
-        self.coordinates = [NSMutableArray array];
     }
     else
     {
@@ -377,9 +414,11 @@ ImageLocation IMAGE_LOCATIONS[] = {
                 points[i] = [self.coordinates[i] MKCoordinateValue];
             }
             MKPolygon *polygon = [MKPolygon polygonWithCoordinates:points count:numberOfPoints];
+            [self.mapView removeOverlay:self.currentPolygon];
             [self.mapView addOverlay:polygon];
-            
             [self writeShape:polygon toFileWithName:@"Shape.geojson"];
+            
+            self.currentPolygon = polygon;
         }
         
         if (self.polyLine) {
@@ -431,6 +470,8 @@ ImageLocation IMAGE_LOCATIONS[] = {
 
 - (BOOL)isClosingPolygonWithCoordinate:(CLLocationCoordinate2D)coordinate
 {
+    BOOL result = NO;
+    
     if (self.coordinates.count > 2)
     {
         CLLocationCoordinate2D startCoordinate = [self.coordinates[0] MKCoordinateValue];
@@ -439,14 +480,10 @@ ImageLocation IMAGE_LOCATIONS[] = {
         CGFloat xDiff = end.x - start.x;
         CGFloat yDiff = end.y - start.y;
         CGFloat distance = sqrtf(xDiff * xDiff + yDiff * yDiff);
-        if (distance < 30.0)
-        {
-            [self.coordinates removeLastObject];
-            return YES;
-        }
+        result = (distance < 30.0);
     }
     
-    return NO;
+    return result;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -484,9 +521,9 @@ ImageLocation IMAGE_LOCATIONS[] = {
     CLLocationCoordinate2D coordinate = [self.mapView convertPoint:location toCoordinateFromView:self.mapView];
     [self addCoordinate:coordinate replaceLastObject:YES];
     
-    // detect if this coordinate is close enough to starting
-    // coordinate to qualify as closing the polygon
+    // Detect if this coordinate is close enough to starting coordinate to qualify as closing the polygon
     if ([self isClosingPolygonWithCoordinate:coordinate]) {
+        [self.coordinates removeLastObject];
         [self toggleEditing:nil];
     }
 }

@@ -15,6 +15,7 @@
 		62325C5D1956028F00E8BB56 /* Berlin1750 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C591956028F00E8BB56 /* Berlin1750 */; };
 		62325C5E1956028F00E8BB56 /* Berlin1690 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C5A1956028F00E8BB56 /* Berlin1690 */; };
 		62325C5F1956028F00E8BB56 /* Berlin1650 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C5B1956028F00E8BB56 /* Berlin1650 */; };
+		625370F9195990BB0026E99E /* Berlin1650.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 625370F8195990BB0026E99E /* Berlin1650.geojson */; };
 		628ED30E192602AC00C8EF43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30D192602AC00C8EF43 /* OpenGLES.framework */; };
 		628ED3101926044100C8EF43 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30F1926044100C8EF43 /* libstdc++.dylib */; };
 		628ED3131926057500C8EF43 /* MorphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628ED3121926057500C8EF43 /* MorphViewController.m */; };
@@ -77,6 +78,7 @@
 		62325C591956028F00E8BB56 /* Berlin1750 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1750; sourceTree = "<group>"; };
 		62325C5A1956028F00E8BB56 /* Berlin1690 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1690; sourceTree = "<group>"; };
 		62325C5B1956028F00E8BB56 /* Berlin1650 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1650; sourceTree = "<group>"; };
+		625370F8195990BB0026E99E /* Berlin1650.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Berlin1650.geojson; sourceTree = "<group>"; };
 		628ED30D192602AC00C8EF43 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		628ED30F1926044100C8EF43 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		628ED3111926057500C8EF43 /* MorphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphViewController.h; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		62325C501956022500E8BB56 /* Geometries */ = {
 			isa = PBXGroup;
 			children = (
+				625370F8195990BB0026E99E /* Berlin1650.geojson */,
 				62325C511956022500E8BB56 /* Berlin-Ortsteile.geojson */,
 				62325C521956022500E8BB56 /* Berlin.geojson */,
 				62325C531956022500E8BB56 /* Shape.geojson */,
@@ -354,6 +357,7 @@
 				62B1C3C7190D420D0027A90F /* Main_iPad.storyboard in Resources */,
 				62325C5D1956028F00E8BB56 /* Berlin1750 in Resources */,
 				62325C541956022500E8BB56 /* Berlin-Ortsteile.geojson in Resources */,
+				625370F9195990BB0026E99E /* Berlin1650.geojson in Resources */,
 				62325C551956022500E8BB56 /* Berlin.geojson in Resources */,
 				62FBF671190D71D100D248B6 /* Platz_am_Zeughaus-VII-59-513-x.jpg in Resources */,
 				62B1C3CC190D420D0027A90F /* Images.xcassets in Resources */,

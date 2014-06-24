@@ -35,7 +35,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gDa-uE-DeN"/>
                                     <barButtonItem title="Karte" id="ajr-0J-nOR">
                                         <connections>
-                                            <action selector="toggleMapOverlay:" destination="BYZ-38-t0r" id="Tdz-5N-gr4"/>
+                                            <action selector="toggleMapOverlay:" destination="BYZ-38-t0r" id="Dd3-rJ-3rM"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Cdo-bb-OZW"/>
