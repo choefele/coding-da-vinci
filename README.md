@@ -1,3 +1,5 @@
+Wer wissen will, wie es weiter geht mit diesem Projekt kann sich auf der [Alt-Berlin Webseite](http://altberlinapp.de) für unseren Newsletter anmelden.
+
 Geocodierte Bilder
 ==================
 
