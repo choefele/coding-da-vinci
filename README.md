@@ -33,7 +33,9 @@ gdal2tiles.py -p mercator -k Berlin1650.vrt
 Geometrien
 ==========
 
-[Geometrien der Ortsteile Berlins](http://daten.berlin.de/datensaetze/geometrien-der-ortsteile-von-berlin-stand-072012)
+[Geometrien der Ortsteile Berlins](http://daten.berlin.de/datensaetze/geometrien-der-ortsteile-von-berlin-stand-072012) und historische Ausdehnung von Karten abgepaust.
+
+![Geometrien](https://raw.githubusercontent.com/choefele/coding-da-vinci/master/Geometries.gif)
 
 ````
 npm install -g togeojson
