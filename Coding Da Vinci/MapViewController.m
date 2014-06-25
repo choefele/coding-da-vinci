@@ -70,6 +70,17 @@ MapOverlayData MAP_OVERLAYS[] = {
     {1800, "Berlin1800"}
 };
 
+typedef struct {
+    NSUInteger year;
+    char *path;
+} GeometryData;
+GeometryData GEOMETRIES[] = {
+    {1400, "Berlin1650"},
+    {1690, "Berlin1690"},
+    {1750, "Berlin1750"},
+    {1800, "Berlin-heute"}
+};
+
 @interface MapViewController ()<MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -79,13 +90,15 @@ MapOverlayData MAP_OVERLAYS[] = {
 @property (nonatomic, copy) NSArray *allImageAnnotations;
 @property (nonatomic) NSMutableSet *currentImageAnnotations;
 @property (nonatomic, getter = areImageAnnotationsEnabled) BOOL imageAnnotationsEnabled;
-@property (nonatomic, copy) NSArray *allGeometries;
-@property (nonatomic, getter = areGeometriesEnabled) BOOL geometriesEnabled;
 @property (nonatomic) UIPopoverController *myPopoverController;
 
 @property (nonatomic) MKTileOverlay *mapOverlay;
 @property (nonatomic, getter = isMapOverlayEnabled) BOOL mapOverlayEnabled;
 @property (nonatomic) NSString *currentMapOverlayPath;
+
+@property (nonatomic) MKPolygon *geometry;
+@property (nonatomic, getter = areGeometriesEnabled) BOOL geometriesEnabled;
+@property (nonatomic) NSString *currentGeometryPath;
 
 @property (nonatomic) NSMutableArray *coordinates;
 @property (nonatomic) MKPolyline *polyLine;
@@ -264,6 +277,7 @@ MapOverlayData MAP_OVERLAYS[] = {
 {
     [self updateImageAnnotations];
     [self updateMapOverlay];
+    [self updateGeometries];
 }
 
 - (MKAnnotationView *)imageAnnotationViewForAnnotation:(id<MKAnnotation>)annotation
@@ -356,21 +370,35 @@ MapOverlayData MAP_OVERLAYS[] = {
 //    for (MKPolygon *polygon in geometries) {
 //        unionPolygon  = [unionPolygon polygonFromUnionWithPolygon:polygon];
 //    }
-
-    NSURL *URL = [[NSBundle mainBundle] URLForResource:@"Berlin1650" withExtension:@"geojson"];
-    NSData *data = [NSData dataWithContentsOfURL:URL];
-    NSDictionary *geoJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-    MKShape *geometry = [GeoJSONSerialization shapeFromGeoJSONFeature:geoJSON error:NULL];
-    
-    self.allGeometries = @[geometry];
 }
 
 - (void)updateGeometries
 {
     if (self.areGeometriesEnabled) {
-        [self.mapView addOverlays:self.allGeometries];
+        NSString *path;
+        for (NSUInteger i = 0; i < sizeof(GEOMETRIES) / sizeof(GeometryData); i++) {
+            GeometryData geometryData = GEOMETRIES[i];
+            if (geometryData.year > self.year) {
+                break;
+            }
+            
+            path = [NSString stringWithUTF8String:geometryData.path];
+        }
+        
+        if (![path isEqualToString:self.currentGeometryPath]) {
+            [self.mapView removeOverlay:self.geometry];
+            self.currentGeometryPath = path;
+            
+            NSURL *URL = [[NSBundle mainBundle] URLForResource:path withExtension:@"geojson"];
+            NSData *data = [NSData dataWithContentsOfURL:URL];
+            NSDictionary *geoJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            MKShape *geometry = [GeoJSONSerialization shapeFromGeoJSONFeature:geoJSON error:NULL];
+            self.geometry = (MKPolygon *)geometry;
+            
+            [self.mapView addOverlay:self.self.geometry];
+        }
     } else {
-        [self.mapView removeOverlays:self.allGeometries];
+        [self.mapView removeOverlay:self.geometry];
     }
 }
 

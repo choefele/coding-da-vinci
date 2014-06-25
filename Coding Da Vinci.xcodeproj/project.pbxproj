@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		080EFD20F1624137BB286BD6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC44FEC64A43C49D7A22E3 /* libPods.a */; };
-		62325C551956022500E8BB56 /* Berlin.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62325C521956022500E8BB56 /* Berlin.geojson */; };
 		62325C5C1956028F00E8BB56 /* Berlin1800 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C581956028F00E8BB56 /* Berlin1800 */; };
 		62325C5D1956028F00E8BB56 /* Berlin1750 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C591956028F00E8BB56 /* Berlin1750 */; };
 		62325C5E1956028F00E8BB56 /* Berlin1690 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C5A1956028F00E8BB56 /* Berlin1690 */; };
@@ -34,6 +33,8 @@
 		62B1C3CA190D420D0027A90F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1C3C9190D420D0027A90F /* MapViewController.m */; };
 		62B1C3CC190D420D0027A90F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62B1C3CB190D420D0027A90F /* Images.xcassets */; };
 		62B1C3E9190D422A0027A90F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1C3E8190D422A0027A90F /* MapKit.framework */; };
+		62F98162195B55D300F60B68 /* Berlin1750.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62F98160195B55D300F60B68 /* Berlin1750.geojson */; };
+		62F98163195B55D300F60B68 /* Berlin-heute.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62F98161195B55D300F60B68 /* Berlin-heute.geojson */; };
 		62FBF645190D438200D248B6 /* ImageAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FBF644190D438200D248B6 /* ImageAnnotationView.m */; };
 		62FBF64D190D6C2D00D248B6 /* ImageAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FBF64C190D6C2D00D248B6 /* ImageAnnotation.m */; };
 		62FBF66D190D71D100D248B6 /* Zoo_Eingang-IV-64-1294-V.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62FBF64E190D71D100D248B6 /* Zoo_Eingang-IV-64-1294-V.jpg */; };
@@ -70,7 +71,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		62325C521956022500E8BB56 /* Berlin.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Berlin.geojson; sourceTree = "<group>"; };
 		62325C581956028F00E8BB56 /* Berlin1800 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1800; sourceTree = "<group>"; };
 		62325C591956028F00E8BB56 /* Berlin1750 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1750; sourceTree = "<group>"; };
 		62325C5A1956028F00E8BB56 /* Berlin1690 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1690; sourceTree = "<group>"; };
@@ -105,6 +105,8 @@
 		62B1C3CB190D420D0027A90F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		62B1C3D2190D420D0027A90F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		62B1C3E8190D422A0027A90F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		62F98160195B55D300F60B68 /* Berlin1750.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Berlin1750.geojson; sourceTree = "<group>"; };
+		62F98161195B55D300F60B68 /* Berlin-heute.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Berlin-heute.geojson"; sourceTree = "<group>"; };
 		62FBF643190D438200D248B6 /* ImageAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnnotationView.h; sourceTree = "<group>"; };
 		62FBF644190D438200D248B6 /* ImageAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAnnotationView.m; sourceTree = "<group>"; };
 		62FBF64B190D6C2D00D248B6 /* ImageAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnnotation.h; sourceTree = "<group>"; };
@@ -168,7 +170,8 @@
 			children = (
 				625370F8195990BB0026E99E /* Berlin1650.geojson */,
 				628BE4CB1959F58800A7C283 /* Berlin1690.geojson */,
-				62325C521956022500E8BB56 /* Berlin.geojson */,
+				62F98160195B55D300F60B68 /* Berlin1750.geojson */,
+				62F98161195B55D300F60B68 /* Berlin-heute.geojson */,
 			);
 			path = Geometries;
 			sourceTree = "<group>";
@@ -354,8 +357,8 @@
 				62B1C3C7190D420D0027A90F /* Main_iPad.storyboard in Resources */,
 				62325C5D1956028F00E8BB56 /* Berlin1750 in Resources */,
 				625370F9195990BB0026E99E /* Berlin1650.geojson in Resources */,
-				62325C551956022500E8BB56 /* Berlin.geojson in Resources */,
 				62FBF671190D71D100D248B6 /* Platz_am_Zeughaus-VII-59-513-x.jpg in Resources */,
+				62F98163195B55D300F60B68 /* Berlin-heute.geojson in Resources */,
 				62B1C3CC190D420D0027A90F /* Images.xcassets in Resources */,
 				62325C5F1956028F00E8BB56 /* Berlin1650 in Resources */,
 				62FBF673190D71D100D248B6 /* Nauener_Platz-GHZ-77-13.jpg in Resources */,
@@ -385,6 +388,7 @@
 				62FBF66F190D71D100D248B6 /* Schlossbrücke-VII-62-424-a-W.jpg in Resources */,
 				62FBF68A190D71D100D248B6 /* Hamburger_Bahnhof-VII-97-341-a-W.jpg in Resources */,
 				62FBF67A190D71D100D248B6 /* Königsstrasse-VII-60-1489-W.jpg in Resources */,
+				62F98162195B55D300F60B68 /* Berlin1750.geojson in Resources */,
 				628ED3151926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg in Resources */,
 				62FBF688190D71D100D248B6 /* Berlin_vom_Kreuzberg_aus-GDR-69-56.jpg in Resources */,
 				62FBF67B190D71D100D248B6 /* Köllnischer_Fischmarkt-VII-59-29-w.jpg in Resources */,
