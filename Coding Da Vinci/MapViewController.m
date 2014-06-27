@@ -341,6 +341,7 @@ GeometryData GEOMETRIES[] = {
             [self.mapView addOverlay:self.mapOverlay];
         }
     } else {
+        self.currentMapOverlayPath = nil;
         [self.mapView removeOverlay:self.mapOverlay];
     }
 }
@@ -398,6 +399,7 @@ GeometryData GEOMETRIES[] = {
             [self.mapView addOverlay:self.self.geometry];
         }
     } else {
+        self.currentGeometryPath = nil;
         [self.mapView removeOverlay:self.geometry];
     }
 }
