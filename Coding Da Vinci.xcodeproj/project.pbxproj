@@ -20,7 +20,6 @@
 		628ED3101926044100C8EF43 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 628ED30F1926044100C8EF43 /* libstdc++.dylib */; };
 		628ED3131926057500C8EF43 /* MorphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628ED3121926057500C8EF43 /* MorphViewController.m */; };
 		628ED3151926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 628ED3141926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg */; };
-		629A62501923ECAA00DECB67 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A624F1923ECAA00DECB67 /* SwipeViewController.m */; };
 		629A62531923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 629A62511923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg */; };
 		629A62541923EF9500DECB67 /* osterdeich-bremen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 629A62521923EF9500DECB67 /* osterdeich-bremen.jpg */; };
 		629A62561923F1D700DECB67 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629A62551923F1D700DECB67 /* CoreImage.framework */; };
@@ -86,8 +85,6 @@
 		628ED3111926057500C8EF43 /* MorphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphViewController.h; sourceTree = "<group>"; };
 		628ED3121926057500C8EF43 /* MorphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorphViewController.m; sourceTree = "<group>"; };
 		628ED3141926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1024px-JH_Hintze_Kreuzberg_1829.jpg"; sourceTree = "<group>"; };
-		629A624E1923ECAA00DECB67 /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
-		629A624F1923ECAA00DECB67 /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
 		629A62511923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "osterdeich-bremen-strandpromenade.jpg"; sourceTree = "<group>"; };
 		629A62521923EF9500DECB67 /* osterdeich-bremen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "osterdeich-bremen.jpg"; sourceTree = "<group>"; };
 		629A62551923F1D700DECB67 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -239,8 +236,6 @@
 				62FBF644190D438200D248B6 /* ImageAnnotationView.m */,
 				62A2FC00194CED8F007790BB /* ImageViewController.h */,
 				62A2FC01194CED8F007790BB /* ImageViewController.m */,
-				629A624E1923ECAA00DECB67 /* SwipeViewController.h */,
-				629A624F1923ECAA00DECB67 /* SwipeViewController.m */,
 				628ED3111926057500C8EF43 /* MorphViewController.h */,
 				628ED3121926057500C8EF43 /* MorphViewController.m */,
 				62B1C3CB190D420D0027A90F /* Images.xcassets */,
@@ -455,7 +450,6 @@
 				62A2FC02194CED8F007790BB /* ImageViewController.m in Sources */,
 				628ED3131926057500C8EF43 /* MorphViewController.m in Sources */,
 				62B1C3C1190D420D0027A90F /* AppDelegate.m in Sources */,
-				629A62501923ECAA00DECB67 /* SwipeViewController.m in Sources */,
 				62FBF64D190D6C2D00D248B6 /* ImageAnnotation.m in Sources */,
 				62B1C3BD190D420D0027A90F /* main.m in Sources */,
 			);

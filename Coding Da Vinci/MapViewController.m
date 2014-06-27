@@ -233,6 +233,10 @@ GeometryData GEOMETRIES[] = {
         annotation.yearConstruction = imageAnnotationData.yearConstruction;
         annotation.yearDemolition = imageAnnotationData.yearDemolition;
         
+        if ([annotation.imageFilePath hasPrefix:@"926px-Blick_auf_Kreuzberg"]) {
+            annotation.alternativeImageFilePath = @"954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg";
+        }
+        
         [annotations addObject:annotation];
     }
     self.allImageAnnotations = annotations;
@@ -291,8 +295,7 @@ GeometryData GEOMETRIES[] = {
     }
     
     ImageAnnotation *imageAnnotation = (ImageAnnotation *)annotation;
-    UIImage *image = [UIImage imageNamed:imageAnnotation.imageFilePath];
-    imageAnnotationView.image = image;
+    imageAnnotationView.image = [UIImage imageNamed:imageAnnotation.imageFilePath];
     
     return imageAnnotationView;
 }
@@ -302,10 +305,12 @@ GeometryData GEOMETRIES[] = {
     [self.mapView deselectAnnotation:view.annotation animated:NO];
 
     ImageAnnotation *imageAnnotation = (ImageAnnotation *)view.annotation;
-    UIImage *image = [UIImage imageNamed:imageAnnotation.imageFilePath];
     
     ImageViewController *imageViewController = (ImageViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
-    imageViewController.image = image;
+    imageViewController.image = [UIImage imageNamed:imageAnnotation.imageFilePath];
+    if (imageAnnotation.alternativeImageFilePath) {
+        imageViewController.targetImage = [UIImage imageNamed:imageAnnotation.alternativeImageFilePath];
+    }
     self.myPopoverController = [[UIPopoverController alloc] initWithContentViewController:imageViewController];
     [self.myPopoverController presentPopoverFromRect:view.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }

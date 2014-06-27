@@ -11,5 +11,6 @@
 @interface ImageViewController : UIViewController
 
 @property (nonatomic) UIImage *image;
+@property (nonatomic) UIImage *targetImage;
 
 @end
