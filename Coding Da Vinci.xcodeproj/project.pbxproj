@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		080EFD20F1624137BB286BD6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC44FEC64A43C49D7A22E3 /* libPods.a */; };
+		62135C28195DD80D00BE143C /* 954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62135C26195DD80D00BE143C /* 954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg */; };
+		62135C29195DD80D00BE143C /* 926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62135C27195DD80D00BE143C /* 926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg */; };
 		62325C5C1956028F00E8BB56 /* Berlin1800 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C581956028F00E8BB56 /* Berlin1800 */; };
 		62325C5D1956028F00E8BB56 /* Berlin1750 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C591956028F00E8BB56 /* Berlin1750 */; };
 		62325C5E1956028F00E8BB56 /* Berlin1690 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C5A1956028F00E8BB56 /* Berlin1690 */; };
@@ -71,6 +73,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62135C26195DD80D00BE143C /* 954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg"; sourceTree = "<group>"; };
+		62135C27195DD80D00BE143C /* 926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg"; sourceTree = "<group>"; };
 		62325C581956028F00E8BB56 /* Berlin1800 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1800; sourceTree = "<group>"; };
 		62325C591956028F00E8BB56 /* Berlin1750 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1750; sourceTree = "<group>"; };
 		62325C5A1956028F00E8BB56 /* Berlin1690 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1690; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 		62FBF646190D6B1B00D248B6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				62135C26195DD80D00BE143C /* 954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg */,
+				62135C27195DD80D00BE143C /* 926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg */,
 				628ED3141926092600C8EF43 /* 1024px-JH_Hintze_Kreuzberg_1829.jpg */,
 				629A62511923EF9500DECB67 /* osterdeich-bremen-strandpromenade.jpg */,
 				629A62521923EF9500DECB67 /* osterdeich-bremen.jpg */,
@@ -356,6 +362,7 @@
 			files = (
 				62B1C3C7190D420D0027A90F /* Main_iPad.storyboard in Resources */,
 				62325C5D1956028F00E8BB56 /* Berlin1750 in Resources */,
+				62135C29195DD80D00BE143C /* 926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg in Resources */,
 				625370F9195990BB0026E99E /* Berlin1650.geojson in Resources */,
 				62FBF671190D71D100D248B6 /* Platz_am_Zeughaus-VII-59-513-x.jpg in Resources */,
 				62F98163195B55D300F60B68 /* Berlin-heute.geojson in Resources */,
@@ -365,6 +372,7 @@
 				62FBF686190D71D100D248B6 /* Börse-IV-61-1531-S.jpg in Resources */,
 				62FBF681190D71D100D248B6 /* Einzug_des_Königs-GDR-64-11-216.jpg in Resources */,
 				62FBF687190D71D100D248B6 /* Blick_von_Oberbaumbrücke-VII-59-408-W.jpg in Resources */,
+				62135C28195DD80D00BE143C /* 954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg in Resources */,
 				62FBF682190D71D100D248B6 /* Der_Ochsen-Platz-GDR-64-11-171.jpg in Resources */,
 				629A62541923EF9500DECB67 /* osterdeich-bremen.jpg in Resources */,
 				62FBF66E190D71D100D248B6 /* Ufer_Stralauer_Strasse-GHZ-78-26.jpg in Resources */,
