@@ -54,7 +54,8 @@ ImageAnnotationData IMAGE_ANNOTATIONS[] = {
     {52.487625, 13.381483, 1818, NSUIntegerMax, "Berlin_vom_Kreuzberg_aus-GDR-69-56.jpg"},  // Nationaldenkmal
     {52.501799, 13.278023, 1924, NSUIntegerMax, "Avus_Funkturm-SM-2013-0958.jpg"},
     {52.527884, 13.373207, 1847, NSUIntegerMax, "Hamburger_Bahnhof-VII-97-341-a-W.jpg"},
-    {52.498995, 13.391758, 1732, NSUIntegerMax, "Rondell-GHZ-74-12.jpg"}                    // Mehringplatz
+    {52.498995, 13.391758, 1732, NSUIntegerMax, "Rondell-GHZ-74-12.jpg"},                   // Mehringplatz
+    {52.490886, 13.382603, 1887, NSUIntegerMax, "926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg"}
 };
 // Date of building dominating the image
 // Panoramas, unknown -> date image (§)
