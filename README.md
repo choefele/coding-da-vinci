@@ -43,4 +43,12 @@ npm install -g togeojson
 togeojson Berlin-Ortsteile.kml > Berlin.geojson
 ````
 
+Vorher/nachher Bilder
+====================
+
+[Bilder vom Berliner Kreuzberg von 1887 und 2007](http://de.wikipedia.org/wiki/Kreuzberg_(Berlin)) können mittels Wischgeste verglichen werden.
+
+![Vorher/nachher](https://raw.githubusercontent.com/choefele/coding-da-vinci/master/Slider.gif)
+
+
 
