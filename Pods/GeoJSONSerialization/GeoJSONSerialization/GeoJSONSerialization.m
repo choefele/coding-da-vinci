@@ -35,10 +35,8 @@ static inline double CLLocationCoordinateNormalizedLongitude(double latitude) {
 }
 
 static inline CLLocationCoordinate2D CLLocationCoordinateFromCoordinates(NSArray *coordinates) {
-//    NSCParameterAssert(coordinates && [coordinates count] == 2);
+    NSCParameterAssert(coordinates && [coordinates count] >= 2);
 
-//    NSNumber *longitude = [coordinates firstObject];
-//    NSNumber *latitude = [coordinates lastObject];
     NSNumber *longitude = coordinates[0];
     NSNumber *latitude = coordinates[1];
 
@@ -273,11 +271,6 @@ static NSDictionary * GeoJSONLineStringFeatureGeometryFromPolyline(MKPolyline *p
         [mutableCoordinatePairs addObject:@[@(coordinate.longitude), @(coordinate.latitude)]];
     }
 
-//    for (NSUInteger idx = 0; idx < [polyline pointCount]; idx++) {
-//        MKMapPoint point = polyline.points[idx];
-//        [mutableCoordinatePairs addObject:@[@(point.x), @(point.y)]];
-//    }
-
     return @{
              @"type": @"LineString",
              @"coordinates": mutableCoordinatePairs
@@ -299,11 +292,6 @@ static NSDictionary * GeoJSONPolygonFeatureGeometryFromPolygon(MKPolygon *polygo
             [interiorOrExteriorPolygon getCoordinates:&coordinate range:NSMakeRange(idx, 1)];
             [mutableCoordinatePairs addObject:@[@(coordinate.longitude), @(coordinate.latitude)]];
         }
-        
-//        for (NSUInteger idx = 0; idx < [interiorOrExteriorPolygon pointCount]; idx++) {
-//            MKMapPoint point = interiorOrExteriorPolygon.points[idx];
-//            [mutableCoordinatePairs addObject:@[@(point.x), @(point.y)]];
-//        }
 
         [mutableCoordinateSets addObject:mutableCoordinatePairs];
     }

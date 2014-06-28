@@ -22,7 +22,7 @@
 #define COCOAPODS_POD_AVAILABLE_GeoJSONSerialization
 #define COCOAPODS_VERSION_MAJOR_GeoJSONSerialization 0
 #define COCOAPODS_VERSION_MINOR_GeoJSONSerialization 0
-#define COCOAPODS_VERSION_PATCH_GeoJSONSerialization 1
+#define COCOAPODS_VERSION_PATCH_GeoJSONSerialization 3
 
 // MKPolygon-GPC
 #define COCOAPODS_POD_AVAILABLE_MKPolygon_GPC
