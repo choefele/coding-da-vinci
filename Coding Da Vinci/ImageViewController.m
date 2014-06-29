@@ -34,7 +34,7 @@
         longPressGestureRecognizer.minimumPressDuration = 0.001;
         [self.interactionView addGestureRecognizer:longPressGestureRecognizer];
     } else {
-        self.constraint.constant = 630;
+        [self.targetImageView.superview removeFromSuperview];
     }
 }
 
