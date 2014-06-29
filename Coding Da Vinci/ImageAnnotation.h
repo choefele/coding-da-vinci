@@ -14,6 +14,7 @@
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *imageFilePath;
 @property (nonatomic, copy) NSString *alternativeImageFilePath;
+@property (nonatomic, copy) NSString *morphImageFilePath;
 @property (nonatomic) NSUInteger yearConstruction;
 @property (nonatomic) NSUInteger yearDemolition;
 

@@ -51,7 +51,7 @@ ImageAnnotationData IMAGE_ANNOTATIONS[] = {
     {52.513754, 13.401384, 1690, NSUIntegerMax, "Cölln_Jungfernbrücke-GHZ-64-3-13.jpg"},    // §
     {52.520565, 13.401708, 1859,          1945, "Börse-IV-61-1531-S.jpg"},                  // Burgstraße
     {52.502331, 13.446358, 1860, NSUIntegerMax, "Blick_von_Oberbaumbrücke-VII-59-408-W.jpg"},// §
-    {52.487625, 13.381483, 1818, NSUIntegerMax, "Berlin_vom_Kreuzberg_aus-GDR-69-56.jpg"},  // Nationaldenkmal
+    {52.487625, 13.381483, 1818, NSUIntegerMax, "kreuzberg15.jpg"},                          // Nationaldenkmal
     {52.501799, 13.278023, 1924, NSUIntegerMax, "Avus_Funkturm-SM-2013-0958.jpg"},
     {52.527884, 13.373207, 1847, NSUIntegerMax, "Hamburger_Bahnhof-VII-97-341-a-W.jpg"},
     {52.498995, 13.391758, 1732, NSUIntegerMax, "Rondell-GHZ-74-12.jpg"},                   // Mehringplatz
@@ -235,6 +235,8 @@ GeometryData GEOMETRIES[] = {
         
         if ([annotation.imageFilePath hasPrefix:@"926px-Blick_auf_Kreuzberg"]) {
             annotation.alternativeImageFilePath = @"954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg";
+        } else if ([annotation.imageFilePath hasPrefix:@"kreuzberg"]) {
+            annotation.morphImageFilePath = @"kreuzberg%02.f.jpg";
         }
         
         [annotations addObject:annotation];
@@ -308,6 +310,7 @@ GeometryData GEOMETRIES[] = {
     
     ImageViewController *imageViewController = (ImageViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
     imageViewController.image = [UIImage imageNamed:imageAnnotation.imageFilePath];
+    imageViewController.morphImageFilePath = imageAnnotation.morphImageFilePath;
     if (imageAnnotation.alternativeImageFilePath) {
         imageViewController.targetImage = [UIImage imageNamed:imageAnnotation.alternativeImageFilePath];
     }

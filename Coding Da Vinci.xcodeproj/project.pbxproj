@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		080EFD20F1624137BB286BD6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC44FEC64A43C49D7A22E3 /* libPods.a */; };
+		6212D06E1960B2F200591F97 /* kreuzberg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D05F1960B2F200591F97 /* kreuzberg01.jpg */; };
+		6212D06F1960B2F200591F97 /* kreuzberg02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D0601960B2F200591F97 /* kreuzberg02.jpg */; };
+		6212D0701960B2F200591F97 /* kreuzberg03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D0611960B2F200591F97 /* kreuzberg03.jpg */; };
+		6212D0711960B2F200591F97 /* kreuzberg04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D0621960B2F200591F97 /* kreuzberg04.jpg */; };
+		6212D0721960B2F200591F97 /* kreuzberg05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D0631960B2F200591F97 /* kreuzberg05.jpg */; };
+		6212D0731960B2F200591F97 /* kreuzberg06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D0641960B2F200591F97 /* kreuzberg06.jpg */; };
+		6212D0741960B2F200591F97 /* kreuzberg07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D0651960B2F200591F97 /* kreuzberg07.jpg */; };
+		6212D0751960B2F200591F97 /* kreuzberg08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D0661960B2F200591F97 /* kreuzberg08.jpg */; };
+		6212D0761960B2F200591F97 /* kreuzberg09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D0671960B2F200591F97 /* kreuzberg09.jpg */; };
+		6212D0771960B2F200591F97 /* kreuzberg10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D0681960B2F200591F97 /* kreuzberg10.jpg */; };
+		6212D0781960B2F200591F97 /* kreuzberg11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D0691960B2F200591F97 /* kreuzberg11.jpg */; };
+		6212D0791960B2F200591F97 /* kreuzberg12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D06A1960B2F200591F97 /* kreuzberg12.jpg */; };
+		6212D07A1960B2F200591F97 /* kreuzberg13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D06B1960B2F200591F97 /* kreuzberg13.jpg */; };
+		6212D07B1960B2F200591F97 /* kreuzberg14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D06C1960B2F200591F97 /* kreuzberg14.jpg */; };
+		6212D07C1960B2F200591F97 /* kreuzberg15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6212D06D1960B2F200591F97 /* kreuzberg15.jpg */; };
 		62135C28195DD80D00BE143C /* 954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62135C26195DD80D00BE143C /* 954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg */; };
 		62135C29195DD80D00BE143C /* 926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62135C27195DD80D00BE143C /* 926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg */; };
 		62325C5C1956028F00E8BB56 /* Berlin1800 in Resources */ = {isa = PBXBuildFile; fileRef = 62325C581956028F00E8BB56 /* Berlin1800 */; };
@@ -72,6 +87,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6212D05F1960B2F200591F97 /* kreuzberg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg01.jpg; sourceTree = "<group>"; };
+		6212D0601960B2F200591F97 /* kreuzberg02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg02.jpg; sourceTree = "<group>"; };
+		6212D0611960B2F200591F97 /* kreuzberg03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg03.jpg; sourceTree = "<group>"; };
+		6212D0621960B2F200591F97 /* kreuzberg04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg04.jpg; sourceTree = "<group>"; };
+		6212D0631960B2F200591F97 /* kreuzberg05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg05.jpg; sourceTree = "<group>"; };
+		6212D0641960B2F200591F97 /* kreuzberg06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg06.jpg; sourceTree = "<group>"; };
+		6212D0651960B2F200591F97 /* kreuzberg07.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg07.jpg; sourceTree = "<group>"; };
+		6212D0661960B2F200591F97 /* kreuzberg08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg08.jpg; sourceTree = "<group>"; };
+		6212D0671960B2F200591F97 /* kreuzberg09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg09.jpg; sourceTree = "<group>"; };
+		6212D0681960B2F200591F97 /* kreuzberg10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg10.jpg; sourceTree = "<group>"; };
+		6212D0691960B2F200591F97 /* kreuzberg11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg11.jpg; sourceTree = "<group>"; };
+		6212D06A1960B2F200591F97 /* kreuzberg12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg12.jpg; sourceTree = "<group>"; };
+		6212D06B1960B2F200591F97 /* kreuzberg13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg13.jpg; sourceTree = "<group>"; };
+		6212D06C1960B2F200591F97 /* kreuzberg14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg14.jpg; sourceTree = "<group>"; };
+		6212D06D1960B2F200591F97 /* kreuzberg15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kreuzberg15.jpg; sourceTree = "<group>"; };
 		62135C26195DD80D00BE143C /* 954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg"; sourceTree = "<group>"; };
 		62135C27195DD80D00BE143C /* 926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg"; sourceTree = "<group>"; };
 		62325C581956028F00E8BB56 /* Berlin1800 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Berlin1800; sourceTree = "<group>"; };
@@ -281,6 +311,21 @@
 				62FBF65D190D71D100D248B6 /* Jerusalemkirche-GHZ-74-14.jpg */,
 				62FBF65C190D71D100D248B6 /* Köllnischer_Fischmarkt-VII-59-29-w.jpg */,
 				62FBF65B190D71D100D248B6 /* Königsstrasse-VII-60-1489-W.jpg */,
+				6212D05F1960B2F200591F97 /* kreuzberg01.jpg */,
+				6212D0601960B2F200591F97 /* kreuzberg02.jpg */,
+				6212D0611960B2F200591F97 /* kreuzberg03.jpg */,
+				6212D0621960B2F200591F97 /* kreuzberg04.jpg */,
+				6212D0631960B2F200591F97 /* kreuzberg05.jpg */,
+				6212D0641960B2F200591F97 /* kreuzberg06.jpg */,
+				6212D0651960B2F200591F97 /* kreuzberg07.jpg */,
+				6212D0661960B2F200591F97 /* kreuzberg08.jpg */,
+				6212D0671960B2F200591F97 /* kreuzberg09.jpg */,
+				6212D0681960B2F200591F97 /* kreuzberg10.jpg */,
+				6212D0691960B2F200591F97 /* kreuzberg11.jpg */,
+				6212D06A1960B2F200591F97 /* kreuzberg12.jpg */,
+				6212D06B1960B2F200591F97 /* kreuzberg13.jpg */,
+				6212D06C1960B2F200591F97 /* kreuzberg14.jpg */,
+				6212D06D1960B2F200591F97 /* kreuzberg15.jpg */,
 				62FBF65A190D71D100D248B6 /* Landsbergerplatz-IV-61-3475-V.jpg */,
 				62FBF659190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg */,
 				62FBF658190D71D100D248B6 /* Leipziger_Platz-GDR-76-57-24.jpg */,
@@ -359,20 +404,32 @@
 				62325C5D1956028F00E8BB56 /* Berlin1750 in Resources */,
 				62135C29195DD80D00BE143C /* 926px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_1887.jpg in Resources */,
 				625370F9195990BB0026E99E /* Berlin1650.geojson in Resources */,
+				6212D0751960B2F200591F97 /* kreuzberg08.jpg in Resources */,
+				6212D0701960B2F200591F97 /* kreuzberg03.jpg in Resources */,
 				62FBF671190D71D100D248B6 /* Platz_am_Zeughaus-VII-59-513-x.jpg in Resources */,
+				6212D07A1960B2F200591F97 /* kreuzberg13.jpg in Resources */,
 				62F98163195B55D300F60B68 /* Berlin-heute.geojson in Resources */,
+				6212D0761960B2F200591F97 /* kreuzberg09.jpg in Resources */,
+				6212D0711960B2F200591F97 /* kreuzberg04.jpg in Resources */,
 				62B1C3CC190D420D0027A90F /* Images.xcassets in Resources */,
 				62325C5F1956028F00E8BB56 /* Berlin1650 in Resources */,
 				62FBF673190D71D100D248B6 /* Nauener_Platz-GHZ-77-13.jpg in Resources */,
+				6212D0781960B2F200591F97 /* kreuzberg11.jpg in Resources */,
 				62FBF686190D71D100D248B6 /* Börse-IV-61-1531-S.jpg in Resources */,
 				62FBF681190D71D100D248B6 /* Einzug_des_Königs-GDR-64-11-216.jpg in Resources */,
 				62FBF687190D71D100D248B6 /* Blick_von_Oberbaumbrücke-VII-59-408-W.jpg in Resources */,
 				62135C28195DD80D00BE143C /* 954px-Blick_auf_Kreuzberg_aus_Großbeerenstraße,_2007.jpg in Resources */,
+				6212D07C1960B2F200591F97 /* kreuzberg15.jpg in Resources */,
 				62FBF682190D71D100D248B6 /* Der_Ochsen-Platz-GDR-64-11-171.jpg in Resources */,
 				629A62541923EF9500DECB67 /* osterdeich-bremen.jpg in Resources */,
+				6212D06F1960B2F200591F97 /* kreuzberg02.jpg in Resources */,
 				62FBF66E190D71D100D248B6 /* Ufer_Stralauer_Strasse-GHZ-78-26.jpg in Resources */,
+				6212D0791960B2F200591F97 /* kreuzberg12.jpg in Resources */,
+				6212D06E1960B2F200591F97 /* kreuzberg01.jpg in Resources */,
+				6212D0721960B2F200591F97 /* kreuzberg05.jpg in Resources */,
 				62325C5C1956028F00E8BB56 /* Berlin1800 in Resources */,
 				62FBF68B190D71D100D248B6 /* Rondell-GHZ-74-12.jpg in Resources */,
+				6212D0731960B2F200591F97 /* kreuzberg06.jpg in Resources */,
 				62FBF684190D71D100D248B6 /* Das_Brandenburger_Tor-GDR-65-7-1.jpg in Resources */,
 				62FBF675190D71D100D248B6 /* Mauerstrasse-Dreifaltigkeitskirche-GDR-71-67.jpg in Resources */,
 				62FBF678190D71D100D248B6 /* Landwehrkanal-GHZ-90-61.jpg in Resources */,
@@ -397,10 +454,13 @@
 				62FBF67B190D71D100D248B6 /* Köllnischer_Fischmarkt-VII-59-29-w.jpg in Resources */,
 				62FBF677190D71D100D248B6 /* Leipziger_Platz-GDR-76-57-24.jpg in Resources */,
 				62FBF683190D71D100D248B6 /* Das_Leipziger_Tor-GDR-74-55.jpg in Resources */,
+				6212D07B1960B2F200591F97 /* kreuzberg14.jpg in Resources */,
 				62FBF680190D71D100D248B6 /* Filmfestspiele_Kudamm-SM-2013-1519.jpg in Resources */,
 				62FBF66D190D71D100D248B6 /* Zoo_Eingang-IV-64-1294-V.jpg in Resources */,
 				62325C5E1956028F00E8BB56 /* Berlin1690 in Resources */,
 				62FBF67C190D71D100D248B6 /* Jerusalemkirche-GHZ-74-14.jpg in Resources */,
+				6212D0741960B2F200591F97 /* kreuzberg07.jpg in Resources */,
+				6212D0771960B2F200591F97 /* kreuzberg10.jpg in Resources */,
 				62B1C3BB190D420D0027A90F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
