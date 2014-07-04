@@ -13,5 +13,6 @@
 @property (nonatomic) UIImage *image;
 @property (nonatomic) UIImage *targetImage;
 @property (nonatomic, copy) NSString *morphImageFilePath;
+@property (nonatomic, copy) NSString *title;
 
 @end

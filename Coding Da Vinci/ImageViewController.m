@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *targetImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint;
 @property (weak, nonatomic) IBOutlet UIView *interactionView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -24,6 +25,10 @@
     [super viewDidLoad];
     
     self.imageView.image = self.image;
+    self.titleLabel.text = self.title;
+    if (self.title) {
+        self.titleLabel.backgroundColor = [UIColor colorWithWhite:1 alpha:0.5];
+    }
     
     SEL selector;
     if (self.targetImage) {

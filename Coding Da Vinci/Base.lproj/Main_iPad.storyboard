@@ -126,6 +126,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9R-Lm-sxU">
+                                <rect key="frame" x="20" y="439" width="600" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -139,7 +146,10 @@
                             <constraint firstAttribute="trailing" secondItem="js6-Sk-xDj" secondAttribute="trailing" constant="10" id="Yv4-lH-RQI"/>
                             <constraint firstAttribute="bottom" secondItem="js6-Sk-xDj" secondAttribute="bottom" constant="10" id="bzf-SU-SEi"/>
                             <constraint firstItem="hZk-Ft-ONU" firstAttribute="top" secondItem="bGx-Eh-H2S" secondAttribute="top" constant="10" id="gdu-3T-yFu"/>
+                            <constraint firstItem="i9R-Lm-sxU" firstAttribute="leading" secondItem="bGx-Eh-H2S" secondAttribute="leading" constant="20" symbolic="YES" id="iWz-Ni-JNV"/>
+                            <constraint firstItem="i9R-Lm-sxU" firstAttribute="centerX" secondItem="js6-Sk-xDj" secondAttribute="centerX" id="l30-rG-RYd"/>
                             <constraint firstAttribute="trailing" secondItem="hZk-Ft-ONU" secondAttribute="trailing" constant="10" id="nvm-9p-Wu6"/>
+                            <constraint firstAttribute="bottom" secondItem="i9R-Lm-sxU" secondAttribute="bottom" constant="20" symbolic="YES" id="qJS-sg-rkp"/>
                             <constraint firstItem="js6-Sk-xDj" firstAttribute="leading" secondItem="bGx-Eh-H2S" secondAttribute="leading" constant="10" id="yvr-KL-XMs"/>
                         </constraints>
                     </view>
@@ -150,6 +160,7 @@
                         <outlet property="imageView" destination="js6-Sk-xDj" id="bwp-H5-uRh"/>
                         <outlet property="interactionView" destination="nw3-dP-Fpw" id="cos-8k-uLm"/>
                         <outlet property="targetImageView" destination="EPl-cG-rUx" id="Iuy-Oh-w52"/>
+                        <outlet property="titleLabel" destination="i9R-Lm-sxU" id="ZAy-OI-5AD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPQ-uN-98J" userLabel="First Responder" sceneMemberID="firstResponder"/>

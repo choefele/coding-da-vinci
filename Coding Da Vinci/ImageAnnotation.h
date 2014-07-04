@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSString *imageFilePath;
 @property (nonatomic, copy) NSString *alternativeImageFilePath;
 @property (nonatomic, copy) NSString *morphImageFilePath;
+@property (nonatomic, copy) NSString *label;
 @property (nonatomic) NSUInteger yearConstruction;
 @property (nonatomic) NSUInteger yearDemolition;
 
