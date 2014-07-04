@@ -158,6 +158,20 @@ GeometryData GEOMETRIES[] = {
     return year;
 }
 
+- (IBAction)showInfo:(UIBarButtonItem *)sender
+{
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    self.myPopoverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    self.myPopoverController.popoverContentSize = CGSizeMake(640, 480);
+    
+    CGRect rect = self.view.frame;
+    if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+        rect.size.height = self.view.frame.size.width;
+        rect.size.width = self.view.frame.size.height;
+    }
+    [self.myPopoverController presentPopoverFromRect:rect inView:self.view permittedArrowDirections:0 animated:YES];
+}
+
 #pragma mark MKMapViewDelegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
